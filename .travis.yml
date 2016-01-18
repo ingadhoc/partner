@@ -21,8 +21,6 @@ addons:
       - python-simplejson
       - python-serial
       - python-yaml
-      - libcups2-dev # for aeroo
-      - wkhtmltopdf # for odoo pdf reports (tested on sale for eg.)
 #     Search your packages here:
 #       https://github.com/travis-ci/apt-package-whitelist/blob/master/ubuntu-precise
 #      - wkhtmltopdf  # only add if needed and check the before_install section below
@@ -36,10 +34,11 @@ env:
   global:
   - VERSION="8.0" TESTS="0" LINT_CHECK="0" TRANSIFEX="0"
   - TRANSIFEX_USER='jjscarafia'
-  - TRANSIFEX_ORGANIZATION='adhoc'
   # to get secure, run 'travis encrypt TRANSIFEX_PASSWORD=[transifex_password] -r [github_repo]'
   # example of github repo 'ingadhoc/odoo-infrastructure'
-  - secure: znz/SSupt0Srn+J1SF2V4nRYEGlx3nOh6BscNth0iv5VNdLoGxMreOfZJ4GVtv9N7rPb/469ApBtV/L+mHJyumd18f8BAszsjkMSjWst5MnfuijX0emm2i1gHZOP9lHKKCv3fN5bCubizBN6+cwQ84+kCeqzf6v9qDOVjByRpI3n8N+iYU5yBhh7VjzhVGWj761j5vMUJI72jT0iFRwVnebfefKh9w8gYPyKgddW4cqNPChNXkiWSZAw7qBvU2ElMI6gGZCBFOoKBj2Gy6mcXap5ZDssPRZsnH11sop9wYZ573Rf1UFZNlc9IQUaDnagojaGjWEnIFjVO4uxZJpAgDBz7MIYT7nYWbsBu2q3bYWGJ9I3tozSyJ/lXkLm9q6nVQ5o8LI6BzFQkPukupVExIVQ285Ag/cc28gxCX7L8ANfKUyfzUszaqXaeTS4klLQERaBY1CdCbheNGDpXAFKq2avukCdGzJ99NTaIFKCCM5RP1wE/AysrkHZSArUmGm+ABRNQJ4LsDdOPHwb+1QTaXjiPRpYFPDb35vb0mF3dPSAUG4zd9BsjZzy8EAdfg8EMx6YzuZWHi3wPzbWDuNBc/ErfVSJBLcJHAGol7loMUVT+307xh8P64xU1D0f+BuzoI7JdM0Nj99uaiSjsgIyDMFBiL01I1BNweqmt7AKNuM=
+  - secure: Ng0RJE/dbYR2ccLERF8tVKPBP4FoES/OoeBaCtcBF5hGNA8YGuzPAjmVI2WP3KQ4ouktVdMiJx8OtyLNL9CSIQuy6ThCQq058rFnezVv10eK5vi17ZWRBFc4hPsDM9cBSw/36ZPAUC0GgOHZxRv2DOrD+nCa1zpEWx/pX9ABzauplBvFKdedNCFeVMP5zyu+iFOtTdNkLuEOVODDzV/GGb4R+Spt9De0fhqshMAUQQWEArE0hHmIpQPCLsHEJn+EhI4Wnhpuef9kGQTPOZk7Cxvx4HbzYEI0TB4lfjaMfk6hg5hDAdn4w3yjDYi38qbEChTHuDiq4plSCK3QT6W7A7vafRaHIWoQrlghRwqDuZbJEibfny5ZRvBNH5WHOda5H9rT5qYO4JGVlVyA6OEi69cC3vAkPiEMLViFwmGteQl286e3V4QW3ehabxG019nYZvwWQza66KGjjbq8i8V5IrUX09GnyeKzqJvYN6ng35cX5jjPHCkLsXJuob4SFY/QVktCwAL2PIEmcVZa4k9sUB20/Ir97DovqPgK/ER6bnPUMLMZac3x7g2pQO9eL5+76mbXGBWGPisJgptZo4gWImo+20bbU3eZlUwF2ffV+BP5smK0VDnGN7zZmfx5ReIsi8/QV3XhPuWRN2KpI2ub4pITtr/Vv+ML9ja2lRG4DTo=
+  - TRANSIFEX_ORGANIZATION='adhoc'
+  - TRANSIFEX_TEAM='46451'
 
   matrix:
   # TODO enable lint check
@@ -57,9 +56,6 @@ virtualenv:
   system_site_packages: true
 
 install:
-  # aeroo reports
-  - pip install git+https://github.com/aeroo/aeroolib.git@master pycups==1.9.68
-
   # repository requirements
   - pip install -r requirements.txt
 
