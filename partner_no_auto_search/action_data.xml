@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+
+    <record id="base.action_partner_form" model="ir.actions.act_window">
+        <field name="auto_search"></field>
+    </record>
+
+</data>
+</openerp>
+
