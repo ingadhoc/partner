@@ -27,9 +27,9 @@
                                 <field name="national_identity" groups="partner_person.person_ni"/>
                                 <field name="passport" groups="partner_person.person_passport"/>
                                 <field name="nationality_id" groups="partner_person.person_nationality"/>
-                                <label for="birthdate" groups="partner_person.person_birthdate"/>
+                                <label for="birthdate_date" groups="partner_person.person_birthdate"/>
                                 <div class="oe_inline" groups="partner_person.person_birthdate">
-                                    <field name="birthdate" class="oe_inline"/>
+                                    <field name="birthdate_date" class="oe_inline"/>
                                     <div attrs="{'invisible':[('age','=',0)]}">
                                         (<field name="age" class="oe_inline"/> Years)
                                     </div>

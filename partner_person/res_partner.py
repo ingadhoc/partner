@@ -8,23 +8,23 @@ from datetime import date
 from openerp.osv import fields as old_fields
 
 
-class res_users(models.Model):
-    _inherit = "res.users"
-    # added this here because in v8 there is a conflict with a char birthdate
-    # field in partner it is supose to be fixed
-    birthdate = fields.Date(string='Birthdate')
+# class res_users(models.Model):
+#     _inherit = "res.users"
+#     # added this here because in v8 there is a conflict with a char birthdate
+#     # field in partner it is supose to be fixed
+#     birthdate = fields.Date(string='Birthdate')
 
 
 class res_partner(models.Model):
     _inherit = "res.partner"
 
     @api.one
-    @api.depends('birthdate')
+    @api.depends('birthdate_date')
     def _get_age(self):
         today = date.today()
         age = False
-        if self.birthdate:
-            birthdate = fields.Date.from_string(self.birthdate)
+        if self.birthdate_date:
+            birthdate = fields.Date.from_string(self.birthdate_date)
             try:
                 birthday = birthdate.replace(year=today.year)
             # raised when birth date is February 29 and the current year is
@@ -86,7 +86,7 @@ class res_partner(models.Model):
          (u'divorced', u'Divorced')],
         string='Marital Status',
         )
-    birthdate = fields.Date(
+    birthdate_date = fields.Date(
         string='Birthdate'
         )
     father_id = fields.Many2one(
