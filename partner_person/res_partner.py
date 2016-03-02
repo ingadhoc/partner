@@ -154,11 +154,9 @@ class res_partner(models.Model):
     @api.onchange('firstname', 'lastname')
     @api.constrains('firstname', 'lastname')
     def build_name(self):
-        print 'build_name'
         if self.lastname and self.firstname:
             self.name = '%s %s' % (
                 self.lastname or '', self.firstname or '')
-            print 'name', self.name
 
     def name_get(self, cr, uid, ids, context=None):
         if context is None:
