@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
 {
     "name": "Search Partners by VAT",
-    "version": "8.0.1.0.0",
+    "version": "8.0.1.0.1",
     "author": "ADHOC SA",
     "category": "",
-    "description" : """
+    "description": """
 Search Partners by VAT
 ======================
     """,

@@ -19,8 +19,8 @@ class res_partner(models.Model):
             res_name = ptrn_name.search(name)
             if res_name:
                 name = name.replace('[' + res_name.group(2) + '] ', '')
-            partner_search = super(res_partner, self).name_search(cr, user,
-                                                                  name, args, operator, context, limit)
+            partner_search = super(res_partner, self).name_search(
+                cr, user, name, args, operator, context, limit)
             ids = [partner[0] for partner in partner_search]
             if not ids:
                 ids = self.search(cr, user, [('vat', operator, name)] + args,
@@ -29,26 +29,27 @@ class res_partner(models.Model):
                 ptrn = re.compile('(\[(.*?)\])')
                 res = ptrn.search(name)
                 if res:
-                    ids = self.search(cr, user,
-                                      [('vat', operator, res.group(2))] + args, limit=limit,
-                                      context=context)
+                    ids = self.search(
+                        cr, user, [('vat', operator, res.group(2))] + args,
+                        limit=limit, context=context)
         else:
-            return super(res_partner, self).name_search(cr, user,
-                                                        name, args, operator, context, limit)
+            return super(res_partner, self).name_search(
+                cr, user, name, args, operator, context, limit)
 
         return self.name_get(cr, user, ids, context=context)
 
-    def name_get(self, cr, uid, ids, context=None):
-        if isinstance(ids, (list, tuple)) and not len(ids):
-            return []
-        if isinstance(ids, (long, int)):
-            ids = [ids]
-        res_name = super(res_partner, self).name_get(cr, uid, ids, context)
-        res = []
-        for record in res_name:
-            partner = self.browse(cr, uid, record[0], context=context)
-            name = record[1]
-            if partner.vat:
-                name = '[' + partner.vat + '] ' + name
-            res.append((record[0], name))
-        return res
+    # TODO ver si lo borramos, decidimos no mostrarlo por ahora
+    # def name_get(self, cr, uid, ids, context=None):
+    #     if isinstance(ids, (list, tuple)) and not len(ids):
+    #         return []
+    #     if isinstance(ids, (long, int)):
+    #         ids = [ids]
+    #     res_name = super(res_partner, self).name_get(cr, uid, ids, context)
+    #     res = []
+    #     for record in res_name:
+    #         partner = self.browse(cr, uid, record[0], context=context)
+    #         name = record[1]
+    #         if partner.vat:
+    #             name = '[' + partner.vat + '] ' + name
+    #         res.append((record[0], name))
+    #     return res
