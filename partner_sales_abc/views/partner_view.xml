@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- INHERITED FORM -->
+        <record id="view_partner_user_form" model="ir.ui.view">
+            <field name="name">partner.user.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <page name="sales_purchases">
+                    <group name="clasificacion_abc" string="Clasificacion ABC">
+                        <field name="abc_sales_amount"/>
+                    </group>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>
