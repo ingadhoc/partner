@@ -58,7 +58,7 @@
             <field name="target">inline</field>
         </record>
 
-        <menuitem id="menu_partner_config" name="Partners" parent="base.menu_config"
+        <menuitem id="menu_partner_config" name="Partners" parent="base.menu_administration"
             sequence="5" action="action_config_settings"/>
 
     </data>
