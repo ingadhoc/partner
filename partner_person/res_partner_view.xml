@@ -24,6 +24,7 @@
                 <page name="internal_notes" position="before">
                     <page string="Personal Information" attrs="{'invisible':[('is_company','=',True)]}">
                         <group>
+                            <group>
                                 <field name="national_identity" groups="partner_person.person_ni"/>
                                 <field name="passport" groups="partner_person.person_passport"/>
                                 <field name="nationality_id" groups="partner_person.person_nationality"/>
@@ -34,6 +35,7 @@
                                         (<field name="age" class="oe_inline"/> Years)
                                     </div>
                                 </div>
+                            </group>
                             <group>
                                 <field name="sex" readonly="'from_member' in context"/>
                                 <field name="disabled_person" groups="partner_person.person_disabilities"/>
