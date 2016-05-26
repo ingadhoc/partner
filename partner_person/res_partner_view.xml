@@ -22,7 +22,7 @@
                     </div>
                 </field>            
                 <page name="internal_notes" position="before">
-                    <page string="Personal Information" attrs="{'invisible':[('is_company','=',True)]}">
+                    <page string="Personal Information" name="personal_information" attrs="{'invisible':[('is_company','=',True)]}">
                         <group>
                             <group>
                                 <field name="national_identity" groups="partner_person.person_ni"/>
