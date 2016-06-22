@@ -23,7 +23,7 @@ class sale_order(models.Model):
                   ('invoiced', '=', False),
                   ('order_id.state', 'not in', ['draft', 'cancel', 'sent'])]
         order_lines = self.env['sale.order.line'].search(domain)
-        none_invoiced_amount = sum([x.price_subtotal for x in order_lines])
+        none_invoiced_amount = sum([x.price_subtotal * x.tax_id.amount + x.price_subtotal for x in order_lines])
 
         # We sum from all the invoices that are in draft the total amount
         domain = [
@@ -32,7 +32,7 @@ class sale_order(models.Model):
         draft_invoices_amount = sum([x.amount_total for x in draft_invoices])
 
         available_credit = self.partner_id.credit_limit - \
-            self.partner_id.credit - \
+            abs(self.partner_id.credit) - \
             none_invoiced_amount - draft_invoices_amount
 
         if self.amount_total > available_credit:
