@@ -42,7 +42,7 @@ class res_partner(models.Model):
         readonly=True,
         required=True,
         default='potential'
-        )
+    )
 
     def write(self, cr, uid, ids, vals, context=None):
         for partner in self.browse(cr, uid, ids, context=context):
@@ -106,3 +106,14 @@ class res_partner(models.Model):
                 ret = [
                     field.field_id.name for field in company_field_ids if field.track]
         return ret
+
+    @api.model
+    def _get_tracked_fields(self, updated_fields):
+        tracked_fields = []
+        for field in self.env.user.company_id.partner_state_field_ids:
+            if field.track and field.field_id.name in updated_fields:
+                tracked_fields.append(field.field_id.name)
+
+        if tracked_fields:
+            return self.fields_get(tracked_fields)
+        return super(res_partner, self)._get_tracked_fields(updated_fields)
