@@ -73,10 +73,10 @@ class res_partner(models.Model):
                 for partner_field in partner_read:
                     partner_name = self.browse(partner_read['id']).display_name
                     if not partner_read[partner_field]:
-                        raise Warning(
-                            _("Can not request approval,\
-                            required field %s empty on partner  %s!"
-                                % (partner_field, partner_name)))
+                        raise Warning(_(
+                            "Can not request approval, "
+                            "required field %s empty on partner  %s!" % (
+                                partner_field, partner_name)))
         self.partner_state = 'pending'
 
     @api.multi
@@ -90,8 +90,8 @@ class res_partner(models.Model):
             'res.users'].has_group('partner_state.approve_partners')
         if not user_can_approve_partners:
             raise Warning(
-                _("User can't approve partners, \
-                    please check user permissions!"))
+                _("User can't approve partners, "
+                    "please check user permissions!"))
         return True
 
     @api.multi
@@ -110,10 +110,25 @@ class res_partner(models.Model):
     @api.model
     def _get_tracked_fields(self, updated_fields):
         tracked_fields = []
-        for field in self.env.user.company_id.partner_state_field_ids:
-            if field.track and field.field_id.name in updated_fields:
-                tracked_fields.append(field.field_id.name)
+        # TODO we should use company of modified partner
+        for line in self.env.user.company_id.partner_state_field_ids:
+            if line.track and line.field_id.name in updated_fields:
+                tracked_fields.append(line.field_id.name)
 
         if tracked_fields:
             return self.fields_get(tracked_fields)
         return super(res_partner, self)._get_tracked_fields(updated_fields)
+
+    @api.multi
+    def message_track(self, tracked_fields, initial_values):
+        """
+        We need to set attribute temporary because message_track read it
+        from field properties to make message
+        """
+        # TODO we should use company of modified partner
+        for line in self.env.user.company_id.partner_state_field_ids:
+            if line.track:
+                field = self._fields[line.field_id.name]
+                setattr(field, 'track_visibility', 'always')
+        return super(res_partner, self).message_track(
+            tracked_fields, initial_values)
