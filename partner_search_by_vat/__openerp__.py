@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 {
     "name": "Search Partners by VAT",
-    "version": "8.0.1.0.1",
+    'version': '9.0.1.0.0',
     "author": "ADHOC SA",
     "category": "",
     "description": """
@@ -17,6 +17,6 @@ Search Partners by VAT
     "data": [
         'res_partner_view.xml',
     ],
-    "installable": True,
+    "installable": False,
     "active": False,
 }

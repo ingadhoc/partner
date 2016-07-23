@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name': 'Partner State',
-    'version': '8.0.2.0.0',
+    'version': '9.0.1.0.0',
     'category': 'Base',
     'description': """
 Partner State
@@ -47,5 +47,5 @@ company or not.
         'security/ir.model.access.csv',
     ],
     'demo': [],
-    'installable': True,
+    'installable': False,
 }

@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 {
     "name": "Search Partners by Reference",
-    "version": "8.0.1.0.0",
+    'version': '9.0.1.0.0',
     "category": "",
     "description": """
 Search Partners by Reference
@@ -17,6 +17,6 @@ Search Partners by Reference
     "data": [
         'res_partner_view.xml',
     ],
-    "installable": True,
+    "installable": False,
     "active": False,
 }

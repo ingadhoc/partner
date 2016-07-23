@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name': 'Partner Employee',
-    'version': '8.0.1.0.0',
+    'version': '9.0.1.0.0',
     'category': 'Hidden',
     'sequence': 14,
     'summary': '',
@@ -29,7 +29,7 @@ Partner Employee
 ================
 Adds a boolean field "Employee" on partners.
     """,
-    'author':  'ADHOC SA',
+    'author': 'ADHOC SA',
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
     'images': [
@@ -44,7 +44,7 @@ Adds a boolean field "Employee" on partners.
     ],
     'test': [
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }

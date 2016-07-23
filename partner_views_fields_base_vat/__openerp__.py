@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 {
     "name": "Add Vat option on partner_views_fields",
-    "version": "8.0.1.0.0",
+    'version': '9.0.1.0.0',
     "author": "ADHOC SA",
     "category": "",
     "description" : """
@@ -13,7 +13,7 @@ Add Fields on Partners Views
     "depends": [
         "partner_views_fields",
         "base_vat",
-                ],
+    ],
     "demo": [
     ],
     "data": [
@@ -21,7 +21,7 @@ Add Fields on Partners Views
         'res_partner_view.xml',
         'res_config_view.xml',
     ],
-    "installable": True,
+    "installable": False,
     "active": False,
     'auto_install': True,
 }

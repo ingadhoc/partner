@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name': 'Portal Partner Fix',
-    'version': '8.0.1.0.0',
+    'version': '9.0.1.0.0',
     'category': '',
     'sequence': 14,
     'summary': '',
@@ -44,7 +44,7 @@ Let user read his commercial partner
     ],
     'test': [
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }

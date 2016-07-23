@@ -21,7 +21,7 @@
 
 {
     "name": "Partner Internal Code",
-    'version': '8.0.0.4.0',
+    'version': '9.0.1.0.0',
     'category': 'Tools',
     'sequence': 14,
     'author': 'ADHOC SA',
@@ -46,7 +46,7 @@ Partner Internal Code
     ],
     'test': [
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }
