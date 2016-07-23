@@ -8,16 +8,6 @@ from datetime import date
 from openerp.osv import fields as old_fields
 
 
-class res_users(models.Model):
-    _inherit = "res.users"
-    # we restore base birthdate field TODO remove on version 9
-    birthdate = fields.Char(
-        'Birthdate (OLD)'
-        )
-#     # added this here because in v8 there is a conflict with a char birthdate
-#     # field in partner it is supose to be fixed
-    # birthdate = fields.Date(string='Birthdate')
-
 
 class res_partner(models.Model):
     _inherit = "res.partner"
@@ -89,10 +79,6 @@ class res_partner(models.Model):
         [(u'single', u'Single'), (u'married', u'Married'),
          (u'divorced', u'Divorced')],
         string='Marital Status',
-        )
-    # we restore base birthdate field TODO remove on version 9
-    birthdate = fields.Char(
-        'Birthdate (OLD)'
         )
     birthdate_date = fields.Date(
         string='Birthdate'
