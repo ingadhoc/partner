@@ -21,7 +21,7 @@
 {
     'author': 'ADHOC SA',
     'auto_install': False,
-    'installable': True,
+    'installable': False,
     'category': 'Tools',
     'demo_xml': [
     ],
@@ -42,7 +42,7 @@ For using the quick creation you must set a "template user" for the partner, you
         'partner_view.xml',
         'security/ir.model.access.csv',
     ],
-    'version': '8.0.1.1.0',
+    'version': '9.0.1.0.0',
     'website': 'www.adhoc.com.ar',
     'application': True,
 }

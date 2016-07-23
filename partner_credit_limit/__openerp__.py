@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name': 'Partner Credit Limit',
-    'version': '8.0.1.1.0',
+    'version': '9.0.1.0.0',
     'description': """Partner Credit Limit
     When approving a Sale Order it computes the sum of:
         * The credit the Partner has to paid
@@ -37,9 +37,9 @@
     'data': [
         'security/partner_credit_limit_security.xml',
         'partner_view.xml',
-        ],
+    ],
     'demo': ['partner_demo.xml'],
     'test': [],
-    'installable': True,
+    'installable': False,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

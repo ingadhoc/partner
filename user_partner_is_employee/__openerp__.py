@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name': 'User/partner is employee',
-    'version': '8.0.1.0.0',
+    'version': '9.0.1.0.0',
     'category': 'Hidden',
     'sequence': 14,
     'summary': '',
@@ -30,7 +30,7 @@ User/partner is or not employee
 Adds a boolean funcitonal field on user to know if user belongs to "employee" security group.
 It also adds a related field on partner to the previus field.
     """,
-    'author':  'ADHOC SA',
+    'author': 'ADHOC SA',
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
     'images': [
@@ -44,7 +44,7 @@ It also adds a related field on partner to the previus field.
     ],
     'test': [
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }
