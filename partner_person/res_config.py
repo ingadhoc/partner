@@ -6,7 +6,7 @@
 from openerp import fields, models
 
 
-class partner_configuration(models.Model):
+class partner_configuration(models.TransientModel):
     _name = 'partner.config.settings'
     _inherit = 'res.config.settings'
 
