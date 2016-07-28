@@ -24,10 +24,6 @@
     'category': 'Tools',
     'sequence': 14,
     'summary': '',
-    'description': """
-Partner No Auto Search
-======================
-    """,
     'author': 'ADHOC SA',
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
@@ -43,7 +39,7 @@ Partner No Auto Search
     ],
     'test': [
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }
