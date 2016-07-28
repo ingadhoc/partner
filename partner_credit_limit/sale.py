@@ -1,4 +1,4 @@
-#-*- coding:utf-8 -*-
+# -*- coding:utf-8 -*-
 from openerp import models, api, _
 from openerp.exceptions import Warning
 
@@ -41,9 +41,10 @@ class sale_order(models.Model):
             none_invoiced_amount - draft_invoices_amount
 
         if self.amount_total > available_credit:
-            msg = 'No se puede confirmar el Pedido ya que el cliente no tiene credito suficiente.\
-                    Puede pasar la politica de facturación del pedido a "Pago antes de envío" en la \
-                    pestaña "Otra información"'
+            msg = 'No se puede confirmar el Pedido ya que el cliente no ' \
+                  'tiene credito suficiente.\
+                    Puede pasar la politica de facturación del pedido a ' \
+                  'Pago antes de envío" en la pestaña "Otra información'
             raise Warning(_(msg))
             return False
         return True
