@@ -25,10 +25,6 @@
     'author': 'ADHOC SA',
     'license': 'AGPL-3',
     'category': 'Tools',
-    'description': """
-Partner Sales ABC
-=================
-""",
     'depends': [
         'base',
         'mail'
@@ -37,7 +33,7 @@ Partner Sales ABC
         'views/partner_view.xml',
     ],
     'test': [],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': True,
 }
