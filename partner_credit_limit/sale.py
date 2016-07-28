@@ -46,5 +46,5 @@ class sale_order(models.Model):
                     Puede pasar la politica de facturación del pedido a ' \
                   'Pago antes de envío" en la pestaña "Otra información'
             raise Warning(_(msg))
-            return False
+            # return False
         return True

@@ -11,9 +11,9 @@ When approving a Sale Order it computes the sum of:
         * The amount of Sale Orders aproved but not yet invoiced
         * The invoices that are in draft state
         * The amount of the Sale Order to be aproved
-    and compares it with the credit limit of the partner. If the
-    credit limit is less it does not allow to approve the Sale
-    Order
+        and compares it with the credit limit of the partner. If the
+        credit limit is less it does not allow to approve the Sale
+        Order
 
 Installation
 ============
@@ -40,10 +40,6 @@ To use this module, you need to:
 .. repo_id is available in https://github.com/OCA/maintainer-tools/blob/master/tools/repos_with_ids.txt
 .. branch is "9.0" for example
 
-Known issues / Roadmap
-======================
-
-* ...
 
 Bug Tracker
 ===========
