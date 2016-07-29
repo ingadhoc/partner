@@ -35,6 +35,9 @@ class res_partner(models.Model):
                 ])
             if same_vat_partners:
                 raise Warning(_(
-                    'Partner vat must be unique per company except on partner with parent/childe relationship. Partners with same vat and not related, are: %s!') % (', '.join(x.name for x in same_vat_partners)))
+                    'Partner vat must be unique per company except on partner'
+                    ' with parent/childe relationship. Partners with same '
+                    'vat and not related, are:'
+                    ' %s!') % (', '.join(x.name for x in same_vat_partners)))
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
