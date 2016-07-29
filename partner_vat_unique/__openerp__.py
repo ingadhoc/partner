@@ -22,11 +22,6 @@
     'name': 'Partner VAT unique',
     'version': '9.0.1.0.0',
     'category': 'ADHOC Modules',
-    'description': """
-Partner VAT Unique
-==================
-Add a constraint on partners so that vat must be unique except in partner with parent/child relationship.
-    """,
     'author': 'ADHOC SA',
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
@@ -41,7 +36,7 @@ Add a constraint on partners so that vat must be unique except in partner with p
     ],
     'test': [
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }
