@@ -23,8 +23,7 @@
     'category': 'base.module_category_hidden',
     'demo': [],
     'depends': ['base'],
-    'description': u'Partner School Data',
-    'installable': False,
+    'installable': True,
     'license': 'AGPL-3',
     'name': u'Partner School Data',
     'test': [],
@@ -34,8 +33,7 @@
         'security/ir.model.access.csv',
     ],
     'version': '9.0.1.0.0',
-    'website': 'www.adhoc.com.ar',
-    'license': 'AGPL-3'
+    'website': 'www.adhoc.com.ar'
 }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

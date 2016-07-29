@@ -30,9 +30,11 @@ class partner(models.Model):
         'course_average_classrooms')
     def _get_totals(self):
         courses_total = len(self.course_ids)
-        classrooms_total = courses_total * self.course_average_classrooms or 0
+        classrooms_total = \
+            courses_total * self.course_average_classrooms or 0
         classrooms_average_students = self.classrooms_average_students
-        students_total = classrooms_total * classrooms_average_students or 0
+        students_total = \
+            classrooms_total * classrooms_average_students or 0
         self.courses_total = courses_total
         self.classrooms_total = classrooms_total
         self.students_total = students_total
