@@ -33,7 +33,7 @@ class partner(models.Model):
     def create(self, vals):
         if not vals.get('internal_code', False):
             vals['internal_code'] = self.env[
-                'ir.sequence'].get('partner.internal.code') or '/'
+                'ir.sequence'].next_by_code('partner.internal.code') or '/'
         return super(partner, self).create(vals)
 
     _sql_constraints = {
