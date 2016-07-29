@@ -29,7 +29,9 @@
         'security/partner_credit_limit_security.xml',
         'partner_view.xml',
     ],
-    'demo': ['partner_demo.xml'],
+    'demo': ['demo/partner_demo.xml',
+             'demo/res.partner.csv',
+             ],
     'test': [],
     'installable': True,
 }
