@@ -21,10 +21,10 @@
 
 {
     "name": "Partner Internal Code",
-    'version': '8.0.0.3.0',
+    'version': '8.0.0.4.0',
     'category': 'Tools',
     'sequence': 14,
-    'author':  'ADHOC SA',
+    'author': 'ADHOC SA',
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
     'summary': '',
