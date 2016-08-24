@@ -5,11 +5,6 @@
     'category': 'Tools',
     'sequence': 14,
     'summary': '',
-    'description': """
-Partner Area
-===========================
-
-    """,
     'author': 'ADHOC SA',
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
@@ -27,7 +22,7 @@ Partner Area
     ],
     'test': [
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': True,
 }
