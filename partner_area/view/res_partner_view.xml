@@ -25,9 +25,9 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
-                <!--<form>-->
-                    <!--<field name="parent_area_ids" invisible="1"/>-->
-                <!--</form>-->
+                <form>
+                    <field name="parent_area_ids" invisible="1"/>
+                </form>
                 <field name="category_id" position="after">
                     <field name="area_ids" widget="many2many_tags" placeholder="Areas..." attrs="{'invisible': [( 'is_company','=', False)]}" context="{'from_m2m':True'}"/>
                 </field>
