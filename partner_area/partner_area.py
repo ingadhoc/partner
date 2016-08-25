@@ -23,9 +23,11 @@ class res_partner(models.Model):
     area_ids = fields.Many2many(
         'res.partner.area',
         string='Areas')
-    # parent_area_ids = fields.related(
-    #         'parent_id', 'area_ids', string='Parent Areas',
-    #         type="many2many", relation="res.partner.area"),
+    parent_area_ids = fields.Many2many('res.partner.area',
+                                       'partner_area_rel',
+                                       'parent_id',
+                                       'area_ids',
+                                       string='Parent Areas')
     area_id = fields.Many2one('res.partner.area',
                               string='Area')
 
