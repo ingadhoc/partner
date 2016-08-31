@@ -34,9 +34,9 @@
                 <field name="function" position="after">
                     <field name="area_id" attrs="{'invisible': [('is_company','=', True)]}" domain="[('id', 'in', parent_area_ids and parent_area_ids[0] and parent_area_ids[0][2] or False)]" options="{'no_create': True}"/>
                 </field>
-                <xpath expr="//form[@string='Contact']//field[@name='function']" position="after">
-                    <field name="area_id" domain="[('id', 'in', parent.area_ids and parent.area_ids[0] and parent.area_ids[0][2] or False)]"/>
-                </xpath>
+                <!--<xpath expr="//form/field[@name='function']" position="after">-->
+                    <!--<field name="area_id" domain="[('id', 'in', parent.area_ids and parent.area_ids[0] and parent.area_ids[0][2] or False)]"/>-->
+                <!--</xpath>-->
             </field>
         </record>
 

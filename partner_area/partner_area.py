@@ -1,32 +1,35 @@
 # -*- coding: utf-8 -*-
-from openerp.osv import osv, fields
-from openerp.tools.translate import _
+from openerp import models, fields, api, _
+from openerp.exceptions import Warning
 
 
-class partner_area(osv.osv):
+class partner_area(models.Model):
     _name = 'res.partner.area'
     _description = 'Area'
-    _columns = {
-        'name': fields.char(string='Name', required=True),
-    }
+    name = fields.Char(string='Name',
+                       required=True)
 
-    def create(self, cr, uid, vals, context=None):
-        if 'from_m2m' not in context:
-            raise osv.except_osv(
-                _('Warning!'), _('You can only create Areas from companies!'))
-        return super(partner_area, self).create(cr, uid, vals, context=context)
+    @api.model
+    def create(self, vals):
+        if 'from_m2m' not in self._context:
+            raise Warning(_('You can only '
+                            'create Areas from companies!'))
+        return super(partner_area, self).create(vals)
 
 
-class res_partner(osv.osv):
+class res_partner(models.Model):
     _inherit = "res.partner"
 
-    _columns = {
-        'area_ids': fields.many2many(
-            'res.partner.area', string='Areas'),
-        'parent_area_ids': fields.related(
-            'parent_id', 'area_ids', string='Parent Areas',
-            type="many2many", relation="res.partner.area"),
-        'area_id': fields.many2one('res.partner.area', string='Area'),
-    }
+    area_ids = fields.Many2many(
+        'res.partner.area',
+        string='Areas')
+    parent_area_ids = fields.Many2many('res.partner.area',
+                                       'partner_area_rel',
+                                       'parent_id',
+                                       'area_ids',
+                                       string='Parent Areas')
+    area_id = fields.Many2one('res.partner.area',
+                              string='Area')
+
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
