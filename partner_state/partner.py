@@ -40,22 +40,7 @@ class res_partner(models.Model):
             ('pending', _('Pending Approval')),
             ('approved', _('Approved'))]
 
-    # Usamos la api vieja porque si no da error en permisos
-    # company_partner_state = fields.Boolean(
-    #     related='company_id.partner_state',
-    #     string="Company Partner State")
-    # TODO: tal vez mejor que usar un campo related a traves de company_id podriamos hacer un campo
-    # property que dependa de la compania y entonces un partner pueda estar aprobado en una cia y en otra no
-    # Ademas haria que la barra de partner_state se muestre o no segun sea la
-    # compania del usuario logueado (se puede ver el codigo de price_security
-    # que trae un campo en funcion a los datos del usuario logueado)
-    # Igualemtne, despues de penarlo y agregar el company_dependt vimos mejor que no porque en realida dun partner
-    # aprobado podria estar para todos, de hecho si lo hacemos properties, trabajando desde la padre, contra quien
-    # verificamos? seria medio lio
     company_partner_state = fields.Boolean(
-        # related='company_id.partner_state',
-        # string="Company Partner State",
-        # readonly=True
         compute='_compute_company_partner_state',
     )
 
@@ -65,7 +50,6 @@ class res_partner(models.Model):
 
     partner_state = fields.Selection(
         '_get_partner_states',
-        # company_dependent=True,
         string='Partner State',
         readonly=True,
         required=True,

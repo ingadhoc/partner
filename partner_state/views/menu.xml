@@ -2,7 +2,6 @@
 <openerp>
     <data>
 
-
         <record id="action_state_fields" model="ir.actions.act_window">
             <field name="name">Partner State fields</field>
             <field name="res_model">res.partner.state_field</field>

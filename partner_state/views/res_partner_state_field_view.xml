@@ -1,36 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <openerp>
     <data>
-
-        <record id="view_partner_state_form2" model="ir.ui.view">
-            <field name="name">state.partner.form.view</field>
-            <field name="model">res.partner.state_field</field>
-            <field name="arch" type="xml">
-                <form>
-                    <group>
-                        <field name="field_id"/>
-                        <field name="approval"/>
-                        <field name="track"/>
-                    </group>
-                </form>
-            </field>
-        </record>
-
-        <record id="view_partner_state_tree2" model="ir.ui.view">
+        <record id="view_partner_state_tree" model="ir.ui.view">
             <field name="name">state.partner.tree.view</field>
             <field name="model">res.partner.state_field</field>
             <field name="arch" type="xml">
-                <tree>
+                <tree editable="bottom">
                     <field name="field_id"/>
                     <field name="approval"/>
                     <field name="track"/>
                 </tree>
             </field>
         </record>
-
-       
-
-
     </data>
 </openerp>

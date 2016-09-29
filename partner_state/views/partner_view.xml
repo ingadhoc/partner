@@ -8,7 +8,6 @@
             <field name="arch" type="xml">
                 <form>
                     <field name="company_partner_state" invisible="1"/>
-
                 </form>
                 <sheet position="before">
                     <header attrs="{'invisible':[('company_partner_state','=',False)]}">
@@ -46,6 +45,5 @@
                 </filter>
             </field>
         </record>
-        
     </data>
 </openerp>
