@@ -20,14 +20,14 @@
 ##############################################################################
 {
     'name': 'Partner State',
-    'version': '8.0.1.1.0',
+    'version': '8.0.1.1.1',
     'category': 'Base',
     'description': """
 Partner State
 =============
 Add three stats for partners:: 'Potential', 'Pending Approval' and 'Approved'.
 Some information is required so that a partner can be approved. That
-information is configured on each company.
+information is configured on: Sales/Settings/Address Book/Partner State fields.
 
 You can also configure on company if you want to use partner state on that
 company or not.
@@ -36,15 +36,16 @@ company or not.
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
     'depends': [
-        'base',
+        'base'
     ],
     'data': [
-        'company_view.xml',
-        'partner_view.xml',
+        'views/res_partner_state_field_view.xml',
+        'views/menu.xml',
+        'views/company_view.xml',
+        'views/partner_view.xml',
         'security/partner_state_security.xml',
         'security/ir.model.access.csv',
     ],
     'demo': [],
     'installable': True,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
