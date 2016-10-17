@@ -5,8 +5,29 @@
 ##############################################################################
 
 from openerp import models, fields, api, _
-from openerp.osv import fields as old_fields
 from openerp.exceptions import Warning
+
+
+class res_partner_state_field(models.Model):
+    _name = 'res.partner.state_field'
+    _description = 'Partner State Fields'
+
+    field_id = fields.Many2one(
+        'ir.model.fields',
+        string='Field',
+        required=True,
+        domain=[('model_id.model', '=', 'res.partner')]
+    )
+    approval = fields.Boolean(
+        'Approval?',
+        help="Required for Approval",
+        default=True
+    )
+    track = fields.Boolean(
+        'Track?',
+        help="Track and, if change, go back to Potencial",
+        default=True
+    )
 
 
 class res_partner(models.Model):
@@ -19,25 +40,16 @@ class res_partner(models.Model):
             ('pending', _('Pending Approval')),
             ('approved', _('Approved'))]
 
-    # Usamos la api vieja porque si no da error en permisos
-    # company_partner_state = fields.Boolean(
-    #     related='company_id.partner_state',
-    #     string="Company Partner State")
-    # TODO: tal vez mejor que usar un campo related a traves de company_id podriamos hacer un campo
-    # property que dependa de la compania y entonces un partner pueda estar aprobado en una cia y en otra no
-    # Ademas haria que la barra de partner_state se muestre o no segun sea la
-    # compania del usuario logueado (se puede ver el codigo de price_security
-    # que trae un campo en funcion a los datos del usuario logueado)
-    # Igualemtne, despues de penarlo y agregar el company_dependt vimos mejor que no porque en realida dun partner
-    # aprobado podria estar para todos, de hecho si lo hacemos properties, trabajando desde la padre, contra quien
-    # verificamos? seria medio lio
-    _columns = {
-        'company_partner_state': old_fields.related('company_id', 'partner_state', type='boolean'),
-    }
+    company_partner_state = fields.Boolean(
+        compute='_compute_company_partner_state',
+    )
+
+    @api.one
+    def _compute_company_partner_state(self):
+        self.company_partner_state = self.env.user.company_id.partner_state
 
     partner_state = fields.Selection(
         '_get_partner_states',
-        # company_dependent=True,
         string='Partner State',
         readonly=True,
         required=True,
@@ -97,21 +109,21 @@ class res_partner(models.Model):
     @api.multi
     def check_fields(self, field_type):
         ret = False
-        if self.company_id.partner_state:
-            company_field_ids = self.company_id.partner_state_field_ids
+        if self.company_partner_state:
+            partner_field_ids = self.env['res.partner.state_field'].search([])
             if field_type == 'approval':
                 ret = [
-                    field.field_id.name for field in company_field_ids if field.approval]
+                    field.field_id.name for field in partner_field_ids if field.approval]
             elif field_type == 'track':
                 ret = [
-                    field.field_id.name for field in company_field_ids if field.track]
+                    field.field_id.name for field in partner_field_ids if field.track]
         return ret
 
     @api.model
     def _get_tracked_fields(self, updated_fields):
         tracked_fields = []
         # TODO we should use company of modified partner
-        for line in self.env.user.company_id.partner_state_field_ids:
+        for line in self.env['res.partner.state_field'].search([]):
             if line.track and line.field_id.name in updated_fields:
                 tracked_fields.append(line.field_id.name)
 
@@ -126,7 +138,7 @@ class res_partner(models.Model):
         from field properties to make message
         """
         # TODO we should use company of modified partner
-        for line in self.env.user.company_id.partner_state_field_ids:
+        for line in self.env['res.partner.state_field'].search([]):
             if line.track:
                 field = self._fields[line.field_id.name]
                 setattr(field, 'track_visibility', 'always')
