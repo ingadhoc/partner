@@ -11,7 +11,7 @@
                     <attribute name="filter_domain">['|','|',('display_name','ilike',self),('ref','=',self),('internal_code','=',self)]</attribute>
                 </field>
                  <field name="name" position="after">
-                    <field name="internal_code" filter_domain="[('internal_code','=',self)]"/>
+                    <field name="internal_code"/>
                 </field>
             </field>
         </record>
