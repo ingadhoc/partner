@@ -36,6 +36,9 @@
         'security/partner_state_security.xml',
         'security/ir.model.access.csv',
     ],
-    'demo': [],
+    'demo': [
+        'demo/company_demo.xml',
+        'demo/res.partner.state.field.csv'
+    ],
     'installable': True,
 }
