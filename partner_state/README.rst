@@ -27,7 +27,7 @@ Configuration
 To configure this module, you need to:
 
 #. Set "Use partner state " in the company.
-#.  Set the field that you requiered to approve partner in Sale/Configuration/Contact: Partner State Fields.
+#. Set the field that you requiered to approve partner in Sale/Configuration/Contact: Partner State Fields.
 #. Set the permition to approve to the user.
 
 
@@ -36,7 +36,7 @@ Usage
 
 To use this module, you need to:
 
-#. In the partner view clik the button to approve , or potencial to approve.
+#. In the partner view clik the button to approve, or potencial to approve.
 
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
