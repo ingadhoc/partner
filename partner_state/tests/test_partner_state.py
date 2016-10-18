@@ -7,10 +7,10 @@
 import openerp.tests.common as common
 
 
-class TestSaleOrderType(common.TransactionCase):
+class TestPartnerState(common.TransactionCase):
 
     def setUp(self):
-        super(TestSaleOrderType, self).setUp()
+        super(TestPartnerState, self).setUp()
         self.partner = self.env.ref('base.res_partner_1')
 
     def test_partner_state_pending(self):

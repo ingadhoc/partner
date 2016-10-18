@@ -30,15 +30,8 @@ class res_partner_state_field(models.Model):
     )
 
 
-class res_partner(models.Model):
+class ResPartner(models.Model):
     _inherit = 'res.partner'
-
-    @api.model
-    def _get_partner_states(self):
-        return [
-            ('potential', _('Potential')),
-            ('pending', _('Pending Approval')),
-            ('approved', _('Approved'))]
 
     company_partner_state = fields.Boolean(
         compute='_compute_company_partner_state',
@@ -56,6 +49,13 @@ class res_partner(models.Model):
         default='potential'
     )
 
+    @api.model
+    def _get_partner_states(self):
+        return [
+            ('potential', _('Potential')),
+            ('pending', _('Pending Approval')),
+            ('approved', _('Approved'))]
+
     @api.multi
     def write(self, vals):
         for partner in self:
@@ -67,7 +67,7 @@ class res_partner(models.Model):
                     if fields_set & vals_set:
                         partner.partner_state_potential()
 
-        ret = super(res_partner, self).write(vals)
+        ret = super(ResPartner, self).write(vals)
 
         return ret
 
@@ -130,7 +130,7 @@ class res_partner(models.Model):
 
         if tracked_fields:
             return self.fields_get(tracked_fields)
-        return super(res_partner, self)._get_tracked_fields(updated_fields)
+        return super(ResPartner, self)._get_tracked_fields(updated_fields)
 
     @api.multi
     def message_track(self, tracked_fields, initial_values):
@@ -143,5 +143,5 @@ class res_partner(models.Model):
             if line.track:
                 field = self._fields[line.field_id.name]
                 setattr(field, 'track_visibility', 'always')
-        return super(res_partner, self).message_track(
+        return super(ResPartner, self).message_track(
             tracked_fields, initial_values)

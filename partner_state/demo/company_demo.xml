@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
-    <data noupdate="1">
+    <data>
         <!-- Your Company -->
         <record id="base.main_company" model="res.company">
             <field name="partner_state">True</field>
+        </record>
+
+        <record id="approve_partners" model="res.groups">
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
         </record>
     </data>
 </openerp>
