@@ -6,7 +6,7 @@
             <field name="model">res.partner.state.field</field>
             <field name="arch" type="xml">
                 <tree editable="top">
-                    <field name="field_id"/>
+                    <field name="field_id" options="{'no_create': True, 'no_open': True}"/>
                     <field name="approval"/>
                     <field name="track"/>
                 </tree>

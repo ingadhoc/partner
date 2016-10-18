@@ -29,6 +29,8 @@
         'base'
     ],
     'data': [
+        'data/res_company_data.xml',
+        'data/res_users_data.xml',
         'views/res_partner_state_field_view.xml',
         'views/menu.xml',
         'views/company_view.xml',
@@ -37,7 +39,6 @@
         'security/ir.model.access.csv',
     ],
     'demo': [
-        'demo/company_demo.xml',
         'demo/res.partner.state.field.csv'
     ],
     'installable': True,
