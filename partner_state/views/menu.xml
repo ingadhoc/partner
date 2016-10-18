@@ -4,8 +4,8 @@
 
         <record id="action_state_fields" model="ir.actions.act_window">
             <field name="name">Partner State fields</field>
-            <field name="res_model">res.partner.state_field</field>
-            <field name="src_model">res.partner.state_field</field>
+            <field name="res_model">res.partner.state.field</field>
+            <field name="src_model">res.partner.state.field</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="view_id" ref=""/>
@@ -14,7 +14,7 @@
         </record>
 
         <menuitem
-            name="Partner State fields"
+            name="Partner State Fields"
             id="menu_state_fields"
             sequence="50"
             action="action_state_fields"

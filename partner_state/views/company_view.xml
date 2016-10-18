@@ -7,7 +7,7 @@
             <field name="inherit_id" ref="base.view_company_form"/>
             <field name="model">res.company</field>
             <field name="arch" type="xml">
-                <xpath expr="//notebook/page[@string='Configuration']" position="inside">
+                <xpath expr="//notebook/page[@name='configuration']" position="inside">
                     <group name="partner_state" string="Partner State">
                         <field name="partner_state"/>
                     </group>   
