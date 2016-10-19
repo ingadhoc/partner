@@ -29,14 +29,14 @@
         'base'
     ],
     'data': [
+        'security/partner_state_security.xml',
+        'security/ir.model.access.csv',
         'data/res_company_data.xml',
         'data/res_users_data.xml',
         'views/res_partner_state_field_view.xml',
         'views/menu.xml',
         'views/company_view.xml',
         'views/partner_view.xml',
-        'security/partner_state_security.xml',
-        'security/ir.model.access.csv',
     ],
     'demo': [
         'demo/res.partner.state.field.csv'
