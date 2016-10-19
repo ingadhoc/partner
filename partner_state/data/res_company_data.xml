@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <!-- Your Company -->
+        <record id="base.main_company" model="res.company">
+            <field name="partner_state">True</field>
+        </record>
+    </data>
+</openerp>

@@ -3,4 +3,13 @@
 # For copyright and license notices, see __openerp__.py file in module root
 # directory
 ##############################################################################
-from . import models
+
+from openerp import models, fields
+
+
+class ResCompany(models.Model):
+    _inherit = 'res.company'
+
+    partner_state = fields.Boolean(
+        'Use partner state?'
+    )

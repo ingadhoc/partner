@@ -9,7 +9,7 @@ from openerp.exceptions import Warning
 
 
 class res_partner_state_field(models.Model):
-    _name = 'res.partner.state_field'
+    _name = 'res.partner.state.field'
     _description = 'Partner State Fields'
 
     field_id = fields.Many2one(
@@ -30,15 +30,8 @@ class res_partner_state_field(models.Model):
     )
 
 
-class res_partner(models.Model):
+class ResPartner(models.Model):
     _inherit = 'res.partner'
-
-    @api.model
-    def _get_partner_states(self):
-        return [
-            ('potential', _('Potential')),
-            ('pending', _('Pending Approval')),
-            ('approved', _('Approved'))]
 
     company_partner_state = fields.Boolean(
         compute='_compute_company_partner_state',
@@ -56,19 +49,25 @@ class res_partner(models.Model):
         default='potential'
     )
 
-    def write(self, cr, uid, ids, vals, context=None):
-        for partner in self.browse(cr, uid, ids, context=context):
+    @api.model
+    def _get_partner_states(self):
+        return [
+            ('potential', _('Potential')),
+            ('pending', _('Pending Approval')),
+            ('approved', _('Approved'))]
+
+    @api.multi
+    def write(self, vals):
+        for partner in self:
             if partner.partner_state in ['approved', 'pending']:
-                fields = self.check_fields(
-                    cr, 1, partner.id, 'track', context=context)
+                fields = partner.check_fields('track')
                 if fields:
                     fields_set = set(fields)
                     vals_set = set(vals)
                     if fields_set & vals_set:
                         partner.partner_state_potential()
 
-        ret = super(res_partner, self).write(
-            cr, uid, ids, vals, context=context)
+        ret = super(ResPartner, self).write(vals)
 
         return ret
 
@@ -110,26 +109,28 @@ class res_partner(models.Model):
     def check_fields(self, field_type):
         ret = False
         if self.company_partner_state:
-            partner_field_ids = self.env['res.partner.state_field'].search([])
+            partner_field_ids = self.env['res.partner.state.field'].search([])
             if field_type == 'approval':
                 ret = [
-                    field.field_id.name for field in partner_field_ids if field.approval]
+                    field.field_id.name for field in partner_field_ids if
+                    field.approval]
             elif field_type == 'track':
                 ret = [
-                    field.field_id.name for field in partner_field_ids if field.track]
+                    field.field_id.name for field in partner_field_ids if
+                    field.track]
         return ret
 
     @api.model
     def _get_tracked_fields(self, updated_fields):
         tracked_fields = []
         # TODO we should use company of modified partner
-        for line in self.env['res.partner.state_field'].search([]):
+        for line in self.env['res.partner.state.field'].search([]):
             if line.track and line.field_id.name in updated_fields:
                 tracked_fields.append(line.field_id.name)
 
         if tracked_fields:
             return self.fields_get(tracked_fields)
-        return super(res_partner, self)._get_tracked_fields(updated_fields)
+        return super(ResPartner, self)._get_tracked_fields(updated_fields)
 
     @api.multi
     def message_track(self, tracked_fields, initial_values):
@@ -138,9 +139,9 @@ class res_partner(models.Model):
         from field properties to make message
         """
         # TODO we should use company of modified partner
-        for line in self.env['res.partner.state_field'].search([]):
+        for line in self.env['res.partner.state.field'].search([]):
             if line.track:
                 field = self._fields[line.field_id.name]
                 setattr(field, 'track_visibility', 'always')
-        return super(res_partner, self).message_track(
+        return super(ResPartner, self).message_track(
             tracked_fields, initial_values)

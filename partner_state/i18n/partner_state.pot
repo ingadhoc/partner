@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-26 13:28+0000\n"
-"PO-Revision-Date: 2015-02-26 13:28+0000\n"
+"POT-Creation-Date: 2016-10-18 16:40+0000\n"
+"PO-Revision-Date: 2016-10-18 16:40+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,12 +16,12 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_state
-#: field:res.company.partner_state_field,approval:0
+#: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field_approval
 msgid "Approval?"
 msgstr ""
 
 #. module: partner_state
-#: view:res.partner:partner_state.view_partner_state_form
+#: model:ir.ui.view,arch_db:partner_state.view_partner_state_form
 msgid "Approve"
 msgstr ""
 
@@ -31,16 +31,16 @@ msgid "Approve Partners"
 msgstr ""
 
 #. module: partner_state
-#: code:addons/partner_state/partner.py:16
-#: view:res.partner:partner_state.view_partner_state_search
+#: code:addons/partner_state/models/partner.py:41
+#: model:ir.ui.view,arch_db:partner_state.view_partner_state_search
 #, python-format
 msgid "Approved"
 msgstr ""
 
 #. module: partner_state
-#: code:addons/partner_state/partner.py:70
+#: code:addons/partner_state/models/partner.py:89
 #, python-format
-msgid "Can not request approval,                            required field %s empty on partner  %s!"
+msgid "Can not request approval, required field %s empty on partner  %s!"
 msgstr ""
 
 #. module: partner_state
@@ -49,60 +49,23 @@ msgid "Companies"
 msgstr ""
 
 #. module: partner_state
-#: field:res.company.partner_state_field,company_id:0
-msgid "Company"
+#: model:ir.model.fields,field_description:partner_state.field_res_partner_company_partner_state
+msgid "Company partner state"
 msgstr ""
 
 #. module: partner_state
-#: model:ir.model,name:partner_state.model_res_company_partner_state_field
-msgid "Company Partner State Fields"
+#: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field_display_name
+msgid "Display Name"
 msgstr ""
 
 #. module: partner_state
-#: field:res.company.partner_state_field,create_uid:0
-msgid "Created by"
-msgstr ""
-
-#. module: partner_state
-#: field:res.company.partner_state_field,create_date:0
-msgid "Created on"
-msgstr ""
-
-#. module: partner_state
-#: selection:res.company,restrict_sales:0
-msgid "Depends on the amount"
-msgstr ""
-
-#. module: partner_state
-#: field:res.company.partner_state_field,field_id:0
+#: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field_field_id
 msgid "Field"
 msgstr ""
 
 #. module: partner_state
-#: field:res.company.partner_state_field,id:0
-msgid "ID"
-msgstr ""
-
-#. module: partner_state
-#: code:addons/partner_state/sale.py:16
-#, python-format
-msgid "In %s you can not sell to an Unapprove partner"
-msgstr ""
-
-#. module: partner_state
-#: code:addons/partner_state/sale.py:20
-#, python-format
-msgid "In %s you can not sell to an Unapprove partner amounts greater than %.2f"
-msgstr ""
-
-#. module: partner_state
-#: field:res.company.partner_state_field,write_uid:0
-msgid "Last Updated by"
-msgstr ""
-
-#. module: partner_state
-#: field:res.company.partner_state_field,write_date:0
-msgid "Last Updated on"
+#: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field___last_update
+msgid "Last Modified on"
 msgstr ""
 
 #. module: partner_state
@@ -111,97 +74,73 @@ msgid "Partner"
 msgstr ""
 
 #. module: partner_state
-#: view:res.company:partner_state.view_company_inherit_form
-#: field:res.partner,partner_state:0
+#: model:ir.model.fields,field_description:partner_state.field_res_partner_partner_state
+#: model:ir.ui.view,arch_db:partner_state.view_company_inherit_form
 msgid "Partner State"
 msgstr ""
 
 #. module: partner_state
-#: view:res.partner:partner_state.view_partner_state_search
+#: model:ir.model,name:partner_state.model_res_partner_state_field
+#: model:ir.ui.menu,name:partner_state.menu_state_fields
+msgid "Partner State Fields"
+msgstr ""
+
+#. module: partner_state
+#: model:ir.actions.act_window,name:partner_state.action_state_fields
+msgid "Partner State fields"
+msgstr ""
+
+#. module: partner_state
+#: model:ir.ui.view,arch_db:partner_state.view_partner_state_search
 msgid "Pending"
 msgstr ""
 
 #. module: partner_state
-#: code:addons/partner_state/partner.py:15
+#: code:addons/partner_state/models/partner.py:40
 #, python-format
 msgid "Pending Approval"
 msgstr ""
 
 #. module: partner_state
-#: code:addons/partner_state/partner.py:14
-#: view:res.partner:partner_state.view_partner_state_search
+#: code:addons/partner_state/models/partner.py:39
+#: model:ir.ui.view,arch_db:partner_state.view_partner_state_search
 #, python-format
 msgid "Potential"
 msgstr ""
 
 #. module: partner_state
-#: view:res.partner:partner_state.view_partner_state_form
+#: model:ir.ui.view,arch_db:partner_state.view_partner_state_form
 msgid "Request Approval"
 msgstr ""
 
 #. module: partner_state
-#: help:res.company.partner_state_field,approval:0
+#: model:ir.model.fields,help:partner_state.field_res_partner_state_field_approval
 msgid "Required for Approval"
 msgstr ""
 
 #. module: partner_state
-#: field:res.company,restrict_sales_amount:0
-msgid "Restrict Amounts Greater Than"
-msgstr ""
-
-#. module: partner_state
-#: help:res.company,restrict_sales:0
-msgid "Restrict Sales to Unapproved Partners?"
-msgstr ""
-
-#. module: partner_state
-#: field:res.company,restrict_sales:0
-msgid "Restrict Sales?"
-msgstr ""
-
-#. module: partner_state
-#: model:ir.model,name:partner_state.model_sale_order
-msgid "Sales Order"
-msgstr ""
-
-#. module: partner_state
-#: field:res.company,partner_state_field_ids:0
-msgid "State Fields"
-msgstr ""
-
-#. module: partner_state
-#: view:res.partner:partner_state.view_partner_state_form
+#: model:ir.ui.view,arch_db:partner_state.view_partner_state_form
 msgid "To Potential"
 msgstr ""
 
 #. module: partner_state
-#: help:res.company.partner_state_field,track:0
+#: model:ir.model.fields,help:partner_state.field_res_partner_state_field_track
 msgid "Track and, if change, go back to Potencial"
 msgstr ""
 
 #. module: partner_state
-#: field:res.company.partner_state_field,track:0
+#: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field_track
 msgid "Track?"
 msgstr ""
 
 #. module: partner_state
-#: field:res.company,partner_state:0
+#: model:ir.model.fields,field_description:partner_state.field_res_company_partner_state
 msgid "Use partner state?"
 msgstr ""
 
 #. module: partner_state
-#: code:addons/partner_state/partner.py:85
+#: code:addons/partner_state/models/partner.py:104
 #, python-format
-msgid "User can't approve partners,                     please check user permissions!"
-msgstr ""
-
-#. module: partner_state
-#: selection:res.company,restrict_sales:0
-msgid "Yes"
-msgstr ""
-
-#. module: partner_state
-#: field:res.partner,company_partner_state:0
-msgid "unknown"
+msgid "User can't approve partners, please check user permissions!"
 msgstr ""
 

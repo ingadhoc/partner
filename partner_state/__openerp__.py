@@ -22,16 +22,6 @@
     'name': 'Partner State',
     'version': '9.0.1.0.0',
     'category': 'Base',
-    'description': """
-Partner State
-=============
-Add three stats for partners:: 'Potential', 'Pending Approval' and 'Approved'.
-Some information is required so that a partner can be approved. That
-information is configured on: Sales/Settings/Address Book/Partner State fields.
-
-You can also configure on company if you want to use partner state on that
-company or not.
-    """,
     'author': 'ADHOC SA',
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
@@ -39,13 +29,17 @@ company or not.
         'base'
     ],
     'data': [
+        'security/partner_state_security.xml',
+        'security/ir.model.access.csv',
+        'data/res_company_data.xml',
+        'data/res_users_data.xml',
         'views/res_partner_state_field_view.xml',
         'views/menu.xml',
         'views/company_view.xml',
         'views/partner_view.xml',
-        'security/partner_state_security.xml',
-        'security/ir.model.access.csv',
     ],
-    'demo': [],
-    'installable': False,
+    'demo': [
+        'demo/res.partner.state.field.csv'
+    ],
+    'installable': True,
 }

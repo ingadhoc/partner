@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <record id="view_partner_state_tree" model="ir.ui.view">
+        <record id="view_partner_state_tree_2" model="ir.ui.view">
             <field name="name">state.partner.tree.view</field>
-            <field name="model">res.partner.state_field</field>
+            <field name="model">res.partner.state.field</field>
             <field name="arch" type="xml">
-                <tree editable="bottom">
-                    <field name="field_id"/>
+                <tree editable="top">
+                    <field name="field_id" options="{'no_create': True, 'no_open': True}"/>
                     <field name="approval"/>
                     <field name="track"/>
                 </tree>
