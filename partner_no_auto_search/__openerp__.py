@@ -30,7 +30,7 @@
     'images': [
     ],
     'depends': [
-        'base',
+        'mail',
     ],
     'data': [
         'action_data.xml',
