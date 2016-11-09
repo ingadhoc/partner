@@ -24,11 +24,6 @@
     'category': 'Tools',
     'sequence': 14,
     'summary': '',
-    'description': """
-Partners Go Social!
-===================
-This module allows to add social (twitter, facebook and skype) fields to partners.
-    """,
     'author': 'ADHOC SA',
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
@@ -38,13 +33,13 @@ This module allows to add social (twitter, facebook and skype) fields to partner
         'base',
     ],
     'data': [
-        'partner_social_fields_view.xml',
+        'views/partner_social_fields_view.xml',
     ],
     'demo': [
     ],
     'test': [
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }

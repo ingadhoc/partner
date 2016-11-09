@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="view_partner_social_form1" model="ir.ui.view">
+            <field name="name">res.partner.social.inherit1</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="website" position="after">
+                    <label for="facebook"/>
+                    <div class="oe_inline">
+                        <field name="facebook" class="oe_inline"/>
+                        <button name="goto_facebook" class="oe_inline oe_link" string="&#8594; Go" type="object"/>
+                    </div>
+                    <label for="twitter"/>
+                    <div class="oe_inline">
+                        <field name="twitter" class="oe_inline"/>
+                        <button name="goto_twitter" class="oe_inline oe_link" string="&#8594; Go" type="object"/>
+                    </div>
+                    <field name="skype"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>
