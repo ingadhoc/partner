@@ -35,5 +35,3 @@
     'version': '9.0.1.0.0',
     'website': 'www.adhoc.com.ar'
 }
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

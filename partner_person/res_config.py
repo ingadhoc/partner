@@ -40,5 +40,3 @@ class partner_configuration(models.TransientModel):
         "Show Nationality",
         implied_group='partner_person.person_nationality',
         help="Show Nationality Field in Personal Information Tab")
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

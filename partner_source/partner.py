@@ -7,6 +7,7 @@ from openerp import netsvc
 from openerp.osv import fields, osv, orm
 from openerp.tools.translate import _
 
+
 class res_partner_source(osv.osv):
     _name = "res.partner.source"
     _description = "Partner Source"
@@ -21,8 +22,5 @@ class res_partner(osv.osv):
     _inherit = "res.partner"
 
     _columns = {
-    	'source_id': fields.many2one('res.partner.source', string='Source',),
+        'source_id': fields.many2one('res.partner.source', string='Source',),
     }
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -177,5 +177,3 @@ class partner(osv.osv):
                 break
             sequence = (sequence + 1) if sequence else 2
         return new_name
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

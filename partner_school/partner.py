@@ -54,5 +54,3 @@ class partner(models.Model):
         string='Students total',
         readonly=True,
         store=True)
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

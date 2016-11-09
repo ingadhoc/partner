@@ -254,5 +254,3 @@ class res_partner(models.Model):
             _display_name, type='char', string='Name',
             store=_display_name_store_triggers, select=True),
     }
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

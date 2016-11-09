@@ -21,6 +21,3 @@ class partner(models.Model):
         compute='_get_is_employee', string='Is Employee?',
         readonly=True, store=True,
         help="If user belongs to employee group return True",)
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

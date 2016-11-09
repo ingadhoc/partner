@@ -21,23 +21,21 @@ class res_partner(models.Model):
             ('vat', '=', self.vat),
             ('vat', '!=', False),
             ('company_id', '=', self.company_id.id),
-            ])
+        ])
 
         if same_vat_partners:
             related_partners = self.search([
                 ('id', 'child_of', parent.id),
                 ('company_id', '=', self.company_id.id),
-                ])
+            ])
             same_vat_partners = self.search([
                 ('id', 'in', same_vat_partners.ids),
                 ('id', 'not in', related_partners.ids),
                 ('company_id', '=', self.company_id.id),
-                ])
+            ])
             if same_vat_partners:
                 raise Warning(_(
                     'Partner vat must be unique per company except on partner'
                     ' with parent/childe relationship. Partners with same '
                     'vat and not related, are:'
                     ' %s!') % (', '.join(x.name for x in same_vat_partners)))
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

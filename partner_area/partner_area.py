@@ -30,6 +30,3 @@ class res_partner(models.Model):
                                        string='Parent Areas')
     area_id = fields.Many2one('res.partner.area',
                               string='Area')
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
