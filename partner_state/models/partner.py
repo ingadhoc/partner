@@ -9,7 +9,7 @@ from openerp.exceptions import Warning
 
 
 class res_partner_state_field(models.Model):
-    _name = 'res.partner.state.field'
+    _name = 'res.partner.state_field'
     _description = 'Partner State Fields'
 
     field_id = fields.Many2one(
@@ -109,7 +109,7 @@ class ResPartner(models.Model):
     def check_fields(self, field_type):
         ret = False
         if self.company_partner_state:
-            partner_field_ids = self.env['res.partner.state.field'].search([])
+            partner_field_ids = self.env['res.partner.state_field'].search([])
             if field_type == 'approval':
                 ret = [
                     field.field_id.name for field in partner_field_ids if
@@ -124,7 +124,7 @@ class ResPartner(models.Model):
     def _get_tracked_fields(self, updated_fields):
         tracked_fields = []
         # TODO we should use company of modified partner
-        for line in self.env['res.partner.state.field'].search([]):
+        for line in self.env['res.partner.state_field'].search([]):
             if line.track and line.field_id.name in updated_fields:
                 tracked_fields.append(line.field_id.name)
 
@@ -139,7 +139,7 @@ class ResPartner(models.Model):
         from field properties to make message
         """
         # TODO we should use company of modified partner
-        for line in self.env['res.partner.state.field'].search([]):
+        for line in self.env['res.partner.state_field'].search([]):
             if line.track:
                 field = self._fields[line.field_id.name]
                 setattr(field, 'track_visibility', 'always')

@@ -26,7 +26,7 @@
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
     'depends': [
-        'base'
+        'base',
     ],
     'data': [
         'security/partner_state_security.xml',
@@ -34,12 +34,11 @@
         'data/res_company_data.xml',
         'data/res_users_data.xml',
         'views/res_partner_state_field_view.xml',
-        'views/menu.xml',
         'views/company_view.xml',
         'views/partner_view.xml',
     ],
     'demo': [
-        'demo/res.partner.state.field.csv'
+        'demo/res.partner.state_field.csv'
     ],
     'installable': True,
 }
