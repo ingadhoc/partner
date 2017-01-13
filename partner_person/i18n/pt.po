@@ -1,0 +1,312 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_person
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-12 11:00+0000\n"
+"PO-Revision-Date: 2017-01-12 11:00+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_res_partner_age
+msgid "Age"
+msgstr "Idade"
+
+#. module: partner_person
+#: model:ir.ui.view,arch_db:partner_person.view_config_settings
+msgid "Apply"
+msgstr "Aplicar"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_res_partner_birthdate_date
+msgid "Birthdate"
+msgstr "Data de nascimento"
+
+#. module: partner_person
+#: model:ir.ui.view,arch_db:partner_person.view_config_settings
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_res_partner_father_child_ids
+#: model:ir.model.fields,field_description:partner_person.field_res_partner_mother_child_ids
+msgid "Childs"
+msgstr "Filhos"
+
+#. module: partner_person
+#: model:ir.actions.act_window,name:partner_person.action_config_settings
+#: model:ir.ui.view,arch_db:partner_person.view_config_settings
+msgid "Configure Partners"
+msgstr "Configurar parceiro"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_partner_config_settings_create_uid
+msgid "Created by"
+msgstr "Criada por"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_partner_config_settings_create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_res_partner_disabled_person
+msgid "Disabled Person?"
+msgstr "Desativar pessoa?"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_partner_config_settings_display_name
+msgid "Display Name"
+msgstr "Nome a Mostrar"
+
+#. module: partner_person
+#: selection:res.partner,marital_status:0
+msgid "Divorced"
+msgstr "Divorciado"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_res_partner_father_id
+msgid "Father"
+msgstr "Pai"
+
+#. module: partner_person
+#: selection:res.partner,sex:0
+msgid "Female"
+msgstr "Mãe"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_res_partner_firstname
+#: model:ir.ui.view,arch_db:partner_person.view_partner_person_form
+msgid "First Name"
+msgstr "Primeiro nome"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_res_partner_husband_id
+msgid "Husband"
+msgstr "Marido"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_partner_config_settings_id
+msgid "ID"
+msgstr "Id."
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_partner_config_settings___last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_res_partner_lastname
+#: model:ir.ui.view,arch_db:partner_person.view_partner_person_form
+msgid "Last Name"
+msgstr "Último nome"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_partner_config_settings_write_uid
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_partner_config_settings_write_date
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: partner_person
+#: selection:res.partner,sex:0
+msgid "Male"
+msgstr "Masculino"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_res_partner_marital_status
+msgid "Marital Status"
+msgstr "Estado civil"
+
+#. module: partner_person
+#: selection:res.partner,marital_status:0
+msgid "Married"
+msgstr "Casado"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_res_partner_mother_id
+msgid "Mother"
+msgstr "Mãe"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_res_partner_national_identity
+msgid "National Identity"
+msgstr "Identificação Nacional"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_res_partner_nationality_id
+msgid "Nationality"
+msgstr "Nationalidade"
+
+#. module: partner_person
+#: model:ir.model,name:partner_person.model_res_partner
+msgid "Partner"
+msgstr "Parceiro"
+
+#. module: partner_person
+#: model:res.groups,name:partner_person.person_birthdate
+msgid "Partner Person Birthdate"
+msgstr "Pessoa Data de nascimento"
+
+#. module: partner_person
+#: model:res.groups,name:partner_person.person_disabilities
+msgid "Partner Person Disabilities"
+msgstr "Pessoa Deficiência"
+
+#. module: partner_person
+#: model:res.groups,name:partner_person.person_family
+msgid "Partner Person Family"
+msgstr "Pessoa Família"
+
+#. module: partner_person
+#: model:res.groups,name:partner_person.personal_marital_information
+msgid "Partner Person Marital Information"
+msgstr "Pessoa Informação Estado Civil"
+
+#. module: partner_person
+#: model:res.groups,name:partner_person.person_ni
+msgid "Partner Person NI"
+msgstr "Pessoa NI"
+
+#. module: partner_person
+#: model:res.groups,name:partner_person.person_nationality
+msgid "Partner Person Nationality"
+msgstr "Pessoa Nationalidade"
+
+#. module: partner_person
+#: model:res.groups,name:partner_person.person_passport
+msgid "Partner Person Passport"
+msgstr "Pessoa Passporte"
+
+#. module: partner_person
+#: model:ir.ui.menu,name:partner_person.menu_partner_config
+#: model:ir.ui.view,arch_db:partner_person.view_config_settings
+msgid "Partners"
+msgstr "Parceiros"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_res_partner_passport
+msgid "Passport"
+msgstr "Passporte"
+
+#. module: partner_person
+#: model:ir.ui.view,arch_db:partner_person.view_config_settings
+msgid "Person - Personal Information"
+msgstr "Pessoa - Informação pessoal"
+
+#. module: partner_person
+#: model:ir.ui.view,arch_db:partner_person.view_partner_person_form
+msgid "Personal Information"
+msgstr "Informação pessoal"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_res_partner_sex
+msgid "Sex"
+msgstr "Género"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_partner_config_settings_group_person_birthdate
+msgid "Show Birthdate"
+msgstr "Mostrar data de nascimento"
+
+#. module: partner_person
+#: model:ir.model.fields,help:partner_person.field_partner_config_settings_group_person_birthdate
+msgid "Show Birthdate Field in Personal Information Tab"
+msgstr "Mostrar data de nascimento no separado Informação Pessoal"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_partner_config_settings_group_disabilities
+msgid "Show Disabilities Information"
+msgstr "Mostrar Deficiências"
+
+#. module: partner_person
+#: model:ir.model.fields,help:partner_person.field_partner_config_settings_group_disabilities
+msgid "Show Disabilities Information Tab"
+msgstr "Mostrar separador Informação de Definiciências"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_partner_config_settings_group_person_family
+msgid "Show Family Information"
+msgstr "Mostrar informação Familiar"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_partner_config_settings_group_person_marital_information
+msgid "Mostrar Estado Civil"
+msgstr "Show Marital Information"
+
+#. module: partner_person
+#: model:ir.model.fields,help:partner_person.field_partner_config_settings_group_person_marital_information
+msgid "Show Marital Status, Husband and Wife Fields in Personal Information Tab"
+msgstr "Mostrar Estaco Civil, Marido e Mulher no separador Informação Pessoal"
+
+#. module: partner_person
+#: model:ir.model.fields,help:partner_person.field_partner_config_settings_group_person_family
+msgid "Show Mother, Father and Childs Fields in Personal Information Tab"
+msgstr "Mostrar Mãe, Pai e Filhos no separador Informação Pessoal"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_partner_config_settings_group_person_ni
+msgid "Show National Identity"
+msgstr "Mostrar Identificação Nacional"
+
+#. module: partner_person
+#: model:ir.model.fields,help:partner_person.field_partner_config_settings_group_person_ni
+msgid "Show National Identity Field in Personal Information Tab"
+msgstr "Mostrar Identificação Nacional no separador Informação Pessoal"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_partner_config_settings_group_person_nationality
+msgid "Show Nationality"
+msgstr "Mostrar Nacionalidade"
+
+#. module: partner_person
+#: model:ir.model.fields,help:partner_person.field_partner_config_settings_group_person_nationality
+msgid "Show Nationality Field in Personal Information Tab"
+msgstr "Mostrar Nacionalidade no separador Informações Pessoais"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_partner_config_settings_group_person_passport
+msgid "Show Passport"
+msgstr "Mostrar Passaporte"
+
+#. module: partner_person
+#: model:ir.model.fields,help:partner_person.field_partner_config_settings_group_person_passport
+msgid "Show Passport Field in Personal Information Tab"
+msgstr "Mostrar Passaport no separador Informações Pessoais"
+
+#. module: partner_person
+#: selection:res.partner,marital_status:0
+msgid "Single"
+msgstr "Solteiro"
+
+#. module: partner_person
+#: model:ir.model.fields,field_description:partner_person.field_res_partner_wife_id
+msgid "Wife"
+msgstr "Mulher"
+
+#. module: partner_person
+#: model:ir.ui.view,arch_db:partner_person.view_partner_person_form
+msgid "Years)"
+msgstr "Anos)"
+
+#. module: partner_person
+#: model:ir.ui.view,arch_db:partner_person.view_config_settings
+msgid "or"
+msgstr "ou"
+
+#. module: partner_person
+#: model:ir.model,name:partner_person.model_partner_config_settings
+msgid "partner.config.settings"
+msgstr "partner.config.settings"
+
