@@ -5,12 +5,12 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: odoo-addons (8.0)\n"
+"Project-Id-Version: partner (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-05 14:24+0000\n"
-"PO-Revision-Date: 2015-09-01 18:00+0000\n"
-"Last-Translator: <>\n"
-"Language-Team: German (http://www.transifex.com/adhoc/ingadhoc-odoo-addons-8-0/language/de/)\n"
+"POT-Creation-Date: 2017-01-24 21:01+0000\n"
+"PO-Revision-Date: 2016-05-13 14:49+0000\n"
+"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>\n"
+"Language-Team: German (http://www.transifex.com/adhoc/ingadhoc-partner-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -20,27 +20,37 @@ msgstr ""
 #. module: partner_source
 #: field:res.partner.source,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Erstellt von"
 
 #. module: partner_source
 #: field:res.partner.source,create_date:0
 msgid "Created on"
+msgstr "Erstellt am"
+
+#. module: partner_source
+#: field:res.partner.source,display_name:0
+msgid "Display Name"
 msgstr ""
 
 #. module: partner_source
 #: field:res.partner.source,id:0
 msgid "ID"
+msgstr "ID"
+
+#. module: partner_source
+#: field:res.partner.source,__last_update:0
+msgid "Last Modified on"
 msgstr ""
 
 #. module: partner_source
 #: field:res.partner.source,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Letzte Änderung durch"
 
 #. module: partner_source
 #: field:res.partner.source,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Letzte Änderung am"
 
 #. module: partner_source
 #: field:res.partner.source,name:0
@@ -50,7 +60,7 @@ msgstr "Bezeichnung"
 #. module: partner_source
 #: model:ir.model,name:partner_source.model_res_partner
 msgid "Partner"
-msgstr ""
+msgstr "Partner"
 
 #. module: partner_source
 #: model:ir.actions.act_window,name:partner_source.partner_source_action

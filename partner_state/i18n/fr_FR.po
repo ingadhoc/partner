@@ -1,0 +1,172 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_state
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: partner (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-24 21:01+0000\n"
+"PO-Revision-Date: 2016-09-29 15:13+0000\n"
+"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>\n"
+"Language-Team: French (France) (http://www.transifex.com/adhoc/ingadhoc-partner-8-0/language/fr_FR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: partner_state
+#: field:res.partner.state_field,approval:0
+msgid "Approval?"
+msgstr ""
+
+#. module: partner_state
+#: view:res.partner:partner_state.view_partner_state_form
+msgid "Approve"
+msgstr ""
+
+#. module: partner_state
+#: model:res.groups,name:partner_state.approve_partners
+msgid "Approve Partners"
+msgstr ""
+
+#. module: partner_state
+#: code:addons/partner_state/partner.py:41
+#: view:res.partner:partner_state.view_partner_state_search
+#, python-format
+msgid "Approved"
+msgstr ""
+
+#. module: partner_state
+#: code:addons/partner_state/partner.py:90
+#, python-format
+msgid "Can not request approval, required field %s empty on partner  %s!"
+msgstr ""
+
+#. module: partner_state
+#: model:ir.model,name:partner_state.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: partner_state
+#: field:res.partner,company_partner_state:0
+msgid "Company partner state"
+msgstr ""
+
+#. module: partner_state
+#: field:res.partner.state_field,create_uid:0
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: partner_state
+#: field:res.partner.state_field,create_date:0
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: partner_state
+#: field:res.partner.state_field,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_state
+#: field:res.partner.state_field,field_id:0
+msgid "Field"
+msgstr ""
+
+#. module: partner_state
+#: field:res.partner.state_field,id:0
+msgid "ID"
+msgstr ""
+
+#. module: partner_state
+#: field:res.partner.state_field,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_state
+#: field:res.partner.state_field,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: partner_state
+#: field:res.partner.state_field,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: partner_state
+#: model:ir.model,name:partner_state.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: partner_state
+#: view:res.company:partner_state.view_company_inherit_form
+#: field:res.partner,partner_state:0
+msgid "Partner State"
+msgstr ""
+
+#. module: partner_state
+#: model:ir.model,name:partner_state.model_res_partner_state_field
+msgid "Partner State Fields"
+msgstr ""
+
+#. module: partner_state
+#: model:ir.actions.act_window,name:partner_state.action_state_fields
+#: model:ir.ui.menu,name:partner_state.menu_state_fields
+msgid "Partner State fields"
+msgstr ""
+
+#. module: partner_state
+#: view:res.partner:partner_state.view_partner_state_search
+msgid "Pending"
+msgstr ""
+
+#. module: partner_state
+#: code:addons/partner_state/partner.py:40
+#, python-format
+msgid "Pending Approval"
+msgstr ""
+
+#. module: partner_state
+#: code:addons/partner_state/partner.py:39
+#: view:res.partner:partner_state.view_partner_state_search
+#, python-format
+msgid "Potential"
+msgstr ""
+
+#. module: partner_state
+#: view:res.partner:partner_state.view_partner_state_form
+msgid "Request Approval"
+msgstr ""
+
+#. module: partner_state
+#: help:res.partner.state_field,approval:0
+msgid "Required for Approval"
+msgstr ""
+
+#. module: partner_state
+#: view:res.partner:partner_state.view_partner_state_form
+msgid "To Potential"
+msgstr ""
+
+#. module: partner_state
+#: help:res.partner.state_field,track:0
+msgid "Track and, if change, go back to Potencial"
+msgstr ""
+
+#. module: partner_state
+#: field:res.partner.state_field,track:0
+msgid "Track?"
+msgstr ""
+
+#. module: partner_state
+#: field:res.company,partner_state:0
+msgid "Use partner state?"
+msgstr ""
+
+#. module: partner_state
+#: code:addons/partner_state/partner.py:105
+#, python-format
+msgid "User can't approve partners, please check user permissions!"
+msgstr ""

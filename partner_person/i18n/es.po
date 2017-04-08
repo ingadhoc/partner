@@ -3,14 +3,15 @@
 # * partner_person
 # 
 # Translators:
+# Nicolas Mac Rouillon <nmr@ingadhoc.com>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: odoo-addons (8.0)\n"
+"Project-Id-Version: partner (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-05 13:55+0000\n"
-"PO-Revision-Date: 2015-11-11 16:04+0000\n"
-"Last-Translator: Juan Jose Scarafia <scarafia.juanjose@gmail.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/adhoc/ingadhoc-odoo-addons-8-0/language/es/)\n"
+"POT-Creation-Date: 2017-01-24 21:01+0000\n"
+"PO-Revision-Date: 2016-08-11 13:43+0000\n"
+"Last-Translator: Nicolas Mac Rouillon <nmr@ingadhoc.com>\n"
+"Language-Team: Spanish (http://www.transifex.com/adhoc/ingadhoc-partner-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -23,9 +24,29 @@ msgid "'is_person' in context"
 msgstr "'is_person' in context"
 
 #. module: partner_person
+#: field:res.partner,age:0 field:res.users,age:0
+msgid "Age"
+msgstr "Edad"
+
+#. module: partner_person
 #: view:partner.config.settings:partner_person.view_config_settings
 msgid "Apply"
 msgstr "Aplicar"
+
+#. module: partner_person
+#: field:res.users,area_id:0
+msgid "Area"
+msgstr "Area"
+
+#. module: partner_person
+#: field:res.users,area_ids:0
+msgid "Areas"
+msgstr "Areas"
+
+#. module: partner_person
+#: field:res.partner,birthdate_date:0 field:res.users,birthdate_date:0
+msgid "Birthdate"
+msgstr "Fecha de nacimiento"
 
 #. module: partner_person
 #: view:partner.config.settings:partner_person.view_config_settings
@@ -34,6 +55,7 @@ msgstr "Cancelar"
 
 #. module: partner_person
 #: field:res.partner,father_child_ids:0 field:res.partner,mother_child_ids:0
+#: field:res.users,father_child_ids:0 field:res.users,mother_child_ids:0
 msgid "Childs"
 msgstr "Hijos"
 
@@ -59,9 +81,14 @@ msgid "Created on"
 msgstr "Creado el"
 
 #. module: partner_person
-#: field:res.partner,disabled_person:0
+#: field:res.partner,disabled_person:0 field:res.users,disabled_person:0
 msgid "Disabled Person?"
 msgstr "Persona con discapacidad?"
+
+#. module: partner_person
+#: field:partner.config.settings,display_name:0
+msgid "Display Name"
+msgstr "Mostrar nombre"
 
 #. module: partner_person
 #: selection:res.partner,marital_status:0
@@ -69,7 +96,7 @@ msgid "Divorced"
 msgstr "Divorciado"
 
 #. module: partner_person
-#: field:res.partner,father_id:0
+#: field:res.partner,father_id:0 field:res.users,father_id:0
 msgid "Father"
 msgstr "Padre"
 
@@ -80,9 +107,14 @@ msgstr "Femenino"
 
 #. module: partner_person
 #: view:res.partner:partner_person.view_partner_person_form
-#: field:res.partner,firstname:0
+#: field:res.partner,firstname:0 field:res.users,firstname:0
 msgid "First Name"
 msgstr "Primer Nombre"
+
+#. module: partner_person
+#: field:res.partner,husband_id:0 field:res.users,husband_id:0
+msgid "Husband"
+msgstr "Marido"
 
 #. module: partner_person
 #: field:partner.config.settings,id:0
@@ -90,8 +122,13 @@ msgid "ID"
 msgstr "ID"
 
 #. module: partner_person
+#: field:partner.config.settings,__last_update:0
+msgid "Last Modified on"
+msgstr "Última actualización el"
+
+#. module: partner_person
 #: view:res.partner:partner_person.view_partner_person_form
-#: field:res.partner,lastname:0
+#: field:res.partner,lastname:0 field:res.users,lastname:0
 msgid "Last Name"
 msgstr "Apellido"
 
@@ -111,7 +148,7 @@ msgid "Male"
 msgstr "Masculino"
 
 #. module: partner_person
-#: field:res.partner,marital_status:0
+#: field:res.partner,marital_status:0 field:res.users,marital_status:0
 msgid "Marital Status"
 msgstr "Estado Civil"
 
@@ -121,19 +158,24 @@ msgid "Married"
 msgstr "Casado"
 
 #. module: partner_person
-#: field:res.partner,mother_id:0
+#: field:res.partner,mother_id:0 field:res.users,mother_id:0
 msgid "Mother"
 msgstr "Madre"
 
 #. module: partner_person
-#: field:res.partner,national_identity:0
+#: field:res.partner,national_identity:0 field:res.users,national_identity:0
 msgid "National Identity"
 msgstr "Documento de Identidad"
 
 #. module: partner_person
-#: field:res.partner,nationality_id:0
+#: field:res.partner,nationality_id:0 field:res.users,nationality_id:0
 msgid "Nationality"
 msgstr "Nacionalidad"
+
+#. module: partner_person
+#: field:res.users,parent_area_ids:0
+msgid "Parent Areas"
+msgstr "Áreas de padres"
 
 #. module: partner_person
 #: model:ir.model,name:partner_person.model_res_partner
@@ -182,7 +224,7 @@ msgid "Partners"
 msgstr "Contactos"
 
 #. module: partner_person
-#: field:res.partner,passport:0
+#: field:res.partner,passport:0 field:res.users,passport:0
 msgid "Passport"
 msgstr "Pasaporte"
 
@@ -197,7 +239,7 @@ msgid "Personal Information"
 msgstr "Información Personal"
 
 #. module: partner_person
-#: field:res.partner,sex:0
+#: field:res.partner,sex:0 field:res.users,sex:0
 msgid "Sex"
 msgstr "Sexo"
 
@@ -283,7 +325,7 @@ msgid "Users"
 msgstr "Usuarios"
 
 #. module: partner_person
-#: field:res.partner,wife_id:0
+#: field:res.partner,wife_id:0 field:res.users,wife_id:0
 msgid "Wife"
 msgstr "Esposa"
 
