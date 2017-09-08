@@ -3,133 +3,132 @@
 # * partner_school
 # 
 # Translators:
-# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2016
-# Andres L <aleibrecht@gmail.com>, 2017
+# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-13 18:43+0000\n"
 "PO-Revision-Date: 2017-01-13 18:43+0000\n"
-"Last-Translator: Andres L <aleibrecht@gmail.com>, 2017\n"
-"Language-Team: Spanish (https://www.transifex.com/adhoc/teams/46451/es/)\n"
+"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2017\n"
+"Language-Team: Portuguese (https://www.transifex.com/adhoc/teams/46451/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
+"Language: pt\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: partner_school
 #: model:ir.ui.view,arch_db:partner_school.view_expresso_crm_partner_form
 msgid "Available Courses ..."
-msgstr "Cursos Disponibles..."
+msgstr ""
 
 #. module: partner_school
 #: model:ir.model.fields,field_description:partner_school.field_res_partner_course_average_classrooms
 msgid "Average Classrooms per Course"
-msgstr "Promedio de Aulas por Curso"
+msgstr ""
 
 #. module: partner_school
 #: model:ir.model.fields,field_description:partner_school.field_res_partner_classrooms_average_students
 msgid "Average Students per Classroom"
-msgstr "Promedio de Alumnos por Aula"
+msgstr ""
 
 #. module: partner_school
 #: model:ir.ui.view,arch_db:partner_school.view_res_partner_course_filter
 msgid "By Attribute"
-msgstr "Por Atributo"
+msgstr ""
 
 #. module: partner_school
 #: model:ir.ui.view,arch_db:partner_school.view_res_partner_course_filter
 msgid "By object"
-msgstr "By object"
+msgstr ""
 
 #. module: partner_school
 #: model:ir.model.fields,field_description:partner_school.field_res_partner_classrooms_total
 msgid "Classrooms total"
-msgstr "Total de Aulas"
+msgstr ""
 
 #. module: partner_school
 #: model:ir.ui.view,arch_db:partner_school.view_res_partner_course_filter
 #: model:ir.ui.view,arch_db:partner_school.view_res_partner_course_form
 #: model:ir.ui.view,arch_db:partner_school.view_res_partner_course_tree
 msgid "Course"
-msgstr "Curso"
+msgstr ""
 
 #. module: partner_school
 #: model:ir.actions.act_window,name:partner_school.action_res_partner_course
 #: model:ir.model.fields,field_description:partner_school.field_res_partner_course_ids
 #: model:ir.ui.menu,name:partner_school.menu_courses
 msgid "Courses"
-msgstr "Cursos"
+msgstr ""
 
 #. module: partner_school
 #: model:ir.model.fields,field_description:partner_school.field_res_partner_courses_total
 msgid "Courses Total"
-msgstr "Total de Cursos"
+msgstr ""
 
 #. module: partner_school
 #: model:ir.model.fields,field_description:partner_school.field_res_partner_course_create_uid
 msgid "Created by"
-msgstr "Created by"
+msgstr "Criada por"
 
 #. module: partner_school
 #: model:ir.model.fields,field_description:partner_school.field_res_partner_course_create_date
 msgid "Created on"
-msgstr "Created on"
+msgstr "Criado em"
 
 #. module: partner_school
 #: model:ir.model.fields,field_description:partner_school.field_res_partner_course_display_name
 msgid "Display Name"
-msgstr "Mostrar Nombre"
+msgstr "Nome a Mostrar"
 
 #. module: partner_school
 #: model:ir.model.fields,field_description:partner_school.field_res_partner_course_id
 msgid "ID"
-msgstr "ID"
+msgstr "Id."
 
 #. module: partner_school
 #: model:ir.model.fields,field_description:partner_school.field_res_partner_course___last_update
 msgid "Last Modified on"
-msgstr "Última modificación en"
+msgstr "Última Modificação em"
 
 #. module: partner_school
 #: model:ir.model.fields,field_description:partner_school.field_res_partner_course_write_uid
 msgid "Last Updated by"
-msgstr "Last Updated by"
+msgstr "Última Atualização por"
 
 #. module: partner_school
 #: model:ir.model.fields,field_description:partner_school.field_res_partner_course_write_date
 msgid "Last Updated on"
-msgstr "Last Updated on"
+msgstr "Última Atualização em"
 
 #. module: partner_school
 #: model:ir.model.fields,field_description:partner_school.field_res_partner_course_name
 #: model:ir.ui.view,arch_db:partner_school.view_res_partner_course_filter
 msgid "Name"
-msgstr "Nombre"
+msgstr ""
 
 #. module: partner_school
 #: model:ir.model,name:partner_school.model_res_partner
 msgid "Partner"
-msgstr "Empresa"
+msgstr "Parceiro"
 
 #. module: partner_school
 #: model:ir.model.fields,field_description:partner_school.field_res_partner_course_partner_id
 msgid "Partners"
-msgstr "Empresas"
+msgstr "Parceiros"
 
 #. module: partner_school
 #: model:ir.model,name:partner_school.model_res_partner_course
 msgid "Res Partner Course"
-msgstr "Res Partner Course"
+msgstr ""
 
 #. module: partner_school
 #: model:ir.ui.view,arch_db:partner_school.view_expresso_crm_partner_form
 msgid "School Data"
-msgstr "Datos de Institución"
+msgstr ""
 
 #. module: partner_school
 #: model:ir.model.fields,field_description:partner_school.field_res_partner_students_total
 msgid "Students total"
-msgstr "Total de Alumnos"
+msgstr ""
