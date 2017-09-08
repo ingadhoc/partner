@@ -3,7 +3,7 @@ from openerp import models, SUPERUSER_ID
 from openerp.tools.safe_eval import safe_eval
 
 
-class PortalWizard(models.Model):
+class PortalWizard(models.TransientModel):
     _inherit = 'portal.wizard'
 
     def onchange_portal_id(self, cr, uid, ids, portal_id, context=None):
