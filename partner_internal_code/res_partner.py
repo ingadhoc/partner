@@ -13,7 +13,9 @@ class partner(models.Model):
     _inherit = 'res.partner'
 
     internal_code = fields.Char(
-        'Internal Code')
+        'Internal Code',
+        copy=False,
+    )
 
     # we let this to base nane search improoved
     # def name_search(self, cr, uid, name, args=None,
