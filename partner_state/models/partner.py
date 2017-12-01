@@ -33,13 +33,16 @@ class res_partner_state_field(models.Model):
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    company_partner_state = fields.Boolean(
-        compute='_compute_company_partner_state',
+    partner_state_enable = fields.Boolean(
+        compute='_compute_partner_state_enable',
     )
 
-    @api.one
-    def _compute_company_partner_state(self):
-        self.company_partner_state = self.env.user.company_id.partner_state
+    @api.multi
+    def _compute_partner_state_enable(self):
+        if self.env.user.company_id.partner_state:
+            for rec in self:
+                if rec.commercial_partner_id == rec:
+                    rec.partner_state_enable = True
 
     partner_state = fields.Selection(
         '_get_partner_states',
@@ -108,7 +111,7 @@ class ResPartner(models.Model):
     @api.multi
     def check_fields(self, field_type):
         ret = False
-        if self.company_partner_state:
+        if self.partner_state_enable:
             partner_field_ids = self.env['res.partner.state_field'].search([])
             if field_type == 'approval':
                 ret = [
