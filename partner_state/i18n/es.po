@@ -4,14 +4,13 @@
 # 
 # Translators:
 # Juan José Scarafía <scarafia.juanjose@gmail.com>, 2016
-# Andres L <aleibrecht@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-13 18:43+0000\n"
-"PO-Revision-Date: 2017-01-13 18:43+0000\n"
-"Last-Translator: Andres L <aleibrecht@gmail.com>, 2017\n"
+"POT-Creation-Date: 2017-12-01 13:01+0000\n"
+"PO-Revision-Date: 2017-12-01 13:01+0000\n"
+"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/adhoc/teams/46451/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,14 +34,14 @@ msgid "Approve Partners"
 msgstr "Aprobar Empresas"
 
 #. module: partner_state
-#: code:addons/partner_state/models/partner.py:57
+#: code:addons/partner_state/models/partner.py:60
 #: model:ir.ui.view,arch_db:partner_state.view_partner_state_search
 #, python-format
 msgid "Approved"
 msgstr "Aprobado"
 
 #. module: partner_state
-#: code:addons/partner_state/models/partner.py:89
+#: code:addons/partner_state/models/partner.py:92
 #, python-format
 msgid "Can not request approval, required field %s empty on partner  %s!"
 msgstr "Can not request approval, required field %s empty on partner  %s!"
@@ -51,11 +50,6 @@ msgstr "Can not request approval, required field %s empty on partner  %s!"
 #: model:ir.model,name:partner_state.model_res_company
 msgid "Companies"
 msgstr "Compañías"
-
-#. module: partner_state
-#: model:ir.model.fields,field_description:partner_state.field_res_partner_company_partner_state
-msgid "Company partner state"
-msgstr "Company partner state"
 
 #. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field_create_uid
@@ -120,18 +114,23 @@ msgid "Partner State fields"
 msgstr "Campos de Estados en Empresas"
 
 #. module: partner_state
+#: model:ir.model.fields,field_description:partner_state.field_res_partner_partner_state_enable
+msgid "Partner state enable"
+msgstr ""
+
+#. module: partner_state
 #: model:ir.ui.view,arch_db:partner_state.view_partner_state_search
 msgid "Pending"
 msgstr "Pendiente"
 
 #. module: partner_state
-#: code:addons/partner_state/models/partner.py:56
+#: code:addons/partner_state/models/partner.py:59
 #, python-format
 msgid "Pending Approval"
 msgstr "Aprobación Pendiente"
 
 #. module: partner_state
-#: code:addons/partner_state/models/partner.py:55
+#: code:addons/partner_state/models/partner.py:58
 #: model:ir.ui.view,arch_db:partner_state.view_partner_state_search
 #, python-format
 msgid "Potential"
@@ -168,7 +167,7 @@ msgid "Use partner state?"
 msgstr "¿Usar Estados en Empresas?"
 
 #. module: partner_state
-#: code:addons/partner_state/models/partner.py:104
+#: code:addons/partner_state/models/partner.py:107
 #, python-format
 msgid "User can't approve partners, please check user permissions!"
 msgstr ""
