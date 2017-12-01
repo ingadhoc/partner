@@ -7,10 +7,10 @@
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
                 <form>
-                    <field name="company_partner_state" invisible="1"/>
+                    <field name="partner_state_enable" invisible="1"/>
                 </form>
                 <sheet position="before">
-                    <header attrs="{'invisible':[('company_partner_state','=',False)]}">
+                    <header attrs="{'invisible':[('partner_state_enable','=',False)]}">
                         <button name="partner_state_pending" attrs="{'invisible':[('partner_state','not in',['potential'])]}" string="Request Approval" type="object" class="oe_highlight"/>
                         <button name="partner_state_approved" attrs="{'invisible':[('partner_state','not in',['pending'])]}"
                             string="Approve" type="object" class="oe_highlight"/>
