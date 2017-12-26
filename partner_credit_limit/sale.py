@@ -36,9 +36,9 @@ class sale_order(models.Model):
             none_invoiced_amount - draft_invoices_amount
 
         if self.amount_total > available_credit:
-            msg = 'No se puede confirmar el Pedido ya que el cliente no tiene credito suficiente.\
+            msg = _('No se puede confirmar el Pedido ya que el cliente no tiene credito suficiente.\
                     Puede pasar la politica de facturación del pedido a "Pago antes de envío" en la \
-                    pestaña "Otra información"'
-            raise Warning(_(msg))
+                    pestaña "Otra información"')
+            raise Warning(msg)
             return False
         return True
