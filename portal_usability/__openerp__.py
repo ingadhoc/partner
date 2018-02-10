@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name': 'Portal Usability Improvements',
-    'version': '9.0.1.1.0',
+    'version': '9.0.1.0.0',
     'category': 'Base',
     'sequence': 14,
     'summary': '',
@@ -33,7 +33,6 @@
         'portal',
     ],
     'data': [
-        './views/menuitem_data.xml',
     ],
     'demo': [
     ],

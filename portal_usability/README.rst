@@ -8,7 +8,6 @@ Portal Usability Improvements
 
 Several Improvements:
 #. Add parameter to allow portal for companies (parents partners), by default odoo does not show parent companies on invite to portal wizard. If you want to enable it, you need to create param "portal_usability.allow_portal_on_companies" with value "True"
-#. Make portal menu visible only for technical features (to avoid portal users go into backend). This menu no longer exists on v11.
 
 
 Installation
