@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data noupdate="1">
         <record id="partner_sample_comp_rule" model="ir.rule">
             <field name="name">Partner Sample multi-company</field>
@@ -22,4 +22,4 @@
             <field name="domain_force">[(1,'=',1)]</field>
         </record>
     </data>
-</openerp>
+</odoo>

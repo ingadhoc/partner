@@ -1,10 +1,9 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
-# For copyright and license notices, see __openerp__.py file in module root
+# For copyright and license notices, see __manifest__.py file in module root
 # directory
 ##############################################################################
 
-import openerp.tests.common as common
+import odoo.tests.common as common
 
 
 class TestPartnerState(common.TransactionCase):
