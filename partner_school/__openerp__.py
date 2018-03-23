@@ -23,7 +23,7 @@
     'category': 'base.module_category_hidden',
     'demo': [],
     'depends': ['base'],
-    'installable': True,
+    'installable': False,
     'license': 'AGPL-3',
     'name': u'Partner School Data',
     'test': [],
