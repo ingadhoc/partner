@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from odoo import models, SUPERUSER_ID
 from odoo.tools.safe_eval import safe_eval
 
