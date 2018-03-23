@@ -1,4 +1,4 @@
-<openerp>
+<odoo>
     <data>
         <record id="view_partner_tree" model="ir.ui.view">
             <field name="name">view.res.partner.tree.inherit</field>
@@ -37,4 +37,4 @@
             </field>
         </record>
     </data>
-</openerp>
+</odoo>

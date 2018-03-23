@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>
 
         <!-- SEARCH VIEW -->
@@ -61,5 +61,5 @@
             />        
 
     </data>
-</openerp>
+</odoo>
 <!-- vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4-->

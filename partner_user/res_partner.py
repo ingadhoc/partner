@@ -1,15 +1,14 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
-# For copyright and license notices, see __openerp__.py file in module root
+# For copyright and license notices, see __manifest__.py file in module root
 # directory
 ##############################################################################
 import re
 import unicodedata
-from openerp.osv import osv, fields
-from openerp import SUPERUSER_ID
-from openerp.tools.translate import _
-from openerp.tools import email_split
-from openerp.tools import ustr
+from odoo.osv import osv, fields
+from odoo import SUPERUSER_ID
+from odoo.tools.translate import _
+from odoo.tools import email_split
+from odoo.tools import ustr
 import string
 import random
 
