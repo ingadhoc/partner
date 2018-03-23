@@ -4,7 +4,7 @@
 # directory
 ##############################################################################
 
-import openerp.tests.common as common
+import odoo.tests.common as common
 
 
 class TestPartnerState(common.TransactionCase):

@@ -4,8 +4,8 @@
 # directory
 ##############################################################################
 
-from openerp import models, fields, api, _
-from openerp.exceptions import Warning
+from odoo import models, fields, api, _
+from odoo.exceptions import Warning
 
 
 class res_partner_state_field(models.Model):

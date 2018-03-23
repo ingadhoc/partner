@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from openerp import models, SUPERUSER_ID
-from openerp.tools.safe_eval import safe_eval
+from odoo import models, SUPERUSER_ID
+from odoo.tools.safe_eval import safe_eval
 
 
 class PortalWizard(models.TransientModel):

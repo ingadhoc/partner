@@ -3,9 +3,9 @@
 # For copyright and license notices, see __manifest__.py file in module root
 # directory
 ##############################################################################
-from openerp import models, fields, api
+from odoo import models, fields, api
 from datetime import date
-from openerp.osv import fields as old_fields
+from odoo.osv import fields as old_fields
 
 
 class res_partner(models.Model):
