@@ -20,7 +20,7 @@
 
 {
     "name": "Partner Internal Code",
-    'version': '9.0.1.0.0',
+    'version': '11.0.1.0.0',
     'category': 'Tools',
     'sequence': 14,
     'author': 'ADHOC SA',
@@ -33,15 +33,15 @@
     'external_dependencies': {
     },
     'data': [
-        'partner_view.xml',
-        'partner_data.xml',
+        'data/partner_data.xml',
+        'views/partner_view.xml',
     ],
     'demo': [
         'demo/res.partner.csv'
     ],
     'test': [
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }

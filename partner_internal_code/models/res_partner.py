@@ -5,9 +5,8 @@
 from odoo import fields, models, api
 
 
-class partner(models.Model):
-
-    """"""
+class Partner(models.Model):
+    
 
     _inherit = 'res.partner'
 
