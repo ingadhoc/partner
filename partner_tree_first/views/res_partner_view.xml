@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="base.action_partner_form_view1" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+    </record>
+       
+    <record id="base.action_partner_tree_view1" model="ir.actions.act_window.view">
+        <field name="sequence" eval="0"/>
+    </record>
+</odoo>
