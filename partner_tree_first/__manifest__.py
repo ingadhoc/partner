@@ -32,7 +32,7 @@
         'base',
     ],
     'data': [
-        'views/res_partner_view',
+        'views/res_partner_view.xml',
     ],
     'demo': [
     ],
