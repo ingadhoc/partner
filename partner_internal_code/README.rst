@@ -14,8 +14,9 @@
 Partner Internal Code
 =====================
 
-This module extends the functionality of ... to support ...
-and allow you to ...
+This module create the field internal_code in res.partner.
+Internal Code field value mast be unique
+
 
 Installation
 ============
