@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Portal Usability Improvements',
-    'version': '9.0.1.0.0',
+    'version': '11.0.1.0.0',
     'category': 'Base',
     'sequence': 14,
     'summary': '',
@@ -37,7 +37,7 @@
     ],
     'test': [
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }
