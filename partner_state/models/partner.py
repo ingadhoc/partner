@@ -7,7 +7,7 @@ from odoo import models, fields, api, _
 from odoo.exceptions import Warning
 
 
-class res_partner_state_field(models.Model):
+class ResPartnerStateField(models.Model):
     _name = 'res.partner.state_field'
     _description = 'Partner State Fields'
 
@@ -38,10 +38,14 @@ class ResPartner(models.Model):
 
     @api.multi
     def _compute_partner_state_enable(self):
+        # if self.env.user.company_id.partner_state:
+        #     for rec in self:
+        #         if rec.commercial_partner_id == rec:
+        #             rec.partner_state_enable = True
         if self.env.user.company_id.partner_state:
-            for rec in self:
-                if rec.commercial_partner_id == rec:
-                    rec.partner_state_enable = True
+            partners = self.filtered(lambda r:
+                                     r.commercial_partner_id == r)
+            partners.update({'partner_state_enable': True})
 
     partner_state = fields.Selection(
         '_get_partner_states',
@@ -60,18 +64,17 @@ class ResPartner(models.Model):
 
     @api.multi
     def write(self, vals):
-        for partner in self:
-            if partner.partner_state in ['approved', 'pending']:
-                fields = partner.check_fields('track')
-                if fields:
-                    fields_set = set(fields)
-                    vals_set = set(vals)
-                    if fields_set & vals_set:
-                        partner.partner_state_potential()
+        for partner in self.filtered(lambda r:
+                                     r.partner_state in
+                                     ['approved', 'pending']):
+            fields = partner.check_fields('track')
+            if fields:
+                fields_set = set(fields)
+                vals_set = set(vals)
+                if fields_set & vals_set:
+                    partner.partner_state_potential()
 
-        ret = super(ResPartner, self).write(vals)
-
-        return ret
+        return super(ResPartner, self).write(vals)
 
     @api.multi
     def partner_state_potential(self):
@@ -79,17 +82,22 @@ class ResPartner(models.Model):
 
     @api.multi
     def partner_state_pending(self):
+        self.ensure_one()
         fields = self.check_fields('approval')
-        if fields:
-            partners_read = self.read(fields)
-            for partner_read in partners_read:
-                for partner_field in partner_read:
-                    partner_name = self.browse(partner_read['id']).display_name
-                    if not partner_read[partner_field]:
-                        raise Warning(_(
-                            "Can not request approval, "
-                            "required field %s empty on partner  %s!" % (
-                                partner_field, partner_name)))
+        if not fields:
+            self.partner_state = 'pending'
+            return
+
+        partner_data = self.read(fields)[0]
+        if all(partner_data.values()):
+            self.partner_state = 'pending'
+            return
+        for partner_field, value in partner_data.items():
+            if not value:
+                raise Warning(_(
+                    "Can not request approval, "
+                    "required field %s" % (
+                        partner_field)))
         self.partner_state = 'pending'
 
     @api.multi
@@ -110,8 +118,8 @@ class ResPartner(models.Model):
     @api.multi
     def check_fields(self, field_type):
         ret = False
-        if self.partner_state_enable:
-            partner_field_ids = self.env['res.partner.state_field'].search([])
+        for rec in self.filtered(lambda x: x.partner_state_enable):
+            partner_field_ids = rec.env['res.partner.state_field'].search([])
             if field_type == 'approval':
                 ret = [
                     field.field_id.name for field in partner_field_ids if
@@ -141,9 +149,8 @@ class ResPartner(models.Model):
         from field properties to make message
         """
         # TODO we should use company of modified partner
-        for line in self.env['res.partner.state_field'].search([]):
-            if line.track:
-                field = self._fields[line.field_id.name]
-                setattr(field, 'track_visibility', 'always')
+        for line in self.env['res.partner.state_field'].filtered('line.track'):
+            field = self._fields[line.field_id.name]
+            setattr(field, 'track_visibility', 'always')
         return super(ResPartner, self).message_track(
             tracked_fields, initial_values)
