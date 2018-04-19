@@ -18,7 +18,7 @@
 #
 ##############################################################################
 {
-    'name': 'Portal Usability Improvements',
+    'name': 'Portal Usability',
     'version': '11.0.1.0.0',
     'category': 'Base',
     'sequence': 14,

@@ -10,7 +10,7 @@ class PortalWizard(models.TransientModel):
         super(PortalWizard, self).onchange_portal_id()
         allow_portal_on_companies = safe_eval(
             self.env['ir.config_parameter'].sudo().get_param(
-                'portal_usability.allow_portal_on_companies',
+                'portal_ux.allow_portal_on_companies',
                 'False'))
         if not allow_portal_on_companies:
             return None
