@@ -10,12 +10,13 @@
    :target: https://www.gnu.org/licenses/agpl
    :alt: License: AGPL-3
 
-=============================
-Portal Usability Improvements
-=============================
+================
+Portal Usability
+================
 
 Several Improvements:
-#. Add parameter to allow portal for companies (parents partners), by default odoo does not show parent companies on invite to portal wizard. If you want to enable it, you need to create param "portal_usability.allow_portal_on_companies" with value "True"
+
+#. Add parameter to allow portal for companies (parents partners), by default odoo does not show parent companies on invite to portal wizard. If you want to enable it, you need to create param "portal_ux.allow_portal_on_companies" with value "True"
 
 Installation
 ============
@@ -33,10 +34,6 @@ To configure this module, you need to:
 
 Usage
 =====
-
-To use this module, you need to:
-
-#. Go to ...
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
