@@ -32,9 +32,9 @@
         'security/ir.model.access.csv',
         'data/res_company_data.xml',
         'data/res_users_data.xml',
-        'views/res_partner_state_field_view.xml',
-        'views/company_view.xml',
-        'views/partner_view.xml',
+        'views/res_partner_state_field_views.xml',
+        'views/company_views.xml',
+        'views/partner_views.xml',
     ],
     'demo': [
         'demo/res.partner.state_field.csv'

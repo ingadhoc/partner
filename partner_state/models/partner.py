@@ -4,7 +4,7 @@
 ##############################################################################
 
 from odoo import models, fields, api, _
-from odoo.exceptions import Warning
+from odoo.exceptions import UserError
 
 
 class ResPartnerStateField(models.Model):
@@ -78,7 +78,7 @@ class ResPartner(models.Model):
 
     @api.multi
     def partner_state_potential(self):
-        self.partner_state = 'potential'
+        self.update({'partner_state': 'potential'})
 
     @api.multi
     def partner_state_pending(self):
@@ -94,7 +94,7 @@ class ResPartner(models.Model):
             return
         for partner_field, value in partner_data.items():
             if not value:
-                raise Warning(_(
+                raise UserError(_(
                     "Can not request approval, "
                     "required field %s" % (
                         partner_field)))
@@ -110,7 +110,7 @@ class ResPartner(models.Model):
         user_can_approve_partners = self.env[
             'res.users'].has_group('partner_state.approve_partners')
         if not user_can_approve_partners:
-            raise Warning(
+            raise UserError(
                 _("User can't approve partners, "
                     "please check user permissions!"))
         return True
@@ -149,7 +149,8 @@ class ResPartner(models.Model):
         from field properties to make message
         """
         # TODO we should use company of modified partner
-        for line in self.env['res.partner.state_field'].filtered('line.track'):
+        for line in self.env['res.partner.state_field'].search([(
+                'track', '=', True)]):
             field = self._fields[line.field_id.name]
             setattr(field, 'track_visibility', 'always')
         return super(ResPartner, self).message_track(
