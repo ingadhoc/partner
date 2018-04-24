@@ -38,10 +38,6 @@ class ResPartner(models.Model):
 
     @api.multi
     def _compute_partner_state_enable(self):
-        # if self.env.user.company_id.partner_state:
-        #     for rec in self:
-        #         if rec.commercial_partner_id == rec:
-        #             rec.partner_state_enable = True
         if self.env.user.company_id.partner_state:
             partners = self.filtered(lambda r:
                                      r.commercial_partner_id == r)
