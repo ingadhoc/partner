@@ -32,10 +32,9 @@
         'portal',
     ],
     'data': [
+        'views/res_config_settings_views.xml'
     ],
     'demo': [
-    ],
-    'test': [
     ],
     'installable': True,
     'auto_install': False,
