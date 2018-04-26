@@ -32,7 +32,7 @@
         'portal',
     ],
     'data': [
-        'views/res_config_settings_views.xml'
+        'wizards/res_config_settings_views.xml'
     ],
     'demo': [
     ],
