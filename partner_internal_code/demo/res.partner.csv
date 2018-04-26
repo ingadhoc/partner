@@ -16,7 +16,7 @@ base.res_partner_3,14
 base.res_partner_address_5,15
 base.res_partner_4,16
 base.res_partner_address_7,17
-portal.demo_user0_res_partner,18
+base.demo_user0_res_partner,18
 base.partner_demo,19
 base.res_partner_address_10,20
 base.res_partner_address_11,21
@@ -41,6 +41,3 @@ base.main_partner,39
 base.res_partner_main1,40
 base.res_partner_main2,41
 base.public_partner,42
-
-
-
