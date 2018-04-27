@@ -10,5 +10,6 @@ class ResCompany(models.Model):
     _inherit = 'res.company'
 
     partner_state = fields.Boolean(
-        'Use partner state?'
+        'Use partner state?',
+        default=True
     )

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_state_tree_2" model="ir.ui.view">
+        <field name="name">state.partner.tree.view</field>
+        <field name="model">res.partner.state_field</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="field_id" options="{'no_create': True, 'no_open': True}"/>
+                <field name="approval"/>
+                <field name="track"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_state_fields" model="ir.actions.act_window">
+        <field name="name">Partner State fields</field>
+        <field name="res_model">res.partner.state_field</field>
+    </record>
+
+    <menuitem
+        name="Partner State Fields"
+        id="menu_state_fields"
+        sequence="50"
+        action="action_state_fields"
+        parent="contacts.res_partner_menu_config"
+        />
+</odoo>

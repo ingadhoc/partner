@@ -19,25 +19,25 @@
 ##############################################################################
 {
     'name': 'Partner State',
-    'version': '9.0.1.2.0',
+    'version': '11.0.1.0.0',
     'category': 'Base',
     'author': 'ADHOC SA, Odoo Community Association (OCA)',
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
     'depends': [
-        'base',
+        'contacts',
     ],
     'data': [
         'security/partner_state_security.xml',
         'security/ir.model.access.csv',
         'data/res_company_data.xml',
         'data/res_users_data.xml',
-        'views/res_partner_state_field_view.xml',
-        'views/company_view.xml',
-        'views/partner_view.xml',
+        'views/res_partner_state_field_views.xml',
+        'views/company_views.xml',
+        'views/partner_views.xml',
     ],
     'demo': [
         'demo/res.partner.state_field.csv'
     ],
-    'installable': False,
+    'installable': True,
 }
