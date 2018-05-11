@@ -16,8 +16,7 @@ Portal Usability
 
 Several Improvements:
 
-#. Add Funcionality to allow portal for companies (parents partners), by default odoo does not show parent companies on invite to portal wizard.
-#. Add a new configuration option in general setting to activate or desactivate 
+#. Add functionality to allow companies (parents partners) to be portal users, by default odoo does not show parent companies on invite to portal wizard
 
 Installation
 ============
@@ -31,7 +30,7 @@ Configuration
 
 To configure this module, you need to:
 
-#. Go to "General Settings" section "Users" and set the boolean field "Portal in companies" to active or desactivate funcionality of portal for companies
+#. To enable / disable portal users for companies: Go to "General Settings" and set/unset the field "Allow companies to be portal users"
 
 Usage
 =====
