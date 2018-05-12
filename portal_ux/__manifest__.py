@@ -18,8 +18,8 @@
 #
 ##############################################################################
 {
-    'name': 'Portal Usability Improvements',
-    'version': '9.0.1.0.0',
+    'name': 'Portal Usability',
+    'version': '11.0.1.0.0',
     'category': 'Base',
     'sequence': 14,
     'summary': '',
@@ -32,12 +32,11 @@
         'portal',
     ],
     'data': [
+        'wizards/res_config_settings_views.xml'
     ],
     'demo': [
     ],
-    'test': [
-    ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }
