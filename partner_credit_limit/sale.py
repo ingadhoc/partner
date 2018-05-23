@@ -21,7 +21,9 @@ class sale_order(models.Model):
         # lines that are not yet invoiced
         domain = [('order_id.partner_id', '=', self.partner_id.id),
                   ('invoiced', '=', False),
-                  ('order_id.state', 'not in', ['draft', 'cancel', 'sent'])]
+                  ('order_id.state', 'not in', [
+                      'draft', 'cancel', 'sent', 'done'
+                  ])]
         order_lines = self.env['sale.order.line'].search(domain)
         none_invoiced_amount = sum([x.price_subtotal for x in order_lines])
 
