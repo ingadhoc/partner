@@ -28,7 +28,7 @@
     'license': 'AGPL-3',
     'summary': '',
     "depends": [
-        "sale",
+        "base",
     ],
     'external_dependencies': {
     },
@@ -38,8 +38,6 @@
     ],
     'demo': [
         'demo/res.partner.csv'
-    ],
-    'test': [
     ],
     'installable': True,
     'auto_install': False,
