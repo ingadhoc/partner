@@ -16,7 +16,7 @@ class ResPartner(models.Model):
 
     @api.multi
     def _compute_partner_state_enable(self):
-        if self.env.user.company_id.partner_state:
+        if self.env.user.company_id.partner_state_enable:
             partners = self.filtered(lambda r:
                                      r.commercial_partner_id == r)
             partners.update({'partner_state_enable': True})
