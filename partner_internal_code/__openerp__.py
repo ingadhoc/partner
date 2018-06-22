@@ -29,7 +29,7 @@
     'license': 'AGPL-3',
     'summary': '',
     "depends": [
-        "sale",
+        "base",
     ],
     'external_dependencies': {
     },
