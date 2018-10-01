@@ -42,6 +42,10 @@
                     <filter string="Potential" domain="[('partner_state','=','potential')]"/>
                     <filter string="Pending" domain="[('partner_state','=','pending')]" />
                     <filter string="Approved" domain="[('partner_state','=','approved')]" />
+                    <separator/>
+                </filter>
+                <filter name="salesperson" position="after">
+                    <filter name="partner_state" string="Partner State" domain="[]" context="{'group_by' : 'partner_state'}"/>
                 </filter>
             </field>
         </record>

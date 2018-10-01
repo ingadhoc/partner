@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.actions.server" id="action_partner_state_pending">
+            <field name="name">Request Approval Partners</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="code">
+active_ids = context.get('active_ids', [])
+partners = env['res.partner'].browse(active_ids).filtered(lambda x: x.partner_state in ['potential'])
+partners.partner_state_pending()
+            </field>
+        </record>
+
+        <record model="ir.actions.server" id="action_partner_to_aprove">
+            <field name="name">Approve Partners</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="code">
+active_ids = context.get('active_ids', [])
+partners = env['res.partner'].browse(active_ids).filtered(lambda x: x.partner_state in ['pending'])
+partners.partner_state_approved()
+            </field>
+        </record>
+
+        <record model="ir.values" id="action_action_request_approval_multi">
+                <field name="name">action_request_approval</field>
+                <field name="action_id" ref="action_partner_state_pending" />
+                <field name="value" eval="'ir.actions.server,' + str(ref('action_partner_state_pending'))" />
+                <field name="key">action</field>
+                <field name="model_id" ref="base.model_res_partner" />
+                <field name="model">base.model_res_partner</field>
+                <field name="key2">client_action_multi</field>
+        </record>
+
+        <record model="ir.values" id="action_partner_to_aprove_multi">
+                <field name="name">action_approve</field>
+                <field name="action_id" ref="action_partner_to_aprove" />
+                <field name="value" eval="'ir.actions.server,' + str(ref('action_partner_to_aprove'))" />
+                <field name="key">action</field>
+                <field name="model_id" ref="base.model_res_partner" />
+                <field name="model">base.model_res_partner</field>
+                <field name="key2">client_action_multi</field>
+        </record>
+    </data>
+</openerp>
