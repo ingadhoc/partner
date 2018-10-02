@@ -26,3 +26,7 @@ class ResPartnerStateField(models.Model):
         help="Track and, if change, go back to Potencial",
         default=True
     )
+    block_edition = fields.Boolean(
+        help="Do not allow to edit this field if the partner is approved",
+        default=True,
+    )
