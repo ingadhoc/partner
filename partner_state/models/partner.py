@@ -5,7 +5,7 @@
 ##############################################################################
 
 from openerp import models, fields, api, _
-from openerp.exceptions import Warning
+from openerp.exceptions import Warning, ValidationError
 
 
 class res_partner_state_field(models.Model):
@@ -27,6 +27,10 @@ class res_partner_state_field(models.Model):
         'Track?',
         help="Track and, if change, go back to Potencial",
         default=True
+    )
+    block_edition = fields.Boolean(
+        help="Do not allow to edit this field if the partner is approved",
+        default=True,
     )
 
 
@@ -63,6 +67,13 @@ class ResPartner(models.Model):
     def write(self, vals):
         for partner in self:
             if partner.partner_state in ['approved', 'pending']:
+                partner_block_fields = self.env[
+                    'res.partner.state_field'].search(
+                    [('block_edition', '=', True)]).mapped('field_id.name')
+                for key in vals.keys():
+                    if key in partner_block_fields:
+                        raise ValidationError(
+                            _('You can not modify this field "%s"' % (key)))
                 fields = partner.check_fields('track')
                 if fields:
                     fields_set = set(fields)
@@ -80,24 +91,25 @@ class ResPartner(models.Model):
 
     @api.multi
     def partner_state_pending(self):
-        fields = self.check_fields('approval')
-        if fields:
-            partners_read = self.read(fields)
-            for partner_read in partners_read:
-                for partner_field in partner_read:
-                    partner_name = self.browse(partner_read['id']).display_name
-                    if not partner_read[partner_field]:
-                        raise Warning(_(
-                            "Can not request approval, "
-                            "required field %s empty on partner  %s!" % (
-                                partner_field, partner_name)))
-        self.partner_state = 'pending'
+        for rec in self:
+            fields = rec.check_fields('approval')
+            if fields:
+                partners_read = rec.read(fields)
+                for partner_read in partners_read:
+                    for partner_field in partner_read:
+                        partner_name = self.browse(
+                            partner_read['id']).display_name
+                        if not partner_read[partner_field]:
+                            raise Warning(_(
+                                "Can not request approval, "
+                                "required field %s empty on partner  %s!" % (
+                                    partner_field, partner_name)))
+            rec.partner_state = 'pending'
 
     @api.multi
     def partner_state_approved(self):
         self.check_partner_approve()
-        self.partner_state = 'approved'
-
+        self.write({'partner_state': 'approved'})
     @api.multi
     def check_partner_approve(self):
         user_can_approve_partners = self.env[
