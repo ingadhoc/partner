@@ -11,15 +11,14 @@
             <sheet position="before">
                 <header attrs="{'invisible':[('partner_state_enable','=',False)]}">
                     <button name="partner_state_pending" attrs="{'invisible':[('partner_state','not in',['potential'])]}" string="Request Approval" type="object" class="oe_highlight"/>
-                    <button name="partner_state_approved" attrs="{'invisible':[('partner_state','not in',['pending'])]}"
-                        string="Approve" type="object" class="oe_highlight"/>
+                    <button name="partner_state_approved" attrs="{'invisible':[('partner_state','not in',['pending'])]}" string="Approve" type="object" class="oe_highlight"/>
                     <button name="partner_state_potential" attrs="{'invisible':[('partner_state','not in',['approved','pending'])]}" string="To Potential" type="object"/>
                     <field name="partner_state" widget="statusbar"/>
                 </header>
             </sheet>
         </field>
     </record>
-    
+
     <record id="view_res_partner_state_tree" model="ir.ui.view">
         <field name="name">partner.state.partner.tree.view</field>
         <field name="model">res.partner</field>
@@ -30,7 +29,7 @@
             </tree>
         </field>
     </record>
-    
+
     <record id="view_partner_state_search" model="ir.ui.view">
         <field name="name">partner.state.partner.search.view</field>
         <field name="model">res.partner</field>
@@ -41,6 +40,11 @@
                 <filter string="Potential" domain="[('partner_state','=','potential')]"/>
                 <filter string="Pending" domain="[('partner_state','=','pending')]" />
                 <filter string="Approved" domain="[('partner_state','=','approved')]" />
+                <separator/>
+            </filter>
+
+            <filter name="salesperson" position="after">
+                <filter name="partner_state" string="Partner State" domain="[]" context="{'group_by' : 'partner_state'}"/>
             </filter>
         </field>
     </record>

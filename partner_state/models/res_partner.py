@@ -14,13 +14,6 @@ class ResPartner(models.Model):
         compute='_compute_partner_state_enable',
     )
 
-    @api.multi
-    def _compute_partner_state_enable(self):
-        if self.env.user.company_id.partner_state_enable:
-            partners = self.filtered(lambda r:
-                                     r.commercial_partner_id == r)
-            partners.update({'partner_state_enable': True})
-
     partner_state = fields.Selection(
         '_get_partner_states',
         string='Partner State',
@@ -28,6 +21,13 @@ class ResPartner(models.Model):
         required=True,
         default='potential'
     )
+
+    @api.multi
+    def _compute_partner_state_enable(self):
+        if self.env.user.company_id.partner_state_enable:
+            partners = self.filtered(lambda r:
+                                     r.commercial_partner_id == r)
+            partners.update({'partner_state_enable': True})
 
     @api.model
     def _get_partner_states(self):
@@ -38,9 +38,16 @@ class ResPartner(models.Model):
 
     @api.multi
     def write(self, vals):
+        ResPartnerStateField = self.env['res.partner.state_field']
         for partner in self.filtered(lambda r:
                                      r.partner_state in
                                      ['approved', 'pending']):
+            partner_block_fields = ResPartnerStateField.search(
+                [('block_edition', '=', True)]).mapped('field_id.name')
+            for key in vals.keys():
+                if key in partner_block_fields:
+                    raise UserError(
+                        _('You can not modify this field "%s"' % (key)))
             fields = partner.check_fields('track')
             if fields:
                 fields_set = set(fields)
@@ -56,28 +63,26 @@ class ResPartner(models.Model):
 
     @api.multi
     def partner_state_pending(self):
-        self.ensure_one()
-        fields = self.check_fields('approval')
-        if not fields:
-            self.partner_state = 'pending'
-            return
-
-        partner_data = self.read(fields)[0]
-        if all(partner_data.values()):
-            self.partner_state = 'pending'
-            return
-        for partner_field, value in partner_data.items():
-            if not value:
-                raise UserError(_(
-                    "Can not request approval, "
-                    "required field %s" % (
-                        partner_field)))
-        self.partner_state = 'pending'
+        for rec in self:
+            fields = rec.check_fields('approval')
+            if not fields:
+                rec.partner_state = 'pending'
+                continue
+            partner_data = rec.read(fields)[0]
+            if all(partner_data.values()):
+                rec.partner_state = 'pending'
+                continue
+            for partner_field, value in partner_data.items():
+                if not value:
+                    raise UserError(_(
+                        'Partner "%s" can not request approval, '
+                        'required field %s' % (
+                            rec.display_name, partner_field)))
 
     @api.multi
     def partner_state_approved(self):
         self.check_partner_approve()
-        self.partner_state = 'approved'
+        self.write({'partner_state': 'approved'})
 
     @api.multi
     def check_partner_approve(self):

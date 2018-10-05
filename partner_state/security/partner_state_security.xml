@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo noupdate="0">
-    <record id="partner_state.approve_partners" model="res.groups">
+    <record id="approve_partners" model="res.groups">
         <field name="name">Approve Partners</field>
     </record>
 </odoo>
