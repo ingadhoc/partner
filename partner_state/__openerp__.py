@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name': 'Partner State',
-    'version': '9.0.1.3.0',
+    'version': '9.0.1.4.0',
     'category': 'Base',
     'author': 'ADHOC SA, Odoo Community Association (OCA)',
     'website': 'www.adhoc.com.ar',
