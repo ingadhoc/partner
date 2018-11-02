@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Partner Sales ABC',
-    'version': '9.0.1.0.0',
+    'version': '11.0.1.0.0',
     'website': 'www.adhoc.com.ar',
     'author': 'ADHOC SA',
     'license': 'AGPL-3',
@@ -32,7 +32,7 @@
         'views/partner_view.xml',
     ],
     'test': [],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': True,
 }
