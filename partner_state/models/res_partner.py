@@ -59,7 +59,7 @@ class ResPartner(models.Model):
 
     @api.multi
     def partner_state_potential(self):
-        self.update({'partner_state': 'potential'})
+        self.write({'partner_state': 'potential'})
 
     @api.multi
     def partner_state_pending(self):
