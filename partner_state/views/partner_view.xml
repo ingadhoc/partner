@@ -14,7 +14,7 @@
                         <button name="partner_state_pending" attrs="{'invisible':[('partner_state','not in',['potential'])]}" string="Request Approval" type="object" class="oe_highlight"/>
                         <button name="partner_state_approved" attrs="{'invisible':[('partner_state','not in',['pending'])]}"
                             string="Approve" type="object" class="oe_highlight"/>
-                        <button name="partner_state_potential" attrs="{'invisible':[('partner_state','not in',['approved','pending'])]}" string="To Potential" type="object"/>
+                        <button name="partner_state_potential" attrs="{'invisible':[('partner_state','not in',['approved','pending'])]}" string="To Potential" type="object" groups="partner_state.approve_partners"/>
                         <field name="partner_state" widget="statusbar"/>
                     </header>
                 </sheet>
