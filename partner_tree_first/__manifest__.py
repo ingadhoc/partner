@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Partner Tree First',
-    'version': '11.0.1.0.0',
+    'version': '11.0.1.1.0',
     'category': 'Tools',
     'sequence': 14,
     'summary': '',
@@ -29,14 +29,12 @@
     'images': [
     ],
     'depends': [
-        'base',
+        'contacts',
     ],
     'data': [
-        'views/res_partner_view.xml',
+        'views/res_partner_views.xml',
     ],
     'demo': [
-    ],
-    'test': [
     ],
     'installable': True,
     'auto_install': False,
