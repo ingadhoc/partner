@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="contacts.action_contacts_view_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+    </record>
+
+    <record id="contacts.action_contacts_view_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="0"/>
+    </record>
+
+    <record id="contacts.action_contacts_view_kanban" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+    </record>
+
+    <record id="base.action_partner_form_view1" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+    </record>
+
+    <record id="base.action_partner_tree_view1" model="ir.actions.act_window.view">
+        <field name="sequence" eval="0"/>
+    </record>
+
+    <record id="base.action_partner_vendor_form_view1" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+    </record>
+
+    <record id="base.action_partner_vendor_form_view2" model="ir.actions.act_window.view">
+        <field eval="0" name="sequence"/>
+    </record>
+
+    <record id="base.action_partner_vendor_form_view3" model="ir.actions.act_window.view">
+        <field eval="3" name="sequence"/>
+    </record>
+
+</odoo>
