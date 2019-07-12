@@ -44,14 +44,21 @@ class ResPartner(models.Model):
                                      ['approved', 'pending']):
             partner_block_fields = ResPartnerStateField.search(
                 [('block_edition', '=', True)]).mapped('field_id.name')
-            for key in vals.keys():
+            modified_fields = vals.keys()
+            # if it's a contact we only check the none commercial fields to
+            # allow them to be synchronized from parent
+            if partner.commercial_partner_id != partner:
+                modified_fields = list(
+                    set(modified_fields) - set(self._commercial_fields()))
+
+            for key in modified_fields:
                 if key in partner_block_fields:
                     raise UserError(
                         _('You can not modify this field "%s"' % (key)))
             fields = partner.check_fields('track')
             if fields:
                 fields_set = set(fields)
-                vals_set = set(vals)
+                vals_set = set(modified_fields)
                 if fields_set & vals_set:
                     partner.partner_state_potential()
 
