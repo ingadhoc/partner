@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Partner State',
-    'version': '11.0.1.2.0',
+    'version': '12.0.1.0.0',
     'category': 'Base',
     'author': 'ADHOC SA, Odoo Community Association (OCA)',
     'website': 'www.adhoc.com.ar',
@@ -40,5 +40,5 @@
     'demo': [
         'demo/res.partner.state_field.csv'
     ],
-    'installable': True,
+    'installable': False,
 }
