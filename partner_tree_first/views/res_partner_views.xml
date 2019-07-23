@@ -32,4 +32,8 @@
         <field eval="3" name="sequence"/>
     </record>
 
+    <record id="base.action_partner_customer_form_view2" model="ir.actions.act_window.view">
+        <field eval="0" name="sequence"/>
+    </record>
+
 </odoo>
