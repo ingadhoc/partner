@@ -34,7 +34,7 @@
         <field name="arch" type="xml">
             <field name="display_name" position="before">
                 <field name="internal_code"/>
-            </field>      
+            </field>
         </field>
     </record>
 </odoo>
