@@ -32,7 +32,7 @@
         'views/partner_view.xml',
     ],
     'test': [],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': True,
 }
