@@ -36,9 +36,6 @@
         'data/partner_data.xml',
         'views/partner_view.xml',
     ],
-    'demo': [
-        'demo/res.partner.csv'
-    ],
     'installable': True,
     'auto_install': False,
     'application': False,
