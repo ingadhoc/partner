@@ -7,7 +7,7 @@ class PortalWizard(models.TransientModel):
 
     @api.onchange('portal_id')
     def onchange_portal_id(self):
-        super(PortalWizard, self).onchange_portal_id()
+        super().onchange_portal_id()
         allow_portal_on_companies = safe_eval(
             self.env['ir.config_parameter'].sudo().get_param(
                 'portal_ux.allow_portal_on_companies',

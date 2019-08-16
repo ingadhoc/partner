@@ -11,7 +11,7 @@ class ResConfigSettings(models.TransientModel):
         " companies on invite to portal wizard")
 
     def get_values(self):
-        res = super(ResConfigSettings, self).get_values()
+        res = super().get_values()
         get_param = self.env['ir.config_parameter'].sudo().get_param
         res.update(allow_portal_on_companies=get_param(
             'portal_ux.allow_portal_on_companies',
@@ -20,7 +20,7 @@ class ResConfigSettings(models.TransientModel):
         return res
 
     def set_values(self):
-        super(ResConfigSettings, self).set_values()
+        super().set_values()
         set_param = self.env['ir.config_parameter'].sudo().set_param
         set_param('portal_ux.allow_portal_on_companies',
                   repr(self.allow_portal_on_companies))

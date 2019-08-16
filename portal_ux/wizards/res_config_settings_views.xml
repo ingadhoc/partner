@@ -5,7 +5,7 @@
         <field name="model">res.config.settings</field>
         <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//div[contains(@id,'default_user_rights')]">
+            <xpath expr="//div[contains(@id,'user_default_rights')]">
                 <div class="col-xs-12 col-md-6 o_setting_box">
                     <div class="o_setting_left_pane">
                         <field name="allow_portal_on_companies"/>
