@@ -14,8 +14,7 @@
 Partner Tree First
 ==================
 
-Change the sequence value in res.partner base.action_partner_form_view1
-and action_partner_tree_view1
+For Partner model always show the List view, not matter the action from where the model is call, could be contacts menu, accounting/customers/customers menu, accouting/vendors/vendors, etc.
 
 Installation
 ============
@@ -33,8 +32,6 @@ Usage
 =====
 
 To use this module, you need to:
-
-#. Go to ...
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
