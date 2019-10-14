@@ -37,9 +37,9 @@
         <field name="arch" type="xml">
             <filter name="supplier" position="after">
                 <separator/>
-                <filter string="Potential" domain="[('partner_state','=','potential')]"/>
-                <filter string="Pending" domain="[('partner_state','=','pending')]" />
-                <filter string="Approved" domain="[('partner_state','=','approved')]" />
+                <filter name="potential" string="Potential" domain="[('partner_state','=','potential')]"/>
+                <filter name="pending" string="Pending" domain="[('partner_state','=','pending')]" />
+                <filter name="approved" string="Approved" domain="[('partner_state','=','approved')]" />
                 <separator/>
             </filter>
 

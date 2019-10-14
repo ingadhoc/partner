@@ -34,11 +34,10 @@
         'data/partner_state_server_data.xml',
         'data/res_users_data.xml',
         'views/res_partner_state_field_views.xml',
-        'views/company_views.xml',
         'views/partner_views.xml',
     ],
     'demo': [
         'demo/res.partner.state_field.csv'
     ],
-    'installable': False,
+    'installable': True,
 }

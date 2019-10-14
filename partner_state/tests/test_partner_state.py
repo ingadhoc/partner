@@ -10,7 +10,7 @@ from odoo.exceptions import UserError
 class TestPartnerState(common.TransactionCase):
 
     def setUp(self):
-        super(TestPartnerState, self).setUp()
+        super().setUp()
         self.partner = self.env.ref('base.res_partner_1')
 
     def test_partner_state_pending(self):

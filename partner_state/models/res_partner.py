@@ -62,7 +62,7 @@ class ResPartner(models.Model):
                 if fields_set & vals_set:
                     partner.partner_state_potential()
 
-        return super(ResPartner, self).write(vals)
+        return super().write(vals)
 
     @api.multi
     def partner_state_potential(self):
@@ -126,7 +126,7 @@ class ResPartner(models.Model):
 
         if tracked_fields:
             return self.fields_get(tracked_fields)
-        return super(ResPartner, self)._get_tracked_fields(updated_fields)
+        return super()._get_tracked_fields(updated_fields)
 
     @api.multi
     def message_track(self, tracked_fields, initial_values):
@@ -139,5 +139,5 @@ class ResPartner(models.Model):
                 'track', '=', True)]):
             field = self._fields[line.field_id.name]
             setattr(field, 'track_visibility', 'always')
-        return super(ResPartner, self).message_track(
+        return super().message_track(
             tracked_fields, initial_values)
