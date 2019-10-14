@@ -17,9 +17,7 @@ class Partner(models.Model):
     @api.model
     def create(self, vals):
         if not vals.get('internal_code', False):
-            vals['internal_code'] = self.env[
-                'ir.sequence'].next_by_code(
-                    'partner.internal.code') or '/'
+            vals['internal_code'] = self.env['ir.sequence'].next_by_code('partner.internal.code')
         return super(Partner, self).create(vals)
 
     _sql_constraints = {
