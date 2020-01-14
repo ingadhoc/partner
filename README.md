@@ -1,6 +1,6 @@
-[![Runbot Status](http://runbot.adhoc.com.ar/runbot/badge/flat/12/12.0.svg)](http://runbot.adhoc.com.ar/runbot/repo/github-com-ingadhoc-partner-12)
-[![Build Status](https://travis-ci.org/ingadhoc/partner.svg?branch=12.0)](https://travis-ci.org/ingadhoc/partner)
-[![Coverage Status](https://coveralls.io/repos/ingadhoc/partner/badge.png?branch=12.0)](https://coveralls.io/r/ingadhoc/partner?branch=12.0)
+[![Runbot Status](http://runbot.adhoc.com.ar/runbot/badge/flat/12/13.0.svg)](http://runbot.adhoc.com.ar/runbot/repo/github-com-ingadhoc-partner-12)
+[![Build Status](https://travis-ci.org/ingadhoc/partner.svg?branch=13.0)](https://travis-ci.org/ingadhoc/partner)
+[![Coverage Status](https://coveralls.io/repos/ingadhoc/partner/badge.png?branch=13.0)](https://coveralls.io/r/ingadhoc/partner?branch=13.0)
 [![Code Climate](https://codeclimate.com/github/ingadhoc/partner/badges/gpa.svg)](https://codeclimate.com/github/ingadhoc/partner)
 
 # ADHOC Partner
@@ -12,7 +12,7 @@ ADHOC Odoo Partner and Contact related addons
 
 Translation Status
 ------------------
-[![Transifex Status](https://www.transifex.com/projects/p/ingadhoc-partner-12-0/chart/image_png)](https://www.transifex.com/projects/p/ingadhoc-partner-12-0)
+[![Transifex Status](https://www.transifex.com/projects/p/ingadhoc-partner-13-0/chart/image_png)](https://www.transifex.com/projects/p/ingadhoc-partner-13-0)
 
 ----
 
