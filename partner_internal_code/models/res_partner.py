@@ -23,5 +23,5 @@ class Partner(models.Model):
 
     _sql_constraints = {
         ('internal_code_uniq', 'unique(internal_code)',
-            'Internal Code mast be unique!')
+            'Internal Code must be unique!')
     }
