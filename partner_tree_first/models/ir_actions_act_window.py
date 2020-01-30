@@ -7,8 +7,8 @@ class IrActionsActWindow(models.Model):
 
     @api.depends('view_ids.view_mode', 'view_mode', 'view_id.type')
     def _compute_views(self):
-        """ Force the tree view to always be the first one mp matter what is
-        configure in the action """
+        """ Force the tree view to always be the first one, no matter what is
+        configured in the action """
         super()._compute_views()
         res_partner = self.filtered(lambda x: x.res_model == 'res.partner' and
                                     'tree' in x.view_mode)
