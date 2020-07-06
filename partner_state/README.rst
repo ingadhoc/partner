@@ -34,7 +34,7 @@ Configuration
 To configure this module, you need to:
 
 #. Set "Use partner state " in the company.
-#. Set the field that you requiered to approve partner in Sale/Configuration/Contact: Partner State Fields.
+#. Set the field that you required to approve partner in Sale/Configuration/Contact: Partner State Fields.
 #. Set the permition to approve to the user.
 
 Usage

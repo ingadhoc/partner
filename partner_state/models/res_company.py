@@ -12,5 +12,4 @@ class ResCompany(models.Model):
     partner_state_enable = fields.Boolean(
         'Use partner state?',
         default=True,
-        oldname='partner_state',
     )

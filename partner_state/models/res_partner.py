@@ -22,12 +22,12 @@ class ResPartner(models.Model):
         default='potential'
     )
 
-    @api.multi
     def _compute_partner_state_enable(self):
-        if self.env.user.company_id.partner_state_enable:
+        self.partner_state_enable = False
+        if self.env.company.partner_state_enable:
             partners = self.filtered(lambda r:
                                      r.commercial_partner_id == r)
-            partners.update({'partner_state_enable': True})
+            partners.partner_state_enable = True
 
     @api.model
     def _get_partner_states(self):
@@ -36,7 +36,6 @@ class ResPartner(models.Model):
             ('pending', _('Pending Approval')),
             ('approved', _('Approved'))]
 
-    @api.multi
     def write(self, vals):
         ResPartnerStateField = self.env['res.partner.state_field']
         for partner in self.filtered(lambda r:
@@ -61,14 +60,11 @@ class ResPartner(models.Model):
                 vals_set = set(modified_fields)
                 if fields_set & vals_set:
                     partner.partner_state_potential()
-
         return super().write(vals)
 
-    @api.multi
     def partner_state_potential(self):
         self.write({'partner_state': 'potential'})
 
-    @api.multi
     def partner_state_pending(self):
         for rec in self:
             fields = rec.check_fields('approval')
@@ -86,12 +82,10 @@ class ResPartner(models.Model):
                         'required field %s' % (
                             rec.display_name, partner_field)))
 
-    @api.multi
     def partner_state_approved(self):
         self.check_partner_approve()
         self.write({'partner_state': 'approved'})
 
-    @api.multi
     def check_partner_approve(self):
         user_can_approve_partners = self.env[
             'res.users'].has_group('partner_state.approve_partners')
@@ -101,7 +95,6 @@ class ResPartner(models.Model):
                     "please check user permissions!"))
         return True
 
-    @api.multi
     def check_fields(self, field_type):
         ret = False
         for rec in self.filtered(lambda x: x.partner_state_enable):
@@ -117,18 +110,16 @@ class ResPartner(models.Model):
         return ret
 
     @api.model
-    def _get_tracked_fields(self, updated_fields):
+    def _get_tracked_fields(self):
         tracked_fields = []
         # TODO we should use company of modified partner
         for line in self.env['res.partner.state_field'].search([]):
-            if line.track and line.field_id.name in updated_fields:
+            if line.track:
                 tracked_fields.append(line.field_id.name)
-
         if tracked_fields:
             return self.fields_get(tracked_fields)
-        return super()._get_tracked_fields(updated_fields)
+        return super()._get_tracked_fields()
 
-    @api.multi
     def message_track(self, tracked_fields, initial_values):
         """
         We need to set attribute temporary because message_track read it
