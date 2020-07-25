@@ -1,28 +1,29 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * partner_state
-# 
-# Translators:
-# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2019
-# 
+# 	* partner_state
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 13.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-25 22:18+0000\n"
-"PO-Revision-Date: 2019-10-14 16:14+0000\n"
-"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2019\n"
-"Language-Team: Spanish (https://www.transifex.com/adhoc/teams/46451/es/)\n"
+"POT-Creation-Date: 2020-07-25 18:42+0000\n"
+"PO-Revision-Date: 2020-07-25 18:42+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: \n"
+
+#. module: partner_state
+#: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__algolia_search
+msgid "Algolia Search"
+msgstr ""
 
 #. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__approval
 msgid "Approval?"
-msgstr "¿Aprobación?"
+msgstr "Aprobación?"
 
 #. module: partner_state
 #: model_terms:ir.ui.view,arch_db:partner_state.view_partner_state_form
@@ -36,7 +37,7 @@ msgid "Approve Partners"
 msgstr "Aprobar Empresas"
 
 #. module: partner_state
-#: code:addons/partner_state/models/res_partner.py:37
+#: code:addons/partner_state/models/res_partner.py:0
 #: model_terms:ir.ui.view,arch_db:partner_state.view_partner_state_search
 #, python-format
 msgid "Approved"
@@ -45,7 +46,7 @@ msgstr "Aprobado"
 #. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__block_edition
 msgid "Block Edition"
-msgstr ""
+msgstr "Bloquear Edición"
 
 #. module: partner_state
 #: model:ir.model,name:partner_state.model_res_company
@@ -55,22 +56,22 @@ msgstr "Compañías"
 #. module: partner_state
 #: model:ir.model,name:partner_state.model_res_partner
 msgid "Contact"
-msgstr "Contactos"
+msgstr "Contacto"
 
 #. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr ""
 
 #. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__create_date
 msgid "Created on"
-msgstr "Creado el"
+msgstr ""
 
 #. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__display_name
 msgid "Display Name"
-msgstr "Mostrar Nombre"
+msgstr ""
 
 #. module: partner_state
 #: model:ir.model.fields,help:partner_state.field_res_partner_state_field__block_edition
@@ -85,25 +86,25 @@ msgstr "Campo"
 #. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field____last_update
 msgid "Last Modified on"
-msgstr "Última modificación en"
+msgstr ""
 
 #. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr ""
 
 #. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__write_date
 msgid "Last Updated on"
-msgstr "Última actualización en"
+msgstr ""
 
 #. module: partner_state
-#: code:addons/partner_state/models/res_partner.py:86
+#: code:addons/partner_state/models/res_partner.py:0
 #, python-format
 msgid "Partner \"%s\" can not request approval, required field %s"
 msgstr ""
@@ -113,7 +114,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_state.field_res_users__partner_state
 #: model_terms:ir.ui.view,arch_db:partner_state.view_partner_state_search
 msgid "Partner State"
-msgstr "Estado del Partner"
+msgstr "Estado de Empresas"
 
 #. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_partner__partner_state_enable
@@ -135,16 +136,16 @@ msgstr "Campos de Estados en Empresas"
 #. module: partner_state
 #: model_terms:ir.ui.view,arch_db:partner_state.view_partner_state_search
 msgid "Pending"
-msgstr "Pendiente"
+msgstr "Pendinte"
 
 #. module: partner_state
-#: code:addons/partner_state/models/res_partner.py:36
+#: code:addons/partner_state/models/res_partner.py:0
 #, python-format
 msgid "Pending Approval"
 msgstr "Aprobación Pendiente"
 
 #. module: partner_state
-#: code:addons/partner_state/models/res_partner.py:35
+#: code:addons/partner_state/models/res_partner.py:0
 #: model_terms:ir.ui.view,arch_db:partner_state.view_partner_state_search
 #, python-format
 msgid "Potential"
@@ -153,12 +154,12 @@ msgstr "Potencial"
 #. module: partner_state
 #: model_terms:ir.ui.view,arch_db:partner_state.view_partner_state_form
 msgid "Request Approval"
-msgstr "Requerir Aprobación"
+msgstr "Solicitar Aprobación"
 
 #. module: partner_state
 #: model:ir.actions.server,name:partner_state.action_partner_state_pending
 msgid "Request Approval Partners"
-msgstr ""
+msgstr "Solicitar Aprobación"
 
 #. module: partner_state
 #: model:ir.model.fields,help:partner_state.field_res_partner_state_field__approval
@@ -173,28 +174,26 @@ msgstr "A Potencial"
 #. module: partner_state
 #: model:ir.model.fields,help:partner_state.field_res_partner_state_field__track
 msgid "Track and, if change, go back to Potencial"
-msgstr "Seguir y, si hay un cambio, volver a Potencial"
+msgstr "Seguir, y si cambia, volver a Potencial"
 
 #. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__track
 msgid "Track?"
-msgstr "¿Seguir?"
+msgstr "Seguir?"
 
 #. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_company__partner_state_enable
 msgid "Use partner state?"
-msgstr "¿Usar Estados en Empresas?"
+msgstr "Utilizar estado de Empresas?"
 
 #. module: partner_state
-#: code:addons/partner_state/models/res_partner.py:100
+#: code:addons/partner_state/models/res_partner.py:0
 #, python-format
 msgid "User can't approve partners, please check user permissions!"
-msgstr ""
-"El usuario no puede aprobar partners, por favor chequear el permiso del "
-"usuario."
+msgstr "El usuario no puede aprobar empresas, verifique los permisos del usuario!"
 
 #. module: partner_state
-#: code:addons/partner_state/models/res_partner.py:57
+#: code:addons/partner_state/models/res_partner.py:0
 #, python-format
 msgid "You can not modify this field \"%s\""
-msgstr ""
+msgstr "No puede modificar este campo \"%s\""
