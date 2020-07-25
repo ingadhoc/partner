@@ -15,7 +15,7 @@ class ResPartner(models.Model):
     )
 
     partner_state = fields.Selection(
-        '_get_partner_states',
+        [('potential', 'Potential'), ('pending', 'Pending pproval'), ('approved', 'Approved')],
         string='Partner State',
         readonly=True,
         required=True,
@@ -28,13 +28,6 @@ class ResPartner(models.Model):
             partners = self.filtered(lambda r:
                                      r.commercial_partner_id == r)
             partners.partner_state_enable = True
-
-    @api.model
-    def _get_partner_states(self):
-        return [
-            ('potential', _('Potential')),
-            ('pending', _('Pending Approval')),
-            ('approved', _('Approved'))]
 
     def write(self, vals):
         ResPartnerStateField = self.env['res.partner.state_field']
