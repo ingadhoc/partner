@@ -11,7 +11,7 @@ class IrActionsActWindow(models.Model):
         configured in the action """
         super()._compute_views()
         res_partner = self.sudo().filtered(lambda x: x.res_model == 'res.partner' and 'tree' in x.view_mode)
-        for act in res_partner:
+        for act in res_partner.with_context(from_config=True):
             modes = act.view_mode.split(',')
             modes.remove('tree')
             modes = ['tree'] + modes
