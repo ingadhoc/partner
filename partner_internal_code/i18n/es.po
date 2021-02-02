@@ -1,17 +1,18 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * partner_internal_code
+# 	* partner_internal_code
 # 
 # Translators:
-# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2019
+# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2020
+# Juan Rivero <jr@adhoc.com.ar>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 11.0\n"
+"Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-02 16:37+0000\n"
-"PO-Revision-Date: 2018-04-26 12:07+0000\n"
-"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2019\n"
+"POT-Creation-Date: 2021-01-12 23:21+0000\n"
+"PO-Revision-Date: 2020-01-30 16:35+0000\n"
+"Last-Translator: Juan Rivero <jr@adhoc.com.ar>, 2021\n"
 "Language-Team: Spanish (https://www.transifex.com/adhoc/teams/46451/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,3 +24,14 @@ msgstr ""
 #: model:ir.model,name:partner_internal_code.model_res_partner
 msgid "Contact"
 msgstr "Contactos"
+
+#. module: partner_internal_code
+#: model:ir.model.fields,field_description:partner_internal_code.field_res_partner__internal_code
+#: model:ir.model.fields,field_description:partner_internal_code.field_res_users__internal_code
+msgid "Internal Code"
+msgstr "Código Interno"
+
+#. module: partner_internal_code
+#: model:ir.model.constraint,message:partner_internal_code.constraint_res_partner_internal_code_uniq
+msgid "Internal Code must be unique!"
+msgstr "El Código Interno debe ser único!"
