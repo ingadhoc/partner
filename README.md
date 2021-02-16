@@ -3,7 +3,7 @@
 
 # ADHOC Partner
 
-ADHOC Odoo Partner and Contact related addons
+Partner and Contact related addons
 
 [//]: # (addons)
 [//]: # (end addons)
