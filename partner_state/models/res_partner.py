@@ -104,14 +104,15 @@ class ResPartner(models.Model):
 
     @api.model
     def _get_tracked_fields(self):
+        res = super()._get_tracked_fields()
         tracked_fields = []
         # TODO we should use company of modified partner
-        for line in self.env['res.partner.state_field'].search([]):
+        for line in self.env['res.partner.state_field'].search([]).with_context(prefetch_fields=False):
             if line.track:
                 tracked_fields.append(line.field_id.name)
         if tracked_fields:
-            return self.fields_get(tracked_fields)
-        return super()._get_tracked_fields()
+            res.update(self.fields_get(tracked_fields))
+        return res
 
     def message_track(self, tracked_fields, initial_values):
         """
@@ -120,8 +121,8 @@ class ResPartner(models.Model):
         """
         # TODO we should use company of modified partner
         for line in self.env['res.partner.state_field'].search([(
-                'track', '=', True)]):
+                'track', '=', True)]).with_context(prefetch_fields=False):
             field = self._fields[line.field_id.name]
-            setattr(field, 'track_visibility', 'always')
+            setattr(field, 'tracking', True)
         return super().message_track(
             tracked_fields, initial_values)
