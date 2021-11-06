@@ -2,7 +2,7 @@
 
 # ADHOC Partner
 
-Partner and Contact related addons
+Partner/Contacts related addons
 
 [//]: # (addons)
 [//]: # (end addons)
