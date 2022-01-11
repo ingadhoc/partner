@@ -14,7 +14,8 @@ class ResPartnerStateField(models.Model):
         'ir.model.fields',
         string='Field',
         required=True,
-        domain=[('model_id.model', '=', 'res.partner')]
+        domain=[('model_id.model', '=', 'res.partner')],
+        ondelete='cascade'
     )
     approval = fields.Boolean(
         'Approval?',
