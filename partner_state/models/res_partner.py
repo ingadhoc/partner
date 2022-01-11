@@ -19,7 +19,8 @@ class ResPartner(models.Model):
         string='Partner State',
         readonly=True,
         required=True,
-        default='potential'
+        default='potential',
+        copy=False,
     )
 
     def _compute_partner_state_enable(self):
@@ -110,7 +111,7 @@ class ResPartner(models.Model):
             if line.track:
                 tracked_fields.append(line.field_id.name)
         if tracked_fields:
-            return self.fields_get(tracked_fields)
+            return set(self.fields_get(tracked_fields))
         return super()._get_tracked_fields()
 
     def message_track(self, tracked_fields, initial_values):

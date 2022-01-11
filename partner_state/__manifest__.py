@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Partner State',
-    'version': '13.0.1.0.0',
+    'version': "15.0.1.0.0",
     'category': 'Base',
     'author': 'ADHOC SA, Odoo Community Association (OCA)',
     'website': 'www.adhoc.com.ar',
@@ -35,9 +35,10 @@
         'data/res_users_data.xml',
         'views/res_partner_state_field_views.xml',
         'views/partner_views.xml',
+        'views/res_company_views.xml',
     ],
     'demo': [
         'demo/res.partner.state_field.csv'
     ],
-    'installable': False,
+    'installable': True,
 }
