@@ -19,7 +19,8 @@ class ResPartner(models.Model):
         string='Partner State',
         readonly=True,
         required=True,
-        default='potential'
+        default='potential',
+        copy=False,
     )
 
     def _compute_partner_state_enable(self):
