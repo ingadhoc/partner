@@ -40,5 +40,5 @@
     'demo': [
         'demo/res.partner.state_field.csv'
     ],
-    'installable': True,
+    'installable': False,
 }
