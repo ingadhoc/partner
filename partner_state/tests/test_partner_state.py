@@ -25,5 +25,5 @@ class TestPartnerState(common.TransactionCase):
     def test_partner_state_block_edition(self):
         self.partner.partner_state_approved()
         msg = 'You can not modify this field "name"'
-        with self.assertRaisesRegexp(UserError, msg):
+        with self.assertRaisesRegex(UserError, msg):
             self.partner.name = 'new name'

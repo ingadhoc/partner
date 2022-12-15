@@ -3,7 +3,7 @@
 # directory
 ##############################################################################
 
-from odoo import models, fields, api, _
+from odoo import models, fields, tools, _
 from odoo.exceptions import UserError
 
 
@@ -103,8 +103,8 @@ class ResPartner(models.Model):
                     field.track]
         return ret
 
-    @api.model
-    def _get_tracked_fields(self):
+    @tools.ormcache('self.env.uid', 'self.env.su')
+    def _track_get_fields(self):
         tracked_fields = []
         # TODO we should use company of modified partner
         for line in self.env['res.partner.state_field'].search([]):
@@ -112,9 +112,9 @@ class ResPartner(models.Model):
                 tracked_fields.append(line.field_id.name)
         if tracked_fields:
             return set(self.fields_get(tracked_fields))
-        return super()._get_tracked_fields()
+        return super()._track_get_fields()
 
-    def message_track(self, tracked_fields, initial_values):
+    def _message_track(self, tracked_fields, initial_values):
         """
         We need to set attribute temporary because message_track read it
         from field properties to make message
@@ -124,5 +124,5 @@ class ResPartner(models.Model):
                 'track', '=', True)]):
             field = self._fields[line.field_id.name]
             setattr(field, 'track_visibility', 'always')
-        return super().message_track(
+        return super()._message_track(
             tracked_fields, initial_values)
