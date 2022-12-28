@@ -14,11 +14,11 @@ class Partner(models.Model):
         copy=False,
     )
 
-    @api.model
-    def create(self, vals):
-        if not vals.get('internal_code', False):
-            vals['internal_code'] = self.env['ir.sequence'].next_by_code(
-                'partner.internal.code')
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if not vals.get('internal_code'):
+                vals['internal_code'] = self.env['ir.sequence'].next_by_code('partner.internal.code')
         return super().create(vals)
 
     _sql_constraints = {
