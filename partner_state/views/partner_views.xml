@@ -9,10 +9,10 @@
                 <field name="partner_state_enable" invisible="1"/>
             </form>
             <sheet position="before">
-                <header attrs="{'invisible':[('partner_state_enable','=',False)]}">
-                    <button name="partner_state_pending" attrs="{'invisible':[('partner_state','not in',['potential'])]}" string="Request Approval" type="object" class="oe_highlight"/>
-                    <button name="partner_state_approved" attrs="{'invisible':[('partner_state','not in',['pending'])]}" string="Approve" type="object" class="oe_highlight"/>
-                    <button name="partner_state_potential" attrs="{'invisible':[('partner_state','not in',['approved','pending'])]}" string="To Potential" groups="partner_state.approve_partners" type="object"/>
+                <header invisible="not partner_state_enable">
+                    <button name="partner_state_pending" invisible="partner_state != 'potential'" string="Request Approval" type="object" class="oe_highlight"/>
+                    <button name="partner_state_approved" invisible="partner_state != 'pending'" string="Approve" type="object" class="oe_highlight"/>
+                    <button name="partner_state_potential" invisible="partner_state not in ['approved', 'pending']" string="To Potential" groups="partner_state.approve_partners" type="object"/>
                     <field name="partner_state" widget="statusbar"/>
                 </header>
             </sheet>
