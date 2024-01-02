@@ -21,17 +21,23 @@ Installation
 
 To install this module, you need to:
 
+1. Just install the module
+
 
 Configuration
 =============
 
 To configure this module, you need to:
 
+1. No configuration needed.
+
 
 Usage
 =====
 
 To use this module, you need to:
+
+1. Just use the module
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
