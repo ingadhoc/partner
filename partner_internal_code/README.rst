@@ -14,8 +14,7 @@
 Partner Internal Code
 =====================
 
-This module create the field internal_code in res.partner.
-Internal Code field value mast be unique
+This module creates a new field called "Internal Code" in res.partner. Internal Code field must be unique per partner, but it will allow to leave this field empty if desired. It also creates a sequence to populate this new field automatically upon partner creation.
 
 
 Installation
@@ -23,19 +22,23 @@ Installation
 
 To install this module, you need to:
 
+1. Just install the module.
 
 Configuration
 =============
 
 To configure this module, you need to:
 
+1. You can enable/disable or change the default sequence called "partner.internal.code" on sequences menu.
 
 Usage
 =====
 
 To use this module, you need to:
 
-#. Go to ...
+1. Set an Internal Code
+
+2. Or leave it empty, then a new code will be automatically assigned by the "partner.internal.code" sequence if enabled.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
