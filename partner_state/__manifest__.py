@@ -19,7 +19,13 @@
 ##############################################################################
 {
     'name': 'Partner State',
+<<<<<<< HEAD
     'version': "17.0.1.0.0",
+||||||| parent of 9afc6245 (temp)
+    'version': "16.0.1.0.0",
+=======
+    'version': "16.0.1.1.0",
+>>>>>>> 9afc6245 (temp)
     'category': 'Base',
     'author': 'ADHOC SA, Odoo Community Association (OCA)',
     'website': 'www.adhoc.com.ar',

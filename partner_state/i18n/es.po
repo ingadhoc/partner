@@ -205,3 +205,13 @@ msgstr ""
 #, python-format
 msgid "You can not modify this field \"%s\""
 msgstr "No puede modificar este campo \"%s\""
+
+#. module: partner_state
+#: model:ir.model.fields,help:partner_state.field_res_partner_state_field__changes
+msgid "Track changes of the Partner in the chatter box"
+msgstr "Seguimiento de los cambios del Contacto en el cuadro de conversación"
+
+#. module: partner_state
+#: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__changes
+msgid "Changes?"
+msgstr "Cambios?"

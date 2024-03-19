@@ -102,13 +102,14 @@ class ResPartner(models.Model):
                     field.field_id.name for field in partner_field_ids if
                     field.track]
         return ret
-
     @tools.ormcache('self.env.uid', 'self.env.su')
     def _track_get_fields(self):
         tracked_fields = []
         # TODO we should use company of modified partner
         for line in self.env['res.partner.state_field'].search([]):
             if line.track:
+                line.changes = True
+            if line.changes:
                 tracked_fields.append(line.field_id.name)
         if tracked_fields:
             return set(self.fields_get(tracked_fields))
@@ -121,7 +122,7 @@ class ResPartner(models.Model):
         """
         # TODO we should use company of modified partner
         for line in self.env['res.partner.state_field'].search([(
-                'track', '=', True)]):
+                'changes', '=', True)]):
             field = self._fields[line.field_id.name]
             setattr(field, 'track_visibility', 'always')
         return super()._message_track(

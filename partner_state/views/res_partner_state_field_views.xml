@@ -7,6 +7,7 @@
             <tree editable="top">
                 <field name="field_id" options="{'no_create': True, 'no_open': True}"/>
                 <field name="approval"/>
+                <field name="changes"/>
                 <field name="track"/>
                 <field name="block_edition"/>
             </tree>
