@@ -19,7 +19,7 @@ class Partner(models.Model):
         for vals in vals_list:
             if not vals.get('internal_code'):
                 vals['internal_code'] = self.env['ir.sequence'].next_by_code('partner.internal.code')
-        return super().create(vals)
+        return super().create(vals_list)
 
     _sql_constraints = {
         ('internal_code_uniq', 'unique(internal_code)',
