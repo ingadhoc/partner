@@ -3,7 +3,7 @@
 # directory
 ##############################################################################
 
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class ResPartnerStateField(models.Model):
@@ -22,11 +22,6 @@ class ResPartnerStateField(models.Model):
         help="Required for Approval",
         default=True
     )
-    changes = fields.Boolean(
-        'Changes?',
-        help="Track changes of the partner in the chatter box",
-        default=True
-    )
     track = fields.Boolean(
         'Track?',
         help="Track and, if change, go back to Potencial",
@@ -36,8 +31,3 @@ class ResPartnerStateField(models.Model):
         help="Do not allow to edit this field if the partner is approved",
         default=True,
     )
-
-    @api.onchange('track')
-    def _compute_changes(self):
-        if self.track:
-            self.changes = True
