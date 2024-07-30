@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_res_partner_state_field_all,res_company_partner_state_field_all,model_res_partner_state_field,,1,0,0,0
+access_ir_model_fields,ir_model_fields,base.model_ir_model_fields,,1,0,0,0
 access_res_partner_state_field_manager,res_company_partner_state_field_manager,model_res_partner_state_field,base.group_erp_manager,1,1,1,1
