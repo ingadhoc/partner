@@ -121,7 +121,7 @@ class ResPartner(models.Model):
         """
         # TODO we should use company of modified partner
         for line in self.env['res.partner.state_field'].search([(
-                'track', '=', True)]):
+                'changes', '=', True)]):
             field = self._fields[line.field_id.name]
             setattr(field, 'track_visibility', 'always')
         return super()._message_track(
