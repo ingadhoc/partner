@@ -36,7 +36,7 @@
         'data/ir_sequence_data.xml',
         'views/partner_view.xml',
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }
