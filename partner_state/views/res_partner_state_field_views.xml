@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="view_partner_state_tree_2" model="ir.ui.view">
-        <field name="name">state.partner.tree.view</field>
+        <field name="name">state.partner.list.view</field>
         <field name="model">res.partner.state_field</field>
         <field name="arch" type="xml">
-            <tree editable="top">
+            <list editable="top">
                 <field name="field_id" options="{'no_create': True, 'no_open': True}"/>
                 <field name="approval"/>
                 <field name="changes"/>
                 <field name="track"/>
                 <field name="block_edition"/>
-            </tree>
+            </list>
         </field>
     </record>
 
