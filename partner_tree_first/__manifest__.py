@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Partner Tree First',
-    'version': "17.0.1.0.0",
+    'version': "18.0.1.0.0",
     'category': 'Tools',
     'sequence': 14,
     'summary': '',
@@ -35,7 +35,7 @@
     ],
     'demo': [
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }
