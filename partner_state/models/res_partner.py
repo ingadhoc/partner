@@ -81,12 +81,11 @@ class ResPartner(models.Model):
         self.write({'partner_state': 'approved'})
 
     def check_partner_approve(self):
-        user_can_approve_partners = self.env[
-            'res.users'].has_group('partner_state.approve_partners')
+        user_can_approve_partners = self.env.user.has_group('partner_state.approve_partners')
         if not user_can_approve_partners:
             raise UserError(
                 _("User can't approve partners, "
-                    "please check user permissions!"))
+                "please check user permissions!"))
         return True
 
     def check_fields(self, field_type):
