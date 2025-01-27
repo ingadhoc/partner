@@ -18,27 +18,25 @@
 #
 ##############################################################################
 {
-    'name': 'Partner State',
-    'version': "18.0.1.0.0",
-    'category': 'Base',
-    'author': 'ADHOC SA, Odoo Community Association (OCA)',
-    'website': 'www.adhoc.com.ar',
-    'license': 'AGPL-3',
-    'depends': [
-        'contacts',
+    "name": "Partner State",
+    "version": "18.0.1.0.0",
+    "category": "Base",
+    "author": "ADHOC SA, Odoo Community Association (OCA)",
+    "website": "www.adhoc.com.ar",
+    "license": "AGPL-3",
+    "depends": [
+        "contacts",
     ],
-    'data': [
-        'security/partner_state_security.xml',
-        'security/ir.model.access.csv',
-        'data/res_company_data.xml',
-        'data/partner_state_server_data.xml',
-        'data/res_users_data.xml',
-        'views/res_partner_state_field_views.xml',
-        'views/partner_views.xml',
-        'views/res_company_views.xml',
+    "data": [
+        "security/partner_state_security.xml",
+        "security/ir.model.access.csv",
+        "data/res_company_data.xml",
+        "data/partner_state_server_data.xml",
+        "data/res_users_data.xml",
+        "views/res_partner_state_field_views.xml",
+        "views/partner_views.xml",
+        "views/res_company_views.xml",
     ],
-    'demo': [
-        'demo/res.partner.state_field.csv'
-    ],
-    'installable': True,
+    "demo": ["demo/res.partner.state_field.csv"],
+    "installable": True,
 }

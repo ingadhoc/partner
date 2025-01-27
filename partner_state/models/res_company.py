@@ -3,13 +3,13 @@
 # directory
 ##############################################################################
 
-from odoo import models, fields
+from odoo import fields, models
 
 
 class ResCompany(models.Model):
-    _inherit = 'res.company'
+    _inherit = "res.company"
 
     partner_state_enable = fields.Boolean(
-        'Use partner state?',
+        "Use partner state?",
         default=True,
     )
