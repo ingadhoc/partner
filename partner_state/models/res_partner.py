@@ -46,7 +46,7 @@ class ResPartner(models.Model):
             for key in modified_fields:
                 if key in partner_block_fields:
                     raise UserError(
-                        _('You can not modify this field "%s"' % (key)))
+                        _('You can not modify this field "%s"', (key)))
             fields = partner.check_fields('track')
             if fields:
                 fields_set = set(fields)
@@ -70,10 +70,12 @@ class ResPartner(models.Model):
                 continue
             for partner_field, value in partner_data.items():
                 if not value:
-                    raise UserError(_(
-                        'Partner "%s" can not request approval, '
-                        'required field %s' % (
-                            rec.display_name, partner_field)))
+                    raise UserError(
+                        _(
+                            'Partner "%s" can not request approval, ' "required field %s",
+                            rec.display_name, partner_field
+                        )
+                    )
 
     def partner_state_approved(self):
         self.check_partner_approve()
