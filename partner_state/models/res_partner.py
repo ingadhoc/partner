@@ -16,7 +16,6 @@ class ResPartner(models.Model):
 
     partner_state = fields.Selection(
         [('potential', 'Potential'), ('pending', 'Pending pproval'), ('approved', 'Approved')],
-        string='Partner State',
         readonly=True,
         required=True,
         default='potential',
