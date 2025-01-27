@@ -10,7 +10,6 @@ class Partner(models.Model):
     _inherit = 'res.partner'
 
     internal_code = fields.Char(
-        'Internal Code',
         copy=False,
         index='btree_not_null',
     )
