@@ -8,10 +8,9 @@ from odoo.exceptions import UserError
 
 
 class TestPartnerState(common.TransactionCase):
-
     def setUp(self):
         super().setUp()
-        self.partner = self.env.ref('base.res_partner_1')
+        self.partner = self.env.ref("base.res_partner_1")
 
     def test_partner_state_pending(self):
         self.partner.partner_state_pending()
@@ -26,4 +25,4 @@ class TestPartnerState(common.TransactionCase):
         self.partner.partner_state_approved()
         msg = 'You can not modify this field "name"'
         with self.assertRaisesRegex(UserError, msg):
-            self.partner.name = 'new name'
+            self.partner.name = "new name"
