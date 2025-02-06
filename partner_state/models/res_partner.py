@@ -67,7 +67,8 @@ class ResPartner(models.Model):
                     raise UserError(
                         _(
                             'Partner "%s" can not request approval, ' "required field %s",
-                            rec.display_name, partner_field
+                            rec.display_name,
+                            partner_field,
                         )
                     )
 
