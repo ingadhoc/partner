@@ -30,12 +30,15 @@ jobs:
           path: ~/.cache/pre-commit
           key: pre-commit|${{ steps.setup-python.outputs.python-version }}|${{ hashFiles('.pre-commit-config.yaml') }}
       -
+        id: precommit
         name: Pre-commit
         uses: pre-commit/action@v3.0.1
+        continue-on-error: true
       -
-        name: Create status on success
+        name: Create status on success only
         env:
-          PRECOMMIT_TOKEN: ${{ secrets.PRECOMMIT_TOKEN }}
+          PRECOMMIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PRECOMMIT_STATE: ${{ steps.precommit.outcome }}
         run: |
           curl -L \
           -X POST \
@@ -43,6 +46,10 @@ jobs:
           -H "Authorization: Bearer $PRECOMMIT_TOKEN" \
           -H "X-GitHub-Api-Version: 2022-11-28" \
           https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.event.pull_request.head.sha }} \
-          -d '{"state":"success","context":"pre-commit","target_url": "${{ github.event.pull_request.html_url }}"}' \
+          -d '{"state":"$PRECOMMIT_STATE","context":"pre-commit","target_url": "${{ github.event.pull_request.html_url }}"}' \
           --fail
-
+      -
+        name: Set output if pre-commit failed
+        if: steps.precommit.outcome == 'failure'
+        run: |
+          exit 1
