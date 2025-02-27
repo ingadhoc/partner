@@ -35,7 +35,7 @@ jobs:
         uses: pre-commit/action@v3.0.1
         continue-on-error: true
       -
-        name: Create status
+        name: Create commit status
         if: github.event_name == 'pull_request_target'
         run: |
           curl -L \
