@@ -10,7 +10,7 @@ class Partner(models.Model):
 
     internal_code = fields.Char(
         copy=False,
-        index="btree_not_null",
+        index='btree_not_null',
     )
 
     @api.model_create_multi
