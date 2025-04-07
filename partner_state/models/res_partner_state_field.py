@@ -18,7 +18,7 @@ class ResPartnerStateField(models.Model):
         ondelete="cascade",
     )
     approval = fields.Boolean("Approval?", help="Required for Approval", default=True)
-    changes = fields.Boolean("Changes?", help="Track changes of the partner in the chatter box", default=True)
+    changes = fields.Boolean("Changes?", help="Track changes of the partner in the chatter box")
     track = fields.Boolean("Track?", help="Track and, if change, go back to Potencial", default=True)
     block_edition = fields.Boolean(
         help="Do not allow to edit this field if the partner is approved",
