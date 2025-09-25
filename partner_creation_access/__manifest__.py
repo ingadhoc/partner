@@ -26,7 +26,7 @@
     "license": "AGPL-3",
     "depends": ["base", "contacts"],
     "data": [],
-    "installable": True,
+    'installable': False,
     "auto_install": False,
     "application": False,
 }
