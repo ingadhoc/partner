@@ -20,7 +20,7 @@
 
 {
     "name": "Partner Internal Code",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "category": "Tools",
     "sequence": 14,
     "author": "ADHOC SA",
@@ -35,7 +35,7 @@
         "data/ir_sequence_data.xml",
         "views/partner_view.xml",
     ],
-    "installable": False,
+    "installable": True,
     "auto_install": False,
     "application": False,
 }
