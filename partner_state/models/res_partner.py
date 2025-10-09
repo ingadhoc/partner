@@ -3,7 +3,7 @@
 # directory
 ##############################################################################
 
-from odoo import _, fields, models, tools
+from odoo import _, fields, models
 from odoo.exceptions import UserError
 
 
@@ -29,6 +29,18 @@ class ResPartner(models.Model):
             partners.partner_state_enable = True
 
     def write(self, vals):
+        initial_values = {}
+        state_fields_to_track = []
+
+        for line in self.env["res.partner.state_field"].search([("track", "=", True)]):
+            field_name = line.field_id.name
+            state_fields_to_track.append(field_name)
+            if field_name in vals:
+                for partner in self:
+                    if partner.id not in initial_values:
+                        initial_values[partner.id] = {}
+                    initial_values[partner.id][field_name] = getattr(partner, field_name)
+
         ResPartnerStateField = self.env["res.partner.state_field"]
         for partner in self.filtered(lambda r: r.partner_state in ["approved", "pending"]):
             partner_block_fields = ResPartnerStateField.search([("block_edition", "=", True)]).mapped("field_id.name")
@@ -92,24 +104,21 @@ class ResPartner(models.Model):
                 ret = [field.field_id.name for field in partner_field_ids if field.track]
         return ret
 
-    @tools.ormcache("self.env.uid", "self.env.su")
     def _track_get_fields(self):
-        tracked_fields = []
-        # TODO we should use company of modified partner
-        for line in self.env["res.partner.state_field"].search([]):
-            if line.track:
-                tracked_fields.append(line.field_id.name)
-        if tracked_fields:
-            return set(self.fields_get(tracked_fields))
-        return super()._track_get_fields()
+        default_result = super()._track_get_fields()
 
-    def _message_track(self, tracked_fields, initial_values):
-        """
-        We need to set attribute temporary because message_track read it
-        from field properties to make message
-        """
-        # TODO we should use company of modified partner
-        for line in self.env["res.partner.state_field"].search([("changes", "=", True)]):
-            field = self._fields[line.field_id.name]
-            setattr(field, "track_visibility", "always")
-        return super()._message_track(tracked_fields, initial_values)
+        fields_to_exclude = set()
+        fields_to_include = set()
+
+        for line in self.env["res.partner.state_field"].search([]):
+            field_name = line.field_id.name
+            if line.changes:
+                fields_to_include.add(field_name)
+            else:
+                fields_to_exclude.add(field_name)
+
+        final_result = set(default_result) - fields_to_exclude
+
+        final_result.update(fields_to_include)
+
+        return final_result
