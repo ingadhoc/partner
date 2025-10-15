@@ -19,14 +19,14 @@
 ##############################################################################
 {
     "name": "Partner Creation Access",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "category": "Partner",
     "author": "ADHOC SA",
     "website": "www.adhoc.com.ar",
     "license": "AGPL-3",
     "depends": ["base", "contacts"],
     "data": [],
-    "installable": False,
+    "installable": True,
     "auto_install": False,
     "application": False,
 }
