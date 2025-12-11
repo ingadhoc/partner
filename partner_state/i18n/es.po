@@ -10,14 +10,17 @@ msgstr ""
 "Project-Id-Version: Odoo Server 19.0+e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-06 15:19+0000\n"
-"PO-Revision-Date: 2025-10-23 14:53+0000\n"
-"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2025\n"
-"Language-Team: Spanish (https://app.transifex.com/adhoc/teams/46451/es/)\n"
+"PO-Revision-Date: 2025-12-11 18:10+0000\n"
+"Last-Translator: BAF <baf@adhoc.inc>\n"
+"Language-Team: Spanish <https://translation.dev-adhoc.com/projects/"
+"partner-19-0/partner-19-0-partner_state/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n != 0 && n % 1000000 == 0)"
+" ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__approval
@@ -94,7 +97,7 @@ msgstr "Campo"
 #: model:ir.model.fields,field_description:partner_state.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__id
 msgid "ID"
-msgstr "ID (identificación)"
+msgstr "ID"
 
 #. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__write_uid
