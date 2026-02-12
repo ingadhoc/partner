@@ -15,6 +15,7 @@ Partner Creation Access
 =======================
 
 This module introduces a new access rule to allow users to create partners only with the 'Create Contact' access.
+Only the public user doesn't apply to this rule, so it can create partners without any access.
 
 Installation
 ============
