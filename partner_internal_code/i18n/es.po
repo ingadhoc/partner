@@ -44,6 +44,15 @@ msgid "Internal Code"
 msgstr "Código Interno"
 
 #. module: partner_internal_code
+#: model:ir.model.fields,help:partner_internal_code.field_res_partner__internal_code
+msgid ""
+"Unique code for the contact; if left empty it is assigned automatically, and "
+"you can also use it to search for the contact."
+msgstr ""
+"Código único del contacto; si lo dejás vacío se asigna automáticamente, y "
+"también podés usarlo para buscarlo."
+
+#. module: partner_internal_code
 #: model:ir.model.constraint,message:partner_internal_code.constraint_res_partner_internal_code_uniq
 msgid "Internal Code must be unique!"
 msgstr "El Código Interno debe ser único!"
