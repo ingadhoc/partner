@@ -11,6 +11,8 @@ class Partner(models.Model):
     internal_code = fields.Char(
         copy=False,
         index="btree_not_null",
+        help="Unique code for the contact; if left empty it is assigned automatically, and "
+        "you can also use it to search for the contact.",
     )
 
     _internal_code_uniq = models.Constraint(
