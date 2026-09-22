@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-22 04:35+0000\n"
+"POT-Creation-Date: 2026-09-22 19:15+0000\n"
 "PO-Revision-Date: 2025-12-11 18:10+0000\n"
 "Last-Translator: BAF <baf@adhoc.inc>\n"
 "Language-Team: Spanish <https://translation.dev-adhoc.com/projects/"
@@ -44,15 +44,16 @@ msgid "Internal Code"
 msgstr "Código Interno"
 
 #. module: partner_internal_code
+#: model:ir.model.constraint,message:partner_internal_code.constraint_res_partner_internal_code_uniq
+msgid "Internal Code must be unique!"
+msgstr "El Código Interno debe ser único!"
+
+#. module: partner_internal_code
 #: model:ir.model.fields,help:partner_internal_code.field_res_partner__internal_code
+#: model:ir.model.fields,help:partner_internal_code.field_res_users__internal_code
 msgid ""
 "Unique code for the contact; if left empty it is assigned automatically, and "
 "you can also use it to search for the contact."
 msgstr ""
 "Código único del contacto; si lo dejás vacío se asigna automáticamente, y "
 "también podés usarlo para buscarlo."
-
-#. module: partner_internal_code
-#: model:ir.model.constraint,message:partner_internal_code.constraint_res_partner_internal_code_uniq
-msgid "Internal Code must be unique!"
-msgstr "El Código Interno debe ser único!"
