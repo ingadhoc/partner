@@ -3,6 +3,7 @@
 # directory
 ##############################################################################
 from odoo import api, fields, models
+from odoo.fields import Domain
 
 
 class Partner(models.Model):
@@ -19,6 +20,16 @@ class Partner(models.Model):
         "unique (internal_code)",
         "Internal Code must be unique!",
     )
+
+    @api.model
+    def _search_display_name(self, operator, value):
+        """The code is matched exactly: it is a short sequence every contact has."""
+        domain = super()._search_display_name(operator, value)
+        if not value or not isinstance(value, str):
+            return domain
+        if operator in Domain.NEGATIVE_OPERATORS or not operator.endswith("like"):
+            return domain
+        return Domain.OR([domain, Domain("internal_code", "=", value)])
 
     @api.model_create_multi
     def create(self, vals_list):
