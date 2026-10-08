@@ -32,7 +32,7 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_tree"/>
         <field name="arch" type="xml">
-            <field name="complete_name" position="before">
+            <field name="display_name" position="before">
                 <field name="internal_code"/>
             </field>
         </field>
