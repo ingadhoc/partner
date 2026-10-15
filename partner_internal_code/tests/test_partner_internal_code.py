@@ -47,7 +47,7 @@ class TestPartnerInternalCode(TransactionCase):
     def test_list_column_before_name(self):
         arch = etree.fromstring(self.env["res.partner"].get_view(view_type="list")["arch"])
         names = [field.get("name") for field in arch.iter("field")]
-        self.assertEqual(names.index("internal_code") + 1, names.index("display_name"))
+        self.assertEqual(names.index("internal_code") + 1, names.index("complete_name"))
 
     def test_search_name_filter_includes_code(self):
         arch = etree.fromstring(self.env["res.partner"].get_view(view_type="search")["arch"])

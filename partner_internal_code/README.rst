@@ -14,7 +14,7 @@
 Partner Internal Code
 =====================
 
-This module creates a new field called "Internal Code" in res.partner. Internal Code field must be unique per partner, but it will allow to leave this field empty if desired. It also creates a sequence to populate this new field automatically upon partner creation.
+This module creates a new field called "Internal Code" in res.partner. Internal Code field must be unique across all contacts, but it will allow to leave this field empty if desired. It also creates a sequence to populate this new field automatically upon partner creation.
 
 
 Installation
@@ -29,7 +29,7 @@ Configuration
 
 To configure this module, you need to:
 
-1. You can enable/disable or change the default sequence called "partner.internal.code" on sequences menu.
+1. You can enable/disable or change the default sequence in Settings > Technical > Sequences, record "partner" (code "partner.internal.code").
 
 Usage
 =====
@@ -39,10 +39,6 @@ To use this module, you need to:
 1. Set an Internal Code
 
 2. Or leave it empty, then a new code will be automatically assigned by the "partner.internal.code" sequence if enabled.
-
-.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
-   :alt: Try me on Runbot
-   :target: http://runbot.adhoc.com.ar/
 
 Bug Tracker
 ===========
