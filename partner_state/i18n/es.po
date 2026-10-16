@@ -47,7 +47,13 @@ msgid "Block Edition"
 msgstr "Bloquear Edición"
 
 #. module: partner_state
+#: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__chatter_tracking
+msgid "Chatter Tracking"
+msgstr "Registro en el chatter"
+
+#. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__changes
+#: model_terms:ir.ui.view,arch_db:partner_state.view_partner_state_tree_2
 msgid "Changes?"
 msgstr "Cambios?"
 
@@ -178,6 +184,11 @@ msgstr "Seguir, y si cambia, volver a Potencial"
 #: model:ir.model.fields,help:partner_state.field_res_partner_state_field__changes
 msgid "Track changes of the partner in the chatter box"
 msgstr "Seguimiento de los cambios del Contacto en el cuadro de conversación"
+
+#. module: partner_state
+#: model:ir.model.fields,help:partner_state.field_res_partner_state_field__chatter_tracking
+msgid "Fields with native tracking are always tracked."
+msgstr "Los campos con trazabilidad nativa se registran siempre."
 
 #. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__track
