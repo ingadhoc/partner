@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-19 20:28+0000\n"
-"PO-Revision-Date: 2026-10-19 20:28+0000\n"
+"POT-Creation-Date: 2026-10-20 16:05+0000\n"
+"PO-Revision-Date: 2026-10-20 16:05+0000\n"
 "Last-Translator: BAF <baf@adhoc.inc>\n"
 "Language-Team: Spanish <https://translation.dev-adhoc.com/projects/"
 "partner-19-0/partner-19-0-partner_state/es/>\n"
@@ -43,14 +43,7 @@ msgid ""
 "\n"
 "Add three states for partners: 'Potential', 'Pending Approval' and 'Approved'.\n"
 "Some information is required so that a partner can be approved. That\n"
-"information is configured on: Contacts/Configuration/Partner State Fields.\n"
-"\n"
-"For each configured field you can also choose whether:\n"
-"\n"
-"* it is required to request approval,\n"
-"* it can not be edited while the partner is pending or approved,\n"
-"* changing it sends the partner back to 'Potential',\n"
-"* its changes are logged in the chatter.\n"
+"information is configured on: Contacts > Configuration > Partner State Fields.\n"
 "\n"
 "You can also configure on company if you want to use partner state on that\n"
 "company or not. The state applies to commercial partners (companies and\n"
@@ -69,8 +62,24 @@ msgid ""
 "To configure this module, you need to:\n"
 "\n"
 "#. Set \"Use partner state \" in the company.\n"
-"#. Set the field that you required to approve partner in Contacts/Configuration/Partner State Fields.\n"
+"#. Set the field that you required to approve partner in Contacts > Configuration > Partner State Fields.\n"
 "#. Set the permition to approve to the user (group \"Approve Partners\").\n"
+"\n"
+"Each line of Partner State Fields has these options:\n"
+"\n"
+"* **Approval?**: the field is required to request the approval.\n"
+"* **Changes?**: the changes of the field are logged in the chatter. It only\n"
+"  adds fields: the fields that Odoo already tracks are always logged, with or\n"
+"  without a line, and for them this option is checked and can not be unchecked.\n"
+"* **Track?**: if the field changes on an approved or pending partner, the\n"
+"  partner goes back to Potential. Checking it also checks **Changes?**.\n"
+"* **Block Edition**: the field can not be edited on an approved or pending\n"
+"  partner.\n"
+"\n"
+"The fields that Odoo tracks on contacts by default are Name, Email, Phone,\n"
+"Related Company, Salesperson, Tax ID and Inlined Complete Address, plus Parent\n"
+"name and Company Name Entity, that follow the name. Other installed modules can\n"
+"add more fields (for example, ``base_ux`` adds Active).\n"
 "\n"
 "Usage\n"
 "=====\n"
@@ -144,8 +153,14 @@ msgstr "Bloquear Edición"
 
 #. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__changes
+#: model_terms:ir.ui.view,arch_db:partner_state.view_partner_state_tree_2
 msgid "Changes?"
 msgstr "Cambios?"
+
+#. module: partner_state
+#: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__chatter_tracking
+msgid "Chatter Tracking"
+msgstr "Registro en el chatter"
 
 #. module: partner_state
 #: model:ir.model,name:partner_state.model_res_company
@@ -186,6 +201,11 @@ msgid "Field"
 msgstr "Campo"
 
 #. module: partner_state
+#: model:ir.model.fields,help:partner_state.field_res_partner_state_field__chatter_tracking
+msgid "Fields with native tracking are always tracked."
+msgstr "Los campos con trazabilidad nativa se registran siempre."
+
+#. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_company__id
 #: model:ir.model.fields,field_description:partner_state.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__id
@@ -201,6 +221,11 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__write_date
 msgid "Last Updated on"
 msgstr "Última actualización en"
+
+#. module: partner_state
+#: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__native_tracking
+msgid "Native Tracking"
+msgstr "Trazabilidad nativa"
 
 #. module: partner_state
 #. odoo-python
