@@ -93,17 +93,9 @@ class ResPartner(models.Model):
         return ret
 
     def _track_get_fields(self):
-        tracked_fields = []
-        for line in self.env["res.partner.state_field"].search([]):
-            if line.track or line.changes:
-                tracked_fields.append(line.field_id.name)
-        if tracked_fields:
-            return set(self.fields_get(tracked_fields))
-        return super()._track_get_fields()
-
-    def _message_track(self, fields_iter, initial_values_dict):
-        changes_fields = {
-            line.field_id.name for line in self.env["res.partner.state_field"].search([("changes", "=", True)])
-        }
-        fields_to_log = set(fields_iter) & changes_fields
-        return super()._message_track(fields_to_log, initial_values_dict)
+        tracked_fields = set(super()._track_get_fields())
+        names = self.env["res.partner.state_field"].search([("changes", "=", True)]).mapped("field_id.name")
+        # fields_get() with an empty list returns every field
+        if names:
+            tracked_fields.update(self.fields_get(names, attributes=()))
+        return tracked_fields
