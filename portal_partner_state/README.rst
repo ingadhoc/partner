@@ -16,14 +16,17 @@ Portal with Partner State
 
 This module integrate partner state using portal.
 
-#. Add a model access rule in order to able portal users to see the portal.
+#. Add a model access rule in order to able portal users to see the portal:
+   portal users can read the Partner State Fields configuration and the
+   fields it points to, but can not modify it.
 
 Installation
 ============
 
 To install this module, you need to:
 
-#. Just install this module.
+#. Just install this module. It is installed automatically when both
+   "Partner State" and "Portal" are installed.
 
 Configuration
 =============
@@ -48,7 +51,7 @@ Bug Tracker
 ===========
 
 Bugs are tracked on `GitHub Issues
-<https://github.com/ingadhoc/sale/issues>`_. In case of trouble, please
+<https://github.com/ingadhoc/partner/issues>`_. In case of trouble, please
 check there if your issue has already been reported. If you spotted it first,
 help us smashing it by providing a detailed and welcomed feedback.
 

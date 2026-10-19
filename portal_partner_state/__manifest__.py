@@ -30,7 +30,7 @@
         "portal",
     ],
     "data": [
-        'security/ir.access.csv',
+        "security/ir.access.csv",
     ],
     "installable": True,
     "auto_install": True,
