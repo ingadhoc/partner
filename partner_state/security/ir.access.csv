@@ -1,4 +1,4 @@
 id,name,model_id,group_id/id,operation,domain
 access_res_partner_state_field_all,res_company_partner_state_field_all,res.partner.state_field,base.group_user,ru,
 access_res_partner_state_field_manager,res_company_partner_state_field_manager,res.partner.state_field,base.group_erp_manager,crud,
-access_ir_model_fields,ir_model_fields,ir.model.fields,base.group_user,r,
+access_ir_model_fields,ir_model_fields,ir.model.fields,base.group_user,r,"[('model', '=', 'res.partner')]"
