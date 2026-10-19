@@ -19,7 +19,7 @@
 ##############################################################################
 {
     "name": "Partner State",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "category": "Base",
     "author": "ADHOC SA, Odoo Community Association (OCA)",
     "website": "www.adhoc.com.ar",
@@ -29,7 +29,7 @@
     ],
     "data": [
         "security/partner_state_security.xml",
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "data/res_company_data.xml",
         "data/partner_state_server_data.xml",
         "data/res_users_data.xml",
@@ -38,5 +38,5 @@
         "views/res_company_views.xml",
     ],
     "demo": ["demo/res.partner.state_field.csv"],
-    "installable": False,
+    "installable": True,
 }
