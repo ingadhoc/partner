@@ -14,12 +14,20 @@
 Partner State
 =============
 
-Add three stats for partners:: 'Potential', 'Pending Approval' and 'Approved'.
+Add three states for partners: 'Potential', 'Pending Approval' and 'Approved'.
 Some information is required so that a partner can be approved. That
-information is configured on: Sales/Settings/Address Book/Partner State fields.
+information is configured on: Contacts/Configuration/Partner State Fields.
+
+For each configured field you can also choose whether:
+
+* it is required to request approval,
+* it can not be edited while the partner is pending or approved,
+* changing it sends the partner back to 'Potential',
+* its changes are logged in the chatter.
 
 You can also configure on company if you want to use partner state on that
-company or not.
+company or not. The state applies to commercial partners (companies and
+individuals without a parent company).
 
 Installation
 ============
@@ -34,8 +42,8 @@ Configuration
 To configure this module, you need to:
 
 #. Set "Use partner state " in the company.
-#. Set the field that you required to approve partner in Sale/Configuration/Contact: Partner State Fields.
-#. Set the permition to approve to the user.
+#. Set the field that you required to approve partner in Contacts/Configuration/Partner State Fields.
+#. Set the permition to approve to the user (group "Approve Partners").
 
 Usage
 =====
@@ -43,6 +51,7 @@ Usage
 To use this module, you need to:
 
 #. In the partner view clik the button to approve, or potencial to approve.
+#. From the partner list, use the actions "Request Approval Partners" and "Approve Partners" to process several partners at once.
 
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
