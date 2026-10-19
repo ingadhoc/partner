@@ -3,7 +3,7 @@
 # directory
 ##############################################################################
 from odoo.exceptions import AccessError
-from odoo.tests import TransactionCase, new_test_user, tagged
+from odoo.tests import HttpCase, TransactionCase, new_test_user, tagged
 
 
 @tagged("post_install", "-at_install")
@@ -23,3 +23,18 @@ class TestPortalPartnerState(TransactionCase):
     def test_portal_cannot_write_state_fields(self):
         with self.assertRaises(AccessError):
             self.state_field.with_user(self.portal_user).write({"approval": False})
+
+    def test_portal_reads_only_partner_fields(self):
+        fields = self.env["ir.model.fields"].with_user(self.portal_user).search([])
+        self.assertTrue(fields)
+        self.assertEqual(set(fields.mapped("model")), {"res.partner"})
+
+
+@tagged("post_install", "-at_install")
+class TestPortalPartnerStateHttp(HttpCase):
+    def test_portal_home(self):
+        new_test_user(self.env, login="portal_partner_state", groups="base.group_portal")
+        self.authenticate("portal_partner_state", "portal_partner_state")
+        response = self.url_open("/my")
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.url.endswith("/my"), "the portal user was redirected to the login")
