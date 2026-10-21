@@ -19,7 +19,7 @@
 ##############################################################################
 {
     "name": "Partner Creation Access",
-    "version": "19.0.1.1.1",
+    "version": "20.0.1.0.0",
     "category": "Partner",
     "author": "ADHOC SA",
     "website": "www.adhoc.com.ar",
@@ -28,7 +28,7 @@
     "data": [
         "security/ir.model.access.csv",
     ],
-    "installable": False,
+    "installable": True,
     "auto_install": False,
     "application": False,
 }
