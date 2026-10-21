@@ -26,7 +26,7 @@
     "license": "AGPL-3",
     "depends": ["base", "contacts", "sale"],
     "data": [
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
     ],
     "installable": True,
     "auto_install": False,
