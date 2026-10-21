@@ -16,6 +16,9 @@ Partner Creation Access
 
 This module introduces a new access rule to allow users to create partners only with the 'Create Contact' access.
 Only the public user doesn't apply to this rule, so it can create partners without any access.
+Creations made in superuser mode are not restricted either: they are system flows that raise privileges on
+purpose, such as the express checkout of ``website_sale``, which creates addresses with
+``res.partner.sudo().create()``.
 Also allows users with sales user access to edit partners and send messages/notes, but not to create contacts.
 
 Installation
