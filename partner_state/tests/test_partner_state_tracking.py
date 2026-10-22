@@ -34,7 +34,7 @@ class TestPartnerStateTracking(TransactionCase):
             return set(messages.tracking_value_ids.field_id.mapped("name"))
         # without mail_tracking, Odoo renders the tracking only in the body: "old → <b>new</b> <i>(Label)</i>"
         labels = set(re.findall(r"<i>\((.*?)\)</i>", "".join(messages.mapped("body"))))
-        return {name for name in vals if self.partner._fields[name].string in labels}
+        return {name for name in self.partner._track_get_fields() if self.partner._fields[name].string in labels}
 
     def _add_line(self, field_name, changes):
         return self.StateField.create(
