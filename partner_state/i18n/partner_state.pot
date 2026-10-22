@@ -4,16 +4,118 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 19.0+e\n"
+"Project-Id-Version: Odoo Server 20.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-25 18:35+0000\n"
-"PO-Revision-Date: 2025-11-25 18:35+0000\n"
+"POT-Creation-Date: 2026-10-20 16:05+0000\n"
+"PO-Revision-Date: 2026-10-20 16:05+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: partner_state
+#: model:ir.module.module,description:base.module_partner_state
+msgid ""
+".. |company| replace:: ADHOC SA\n"
+"\n"
+".. |company_logo| image:: https://raw.githubusercontent.com/ingadhoc/maintainer-tools/master/resources/adhoc-logo.png\n"
+"   :alt: ADHOC SA\n"
+"   :target: https://www.adhoc.com.ar\n"
+"\n"
+".. |icon| image:: https://raw.githubusercontent.com/ingadhoc/maintainer-tools/master/resources/adhoc-icon.png\n"
+"\n"
+".. image:: https://img.shields.io/badge/license-AGPL--3-blue.png\n"
+"   :target: https://www.gnu.org/licenses/agpl\n"
+"   :alt: License: AGPL-3\n"
+"\n"
+"=============\n"
+"Partner State\n"
+"=============\n"
+"\n"
+"Add three states for partners: 'Potential', 'Pending Approval' and 'Approved'.\n"
+"Some information is required so that a partner can be approved. That\n"
+"information is configured on: Contacts > Configuration > Partner State Fields.\n"
+"\n"
+"You can also configure on company if you want to use partner state on that\n"
+"company or not. The state applies to commercial partners (companies and\n"
+"individuals without a parent company).\n"
+"\n"
+"Installation\n"
+"============\n"
+"\n"
+"To install this module, you need to:\n"
+"\n"
+"#. Just install module.\n"
+"\n"
+"Configuration\n"
+"=============\n"
+"\n"
+"To configure this module, you need to:\n"
+"\n"
+"#. Set \"Use partner state \" in the company.\n"
+"#. Set the field that you required to approve partner in Contacts > Configuration > Partner State Fields.\n"
+"#. Set the permition to approve to the user (group \"Approve Partners\").\n"
+"\n"
+"Each line of Partner State Fields has these options:\n"
+"\n"
+"* **Approval?**: the field is required to request the approval.\n"
+"* **Changes?**: the changes of the field are logged in the chatter. It only\n"
+"  adds fields: the fields that Odoo already tracks are always logged, with or\n"
+"  without a line, and for them this option is checked and can not be unchecked.\n"
+"* **Track?**: if the field changes on an approved or pending partner, the\n"
+"  partner goes back to Potential. Checking it also checks **Changes?**.\n"
+"* **Block Edition**: the field can not be edited on an approved or pending\n"
+"  partner.\n"
+"\n"
+"The fields that Odoo tracks on contacts by default are Name, Email, Phone,\n"
+"Related Company, Salesperson, Tax ID and Inlined Complete Address, plus Parent\n"
+"name and Company Name Entity, that follow the name. Other installed modules can\n"
+"add more fields (for example, ``base_ux`` adds Active).\n"
+"\n"
+"Usage\n"
+"=====\n"
+"\n"
+"To use this module, you need to:\n"
+"\n"
+"#. In the partner view clik the button to approve, or potencial to approve.\n"
+"#. From the partner list, use the actions \"Request Approval Partners\" and \"Approve Partners\" to process several partners at once.\n"
+"\n"
+"\n"
+".. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas\n"
+"   :alt: Try me on Runbot\n"
+"   :target: http://runbot.adhoc.com.ar/\n"
+"\n"
+"Bug Tracker\n"
+"===========\n"
+"\n"
+"Bugs are tracked on `GitHub Issues\n"
+"<https://github.com/ingadhoc/partner/issues>`_. In case of trouble, please\n"
+"check there if your issue has already been reported. If you spotted it first,\n"
+"help us smashing it by providing a detailed and welcomed feedback.\n"
+"\n"
+"\n"
+"Credits\n"
+"=======\n"
+"\n"
+"Images\n"
+"------\n"
+"\n"
+"* |company| |icon|\n"
+"\n"
+"Contributors\n"
+"------------\n"
+"\n"
+"Maintainer\n"
+"----------\n"
+"\n"
+"|company_logo|\n"
+"\n"
+"This module is maintained by the |company|.\n"
+"\n"
+"To contribute to this module, please visit https://www.adhoc.com.ar.\n"
+msgstr ""
 
 #. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__approval
@@ -44,12 +146,18 @@ msgstr ""
 
 #. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__changes
+#: model_terms:ir.ui.view,arch_db:partner_state.view_partner_state_tree_2
 msgid "Changes?"
 msgstr ""
 
 #. module: partner_state
+#: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__chatter_tracking
+msgid "Chatter Tracking"
+msgstr ""
+
+#. module: partner_state
 #: model:ir.model,name:partner_state.model_res_company
-msgid "Companies"
+msgid "Company"
 msgstr ""
 
 #. module: partner_state
@@ -85,6 +193,11 @@ msgid "Field"
 msgstr ""
 
 #. module: partner_state
+#: model:ir.model.fields,help:partner_state.field_res_partner_state_field__chatter_tracking
+msgid "Fields with native tracking are always tracked."
+msgstr ""
+
+#. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_company__id
 #: model:ir.model.fields,field_description:partner_state.field_res_partner__id
 #: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__id
@@ -102,6 +215,11 @@ msgid "Last Updated on"
 msgstr ""
 
 #. module: partner_state
+#: model:ir.model.fields,field_description:partner_state.field_res_partner_state_field__native_tracking
+msgid "Native Tracking"
+msgstr ""
+
+#. module: partner_state
 #. odoo-python
 #: code:addons/partner_state/models/res_partner.py:0
 msgid "Partner \"%s\" can not request approval, required field %s"
@@ -110,6 +228,7 @@ msgstr ""
 #. module: partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_partner__partner_state
 #: model:ir.model.fields,field_description:partner_state.field_res_users__partner_state
+#: model:ir.module.module,shortdesc:base.module_partner_state
 #: model_terms:ir.ui.view,arch_db:partner_state.view_company_inherit_form
 #: model_terms:ir.ui.view,arch_db:partner_state.view_partner_state_search
 msgid "Partner State"

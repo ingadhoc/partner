@@ -32,7 +32,7 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_res_partner_filter"/>
         <field name="arch" type="xml">
-            <filter name="type_company" position="after">
+            <filter name="filter_vat_set" position="after">
                 <separator/>
                 <filter name="potential" string="Potential" domain="[('partner_state','=','potential')]"/>
                 <filter name="pending" string="Pending" domain="[('partner_state','=','pending')]" />

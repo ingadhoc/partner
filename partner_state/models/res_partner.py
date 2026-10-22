@@ -29,18 +29,6 @@ class ResPartner(models.Model):
             partners.partner_state_enable = True
 
     def write(self, vals):
-        initial_values = {}
-        state_fields_to_track = []
-
-        for line in self.env["res.partner.state_field"].search([("track", "=", True)]):
-            field_name = line.field_id.name
-            state_fields_to_track.append(field_name)
-            if field_name in vals:
-                for partner in self:
-                    if partner.id not in initial_values:
-                        initial_values[partner.id] = {}
-                    initial_values[partner.id][field_name] = getattr(partner, field_name)
-
         ResPartnerStateField = self.env["res.partner.state_field"]
         for partner in self.filtered(lambda r: r.partner_state in ["approved", "pending"]):
             partner_block_fields = ResPartnerStateField.search([("block_edition", "=", True)]).mapped("field_id.name")
@@ -105,20 +93,9 @@ class ResPartner(models.Model):
         return ret
 
     def _track_get_fields(self):
-        default_result = super()._track_get_fields()
-
-        fields_to_exclude = set()
-        fields_to_include = set()
-
-        for line in self.env["res.partner.state_field"].search([]):
-            field_name = line.field_id.name
-            if line.changes:
-                fields_to_include.add(field_name)
-            else:
-                fields_to_exclude.add(field_name)
-
-        final_result = set(default_result) - fields_to_exclude
-
-        final_result.update(fields_to_include)
-
-        return final_result
+        tracked_fields = set(super()._track_get_fields())
+        names = self.env["res.partner.state_field"].search([("changes", "=", True)]).mapped("field_id.name")
+        # fields_get() with an empty list returns every field
+        if names:
+            tracked_fields.update(self.fields_get(names, attributes=()))
+        return tracked_fields
