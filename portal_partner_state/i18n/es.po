@@ -89,4 +89,4 @@ msgstr ""
 #. module: portal_partner_state
 #: model:ir.module.module,shortdesc:base.module_portal_partner_state
 msgid "Portal Partner State"
-msgstr ""
+msgstr "Estado de Empresas en el portal"
