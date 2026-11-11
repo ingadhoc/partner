@@ -20,7 +20,13 @@
 
 {
     "name": "Partner Internal Code",
+<<<<<<< d23ecdfac17cc5f16d87b964d9b38718b9981b4b
     "version": "19.0.1.2.0",
+||||||| be9a347cd56daef5a9db4fa64d30d14abaaa567c
+    "version": "18.0.1.0.0",
+=======
+    "version": "18.0.1.1.0",
+>>>>>>> 1df1d9c1bfac5b633022acf6314f7464a2b32ddd
     "category": "Tools",
     "sequence": 14,
     "author": "ADHOC SA",
