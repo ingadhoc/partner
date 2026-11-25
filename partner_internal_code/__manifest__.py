@@ -20,7 +20,7 @@
 
 {
     "name": "Partner Internal Code",
-    "version": "20.0.1.1.0",
+    "version": "20.0.1.2.0",
     "category": "Tools",
     "sequence": 14,
     "author": "ADHOC SA",
