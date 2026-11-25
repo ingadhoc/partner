@@ -4,6 +4,7 @@
 ##############################################################################
 import logging
 
+import psycopg2
 from odoo import api, fields, models
 from odoo.fields import Domain
 from odoo.modules.db import FunctionStatus
@@ -12,8 +13,6 @@ from odoo.tools.sql import create_index
 _logger = logging.getLogger(__name__)
 
 INTERNAL_CODE_TRIGRAM_INDEX = "res_partner__internal_code_trgm_index"
-# Same flag as base_ux partner search indexes; read directly to avoid the dependency.
-TRIGRAM_FLAG_PARAM = "saas_feature.partner_search_trigram_index"
 
 
 class Partner(models.Model):
@@ -66,11 +65,7 @@ class Partner(models.Model):
         It goes next to the btree index of the field, with its own name: an
         index="trigram" on the field would make the registry drop the btree and
         rebuild it as gin without CONCURRENTLY, and the btree is what serves "=".
-        Only runs when the feature flag is on, so the rollout goes base by base.
         """
-        flag = self.env["ir.config_parameter"].sudo().get_param(TRIGRAM_FLAG_PARAM, "")
-        if flag.strip().lower() not in ("1", "true", "yes"):
-            return
         registry = self.env.registry
         # Logged at info: a WARNING during install turns the runbot build red.
         if not registry.has_trigram:
@@ -80,13 +75,18 @@ class Partner(models.Model):
         if registry.has_unaccent != FunctionStatus.INDEXABLE:
             _logger.info("unaccent is not indexable: %s is not created.", INTERNAL_CODE_TRIGRAM_INDEX)
             return
-        create_index(
-            self.env.cr,
-            indexname=INTERNAL_CODE_TRIGRAM_INDEX,
-            tablename="res_partner",
-            expressions=[registry.unaccent('"internal_code"') + " gin_trgm_ops"],
-            method="gin",
-        )
+        # Same as the registry: a failed index must not abort the module update.
+        try:
+            with self.env.cr.savepoint(flush=False):
+                create_index(
+                    self.env.cr,
+                    indexname=INTERNAL_CODE_TRIGRAM_INDEX,
+                    tablename="res_partner",
+                    expressions=[registry.unaccent('"internal_code"') + " gin_trgm_ops"],
+                    method="gin",
+                )
+        except psycopg2.OperationalError:
+            _logger.error("Unable to add index %s on res_partner", INTERNAL_CODE_TRIGRAM_INDEX)
 
     @api.model_create_multi
     def create(self, vals_list):
